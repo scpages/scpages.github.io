@@ -5,53 +5,141 @@
   <meta charset="UTF-8" />
   <title>Ship Components</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      background-color: #121212;
-      color: #e0e0e0;
-      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+      color: #e8e8e8;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 0;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
       padding: 20px;
+    }
+
+    header {
+      background: rgba(10, 14, 39, 0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid #2a9fd6;
+      padding: 20px 0;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     }
 
     h1 {
       color: #ffffff;
+      font-size: 2rem;
+      font-weight: 600;
+      text-align: center;
+      text-shadow: 0 0 20px rgba(42, 159, 214, 0.5);
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #a0a0a0;
+      font-size: 0.9rem;
+      margin-top: 8px;
     }
 
     table {
-      border-collapse: collapse;
       width: 100%;
-      margin-top: 20px;
-    }
-
-    th, td {
-      border: 1px solid #333;
-      padding: 10px;
-      text-align: left;
+      border-collapse: separate;
+      border-spacing: 0;
+      background: rgba(20, 25, 45, 0.6);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     }
 
     th {
-      background-color: #1f1f1f;
+      background: linear-gradient(180deg, #1e3a5f 0%, #152840 100%);
       color: #ffffff;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      padding: 16px 12px;
+      text-align: left;
+      border-bottom: 2px solid #2a9fd6;
     }
 
-    tr:nth-child(even) {
-      background-color: #1a1a1a;
+    td {
+      padding: 14px 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: #d0d0d0;
+      font-size: 0.9rem;
     }
 
     tr:hover {
-      background-color: #2a2a2a;
+      background-color: rgba(42, 159, 214, 0.1);
+      transition: background-color 0.2s ease;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
     }
 
     .ship {
-      font-weight: bold;
+      font-weight: 600;
+      color: #2a9fd6;
+      font-size: 1rem;
+    }
+
+    .footer {
+      margin-top: 50px;
+      padding: 20px 0;
+      border-top: 1px solid rgba(42, 159, 214, 0.3);
+      color: #888;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    .footer a {
+      color: #2a9fd6;
+      text-decoration: none;
+      margin: 0 8px;
+      transition: color 0.2s ease;
+    }
+
+    .footer a:hover {
       color: #4fc3f7;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      table {
+        font-size: 0.8rem;
+      }
+
+      th, td {
+        padding: 10px 8px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h1>Default Ship Components</h1>
+  <header>
+    <div class="container">
+      <h1>Default Ship Components</h1>
+      <div class="subtitle">Star Citizen - Default Loadouts Database</div>
+    </div>
+  </header>
 
-  <table>
+  <div class="container">
+    <table>
     <thead>
       <tr>
         <th>Ship</th>
@@ -2147,6 +2235,14 @@
   
     </tbody>
   </table>
+
+  <div class="footer">
+    Generated: Wed, 01 Apr 2026 11:00:55 GMT |
+    <a href="https://github.com/scpages/default_loadout" target="_blank">GitHub Repository</a> |
+    Data from <a href="https://www.erkul.games" target="_blank">erkul.games</a>
+  </div>
+
+  </div>
 
 </body>
 </html>
