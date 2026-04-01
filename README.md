@@ -6,13 +6,12 @@ A comprehensive hub of useful tools and resources for Star Citizen players.
 
 ## Features
 
-### 📦 My Tools
+### 📦 Integrated Tools
 - **Default Ship Components** - Database of default ship loadouts (auto-updated daily)
 - **Cargo Trading** - Trading routes and commodity prices (auto-updated every 15 minutes)
-- **Armor Gallery** - Character armor and clothing gallery
 
-### 🔗 External Resources
-Curated collection of 26+ community tools organized by category:
+### 🔗 Community Tools
+Curated collection of 29 community tools with favicon logos organized by category:
 - Cargo Trading
 - Ship Loadouts & Information
 - Ship Visualizations
@@ -22,6 +21,8 @@ Curated collection of 26+ community tools organized by category:
 - Ship Management
 - Reference & Guides
 - And more...
+
+Each community tool displays its website favicon and domain name for easy recognition.
 
 ## Automated Workflows
 
