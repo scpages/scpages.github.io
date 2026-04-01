@@ -34,7 +34,7 @@ Each community tool displays its website favicon and domain name for easy recogn
 
 ### Trading Data
 - **Frequency:** Every 15 minutes
-- **Source:** sctrading.dodoslav.eu
+- **Source:** UEX Corp API (via sctrading.dodoslav.eu)
 - **Method:** Downloads HTML via CURL
 - **Output:** `docs/trading/index.html`
 - **Safety:** Keeps old data if fetch fails
