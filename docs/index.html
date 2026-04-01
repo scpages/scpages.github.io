@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Star Citizen - Hub</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🚀%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📦%3C/text%3E%3C/svg%3E">
   <style>
     * {
       margin: 0;
@@ -21,7 +21,7 @@
     }
 
     .container {
-      max-width: 1400px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 20px;
     }
@@ -50,25 +50,12 @@
       font-size: 1.1rem;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-
-    @media (max-width: 968px) {
-      .grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-    }
-
     .section {
       background: rgba(20, 25, 45, 0.6);
       border-radius: 12px;
       padding: 30px;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+      margin-bottom: 30px;
     }
 
     .section-title {
@@ -105,14 +92,14 @@
     }
 
     .link-button {
-      display: block;
+      display: flex;
+      flex-direction: column;
       padding: 16px 20px;
       background: linear-gradient(135deg, rgba(42, 159, 214, 0.15) 0%, rgba(42, 159, 214, 0.05) 100%);
       border: 1px solid rgba(42, 159, 214, 0.3);
       border-radius: 8px;
       color: #e8e8e8;
       text-decoration: none;
-      font-size: 1.05rem;
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
@@ -144,6 +131,18 @@
       transform: translateY(0);
     }
 
+    .link-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .link-url {
+      font-size: 0.85rem;
+      color: #888;
+      font-family: 'Courier New', monospace;
+    }
+
     .footer {
       margin-top: 50px;
       padding: 20px 0;
@@ -169,110 +168,182 @@
 
   <header>
     <div class="container">
-      <h1>🚀 Star Citizen Hub</h1>
-      <div class="subtitle">Useful links and tools</div>
+      <h1>📦 Star Citizen Hub</h1>
+      <div class="subtitle">Useful tools and resources</div>
     </div>
   </header>
 
   <div class="container">
-    <div class="grid">
 
-      <!-- Left Column - My Sites -->
-      <div class="section">
-        <h2 class="section-title">My Sites</h2>
+    <!-- Integrated Tools Section - Top -->
+    <div class="section">
+      <h2 class="section-title">Integrated Tools</h2>
 
-        <div class="category">
-          <h3 class="category-title">Databases</h3>
-          <div class="links">
-            <a href="/default-loadouts/" class="link-button">⚙️ Default Ship Components</a>
-            <a href="/trading/" class="link-button">📦 Cargo Trading</a>
-            <a href="https://scitems.dodoslav.eu" class="link-button" target="_blank">🎽 Armor Gallery</a>
-          </div>
+      <div class="links">
+        <a href="/default-loadouts/" class="link-button">
+          <span class="link-name">⚙️ Default Ship Components</span>
+          <span class="link-url">scpages.github.io/default-loadouts</span>
+        </a>
+        <a href="/trading/" class="link-button">
+          <span class="link-name">📦 Cargo Trading</span>
+          <span class="link-url">scpages.github.io/trading</span>
+        </a>
+        <a href="https://scitems.dodoslav.eu" class="link-button" target="_blank">
+          <span class="link-name">🎽 Armor Gallery</span>
+          <span class="link-url">scitems.dodoslav.eu</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Community Tools Section -->
+    <div class="section">
+      <h2 class="section-title">Community Tools</h2>
+
+      <div class="category">
+        <h3 class="category-title">Cargo Trading</h3>
+        <div class="links">
+          <a href="https://uexcorp.space" class="link-button" target="_blank">
+            <span class="link-name">📊 UEXcorp</span>
+            <span class="link-url">uexcorp.space</span>
+          </a>
+          <a href="https://sc-trade.tools" class="link-button" target="_blank">
+            <span class="link-name">🛸 SC-Trade</span>
+            <span class="link-url">sc-trade.tools</span>
+          </a>
         </div>
       </div>
 
-      <!-- Right Column - External Links -->
-      <div class="section">
-        <h2 class="section-title">External Tools</h2>
-
-        <div class="category">
-          <h3 class="category-title">Cargo Trading</h3>
-          <div class="links">
-            <a href="https://uexcorp.space" class="link-button" target="_blank">📊 UEXcorp</a>
-            <a href="https://sc-trade.tools" class="link-button" target="_blank">🛸 SC-Trade</a>
-          </div>
-        </div>
-
-        <div class="category">
-          <h3 class="category-title">Ship Loadouts & Information</h3>
-          <div class="links">
-            <a href="https://www.erkul.games" class="link-button" target="_blank">🔧 Erkul DPS Calculator</a>
-            <a href="https://www.spviewer.eu" class="link-button" target="_blank">🎮 SPViewer</a>
-          </div>
-        </div>
-
-        <div class="category">
-          <h3 class="category-title">Ship Visualizations</h3>
-          <div class="links">
-            <a href="https://hangar.link/" class="link-button" target="_blank">🏠 Hangar Link</a>
-            <a href="https://www.starship42.com/" class="link-button" target="_blank">🚀 Starship42</a>
-          </div>
-        </div>
-
-        <div class="category">
-          <h3 class="category-title">Contested Zones</h3>
-          <div class="links">
-            <a href="https://contestedzonetimers.com" class="link-button" target="_blank">⏱️ CZ Timers</a>
-            <a href="https://exec.xyxyll.com" class="link-button" target="_blank">📍 Exec</a>
-          </div>
-        </div>
-
-        <div class="category">
-          <h3 class="category-title">Mining & Resources</h3>
-          <div class="links">
-            <a href="https://sc-mining.space/" class="link-button" target="_blank">🪨 SC Mining Tool</a>
-            <a href="https://versemate.com/" class="link-button" target="_blank">💎 Versemate</a>
-            <a href="https://uexcorp.space/mining" class="link-button" target="_blank">⛏️ UEX Mining</a>
-          </div>
-        </div>
-
-        <div class="category">
-          <h3 class="category-title">Crafting & Manufacturing</h3>
-          <div class="links">
-            <a href="https://www.sccrafter.com/" class="link-button" target="_blank">🔨 SC Crafter</a>
-            <a href="https://sc-craft.tools" class="link-button" target="_blank">⚒️ SC Craft Tools</a>
-            <a href="https://star-crafting.com" class="link-button" target="_blank">🛠️ Star Crafting</a>
-          </div>
-        </div>
-
-        <div class="category">
-          <h3 class="category-title">Ship Management</h3>
-          <div class="links">
-            <a href="https://ccugame.app/" class="link-button" target="_blank">🎯 CCU Game</a>
-            <a href="https://fleetyards.net/" class="link-button" target="_blank">📊 Fleetyards</a>
-            <a href="https://finder.cstone.space/" class="link-button" target="_blank">🛡️ Universal Item Finder</a>
-          </div>
-        </div>
-
-        <div class="category">
-          <h3 class="category-title">Reference & Guides</h3>
-          <div class="links">
-            <a href="https://verseguide.com/" class="link-button" target="_blank">📍 VerseGuide</a>
-            <a href="https://starcitizen.tools/" class="link-button" target="_blank">📚 Star Citizen Wiki</a>
-            <a href="https://gallog.co/" class="link-button" target="_blank">📝 Gallog</a>
-          </div>
-        </div>
-
-        <div class="category">
-          <h3 class="category-title">Other</h3>
-          <div class="links">
-            <a href="https://sc-cargo.space/" class="link-button" target="_blank">📐 Cargo Grid Visualizations</a>
-            <a href="https://www.star-citizen-characters.com/" class="link-button" target="_blank">👤 Character Gallery</a>
-            <a href="https://medpen.space/" class="link-button" target="_blank">⚕️ MediPen Guide</a>
-          </div>
+      <div class="category">
+        <h3 class="category-title">Ship Loadouts & Information</h3>
+        <div class="links">
+          <a href="https://www.erkul.games" class="link-button" target="_blank">
+            <span class="link-name">🔧 Erkul DPS Calculator</span>
+            <span class="link-url">erkul.games</span>
+          </a>
+          <a href="https://www.spviewer.eu" class="link-button" target="_blank">
+            <span class="link-name">🎮 SPViewer</span>
+            <span class="link-url">spviewer.eu</span>
+          </a>
         </div>
       </div>
 
+      <div class="category">
+        <h3 class="category-title">Ship Visualizations</h3>
+        <div class="links">
+          <a href="https://hangar.link/" class="link-button" target="_blank">
+            <span class="link-name">🏠 Hangar Link</span>
+            <span class="link-url">hangar.link</span>
+          </a>
+          <a href="https://www.starship42.com/" class="link-button" target="_blank">
+            <span class="link-name">🚀 Starship42</span>
+            <span class="link-url">starship42.com</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="category">
+        <h3 class="category-title">Contested Zones</h3>
+        <div class="links">
+          <a href="https://contestedzonetimers.com" class="link-button" target="_blank">
+            <span class="link-name">⏱️ CZ Timers</span>
+            <span class="link-url">contestedzonetimers.com</span>
+          </a>
+          <a href="https://exec.xyxyll.com" class="link-button" target="_blank">
+            <span class="link-name">📍 Exec</span>
+            <span class="link-url">exec.xyxyll.com</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="category">
+        <h3 class="category-title">Mining & Resources</h3>
+        <div class="links">
+          <a href="https://sc-mining.space/" class="link-button" target="_blank">
+            <span class="link-name">🪨 SC Mining Tool</span>
+            <span class="link-url">sc-mining.space</span>
+          </a>
+          <a href="https://versemate.com/" class="link-button" target="_blank">
+            <span class="link-name">💎 Versemate</span>
+            <span class="link-url">versemate.com</span>
+          </a>
+          <a href="https://uexcorp.space/mining" class="link-button" target="_blank">
+            <span class="link-name">⛏️ UEX Mining</span>
+            <span class="link-url">uexcorp.space/mining</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="category">
+        <h3 class="category-title">Crafting & Manufacturing</h3>
+        <div class="links">
+          <a href="https://www.sccrafter.com/" class="link-button" target="_blank">
+            <span class="link-name">🔨 SC Crafter</span>
+            <span class="link-url">sccrafter.com</span>
+          </a>
+          <a href="https://sc-craft.tools" class="link-button" target="_blank">
+            <span class="link-name">⚒️ SC Craft Tools</span>
+            <span class="link-url">sc-craft.tools</span>
+          </a>
+          <a href="https://star-crafting.com" class="link-button" target="_blank">
+            <span class="link-name">🛠️ Star Crafting</span>
+            <span class="link-url">star-crafting.com</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="category">
+        <h3 class="category-title">Ship Management</h3>
+        <div class="links">
+          <a href="https://ccugame.app/" class="link-button" target="_blank">
+            <span class="link-name">🎯 CCU Game</span>
+            <span class="link-url">ccugame.app</span>
+          </a>
+          <a href="https://fleetyards.net/" class="link-button" target="_blank">
+            <span class="link-name">📊 Fleetyards</span>
+            <span class="link-url">fleetyards.net</span>
+          </a>
+          <a href="https://finder.cstone.space/" class="link-button" target="_blank">
+            <span class="link-name">🛡️ Universal Item Finder</span>
+            <span class="link-url">finder.cstone.space</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="category">
+        <h3 class="category-title">Reference & Guides</h3>
+        <div class="links">
+          <a href="https://verseguide.com/" class="link-button" target="_blank">
+            <span class="link-name">📍 VerseGuide</span>
+            <span class="link-url">verseguide.com</span>
+          </a>
+          <a href="https://starcitizen.tools/" class="link-button" target="_blank">
+            <span class="link-name">📚 Star Citizen Wiki</span>
+            <span class="link-url">starcitizen.tools</span>
+          </a>
+          <a href="https://gallog.co/" class="link-button" target="_blank">
+            <span class="link-name">📝 Gallog</span>
+            <span class="link-url">gallog.co</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="category">
+        <h3 class="category-title">Other</h3>
+        <div class="links">
+          <a href="https://sc-cargo.space/" class="link-button" target="_blank">
+            <span class="link-name">📐 Cargo Grid Visualizations</span>
+            <span class="link-url">sc-cargo.space</span>
+          </a>
+          <a href="https://www.star-citizen-characters.com/" class="link-button" target="_blank">
+            <span class="link-name">👤 Character Gallery</span>
+            <span class="link-url">star-citizen-characters.com</span>
+          </a>
+          <a href="https://medpen.space/" class="link-button" target="_blank">
+            <span class="link-name">⚕️ MediPen Guide</span>
+            <span class="link-url">medpen.space</span>
+          </a>
+        </div>
+      </div>
     </div>
 
     <div class="footer">
