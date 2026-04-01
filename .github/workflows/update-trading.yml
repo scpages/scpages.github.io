@@ -24,6 +24,8 @@ jobs:
           if curl -f -s -o docs/trading/index.html https://sctrading.dodoslav.eu && \
              curl -f -s -o docs/trading/default.css https://sctrading.dodoslav.eu/default.css && \
              curl -f -s -o docs/trading/favicon.ico https://sctrading.dodoslav.eu/favicon.ico; then
+            # Fix CSS path from /default.css to default.css (relative)
+            sed -i 's|href="/default.css"|href="default.css"|g' docs/trading/index.html
             echo "status=success" >> $GITHUB_OUTPUT
             date -u +"%Y-%m-%d %H:%M:%S UTC" > docs/trading/.last-update
           else
