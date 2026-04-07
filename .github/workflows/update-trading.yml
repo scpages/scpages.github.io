@@ -6,7 +6,7 @@ on:
     - cron: '3,18,33,48 * * * *' # Every 15 minutes (at :03, :18, :33, :48)
 
 jobs:
-  fetch-and-deploy:
+  generate-and-deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -15,41 +15,33 @@ jobs:
       - name: Checkout pages repo
         uses: actions/checkout@v4
 
-      - name: Create trading directory
-        run: mkdir -p docs/trading
+      - name: Checkout generator repo
+        uses: actions/checkout@v4
+        with:
+          repository: scpages/trading
+          path: generator
 
-      - name: Fetch trading page
-        id: fetch
-        run: |
-          if curl -f -s -o docs/trading/index.html https://sctrading.dodoslav.eu && \
-             curl -f -s -o docs/trading/default.css https://sctrading.dodoslav.eu/default.css && \
-             curl -f -s -o docs/trading/favicon.ico https://sctrading.dodoslav.eu/favicon.ico; then
-            # Fix CSS path from /default.css to default.css (relative)
-            sed -i 's|href="/default.css"|href="default.css"|g' docs/trading/index.html
-            echo "status=success" >> $GITHUB_OUTPUT
-            date -u +"%Y-%m-%d %H:%M:%S UTC" > docs/trading/.last-update
-          else
-            echo "status=failed" >> $GITHUB_OUTPUT
-          fi
-        continue-on-error: true
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
 
-      - name: Check fetch status
+      - name: Generate HTML
+        working-directory: generator
         run: |
-          if [ "${{ steps.fetch.outputs.status }}" = "success" ]; then
-            echo "✅ Fetch succeeded"
-          else
-            echo "⚠️ Fetch failed - keeping old data"
-          fi
+          chmod +x main.sh
+          ./main.sh
+
+      - name: Copy generated files
+        run: |
+          mkdir -p docs/trading
+          cp generator/index.html docs/trading/index.html
+          cp generator/default.css docs/trading/default.css
+          date -u +"%Y-%m-%d %H:%M:%S UTC" > docs/trading/.last-update
 
       - name: Commit and push
-        if: steps.fetch.outputs.status == 'success'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add docs/trading/
           git diff --quiet && git diff --staged --quiet || (git commit -m "Update trading data" && git push)
-
-      - name: Report failure
-        if: steps.fetch.outputs.status == 'failed'
-        run: |
-          echo "::warning::Failed to fetch trading data from server. Previous data retained."
