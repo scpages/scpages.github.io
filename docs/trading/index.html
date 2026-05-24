@@ -141,9 +141,6 @@
             <td><a href="#comm-Omnapoxy">Omnapoxy</a></td>
             <td>1 763 (up to 1 763)</td>
         </tr><tr>
-            <td><a href="#comm-Thermalfoam">Thermalfoam</a></td>
-            <td>1 712 (up to 1 712)</td>
-        </tr><tr>
             <td><a href="#comm-Titanium">Titanium</a></td>
             <td>1 701 (up to 1 701)</td>
         </tr><tr>
@@ -152,6 +149,9 @@
         </tr><tr>
             <td><a href="#comm-Copper">Copper</a></td>
             <td>1 440 (up to 1 440)</td>
+        </tr><tr>
+            <td><a href="#comm-Thermalfoam">Thermalfoam</a></td>
+            <td>1 112 (up to 1 412)</td>
         </tr><tr>
             <td><a href="#comm-Nitrogen">Nitrogen</a></td>
             <td>1 358 (up to 1 358)</td>
@@ -168,11 +168,11 @@
             <td><a href="#comm-Astatine">Astatine</a></td>
             <td>1 251 (up to 1 251)</td>
         </tr><tr>
+            <td><a href="#comm-Pressurized Ice">Pressurized Ice</a></td>
+            <td>1 164 (up to 1 164)</td>
+        </tr><tr>
             <td><a href="#comm-Silicon">Silicon</a></td>
             <td>1 123 (up to 1 123)</td>
-        </tr><tr>
-            <td><a href="#comm-Pressurized Ice">Pressurized Ice</a></td>
-            <td>964 (up to 964)</td>
         </tr><tr>
             <td><a href="#comm-Steel">Steel</a></td>
             <td>624 (up to 824)</td>
@@ -405,14 +405,17 @@
             <td><a href="#comm-Diamond">Diamond</a></td>
             <td>33.70 (up to 33.70)</td>
         </tr><tr>
-            <td><a href="#comm-Thermalfoam">Thermalfoam</a></td>
-            <td>33.65 (up to 33.65)</td>
-        </tr><tr>
             <td><a href="#comm-Laranite">Laranite</a></td>
             <td>33.39 (up to 33.39)</td>
         </tr><tr>
+            <td><a href="#comm-Thermalfoam">Thermalfoam</a></td>
+            <td>21.86 (up to 27.75)</td>
+        </tr><tr>
             <td><a href="#comm-Bexalite">Bexalite</a></td>
             <td>27.36 (up to 27.36)</td>
+        </tr><tr>
+            <td><a href="#comm-Pressurized Ice">Pressurized Ice</a></td>
+            <td>25.66 (up to 25.66)</td>
         </tr><tr>
             <td><a href="#comm-Titanium">Titanium</a></td>
             <td>25.39 (up to 25.39)</td>
@@ -437,9 +440,6 @@
         </tr><tr>
             <td><a href="#comm-Carbon-Silk">Carbon-Silk</a></td>
             <td>15.71 (up to 21.50)</td>
-        </tr><tr>
-            <td><a href="#comm-Pressurized Ice">Pressurized Ice</a></td>
-            <td>21.25 (up to 21.25)</td>
         </tr><tr>
             <td><a href="#comm-Pitambu">Pitambu</a></td>
             <td>14.94 (up to 14.94)</td>
@@ -490,8 +490,8 @@
         <td>3 640 (~5 002)</td>
     </tr><tr>
         <td title="8,16,24,32">(ST) Everus Harbor</td>
-        <td>4 000 (~3 873)</td>
-        <td>0 (~3 522)</td>
+        <td>4 100 (~3 885)</td>
+        <td>4 083 (~3 569)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) TDD New Babbage</td>
         <td>3 800 (~3 800)</td>
@@ -521,6 +521,10 @@
         <td>3 600 (~3 600)</td>
         <td>0 (~0)</td>
     </tr><tr>
+        <td title="8,16,24,32">(PY) Endgame</td>
+        <td>3 600 (~3 589)</td>
+        <td>0 (~4 379)</td>
+    </tr><tr>
         <td title="8,16,24,32">(PY) Gaslight</td>
         <td>3 600 (~3 600)</td>
         <td>0 (~4 102)</td>
@@ -528,10 +532,6 @@
         <td title="8,16,24,32">(PY) Orbituary</td>
         <td>3 600 (~3 600)</td>
         <td>0 (~0)</td>
-    </tr><tr>
-        <td title="8,16,24,32">(PY) Endgame</td>
-        <td>3 500 (~3 588)</td>
-        <td>4 379 (~4 379)</td>
     </tr><tr>
         <td title="8,16,24,32">(ST) Terra Gateway (Stanton)</td>
         <td>3 500 (~3 969)</td>
@@ -580,7 +580,7 @@
     </tr><tr>
         <td title="1,2,4,8,16">(ST) Shubin SM0-22</td>
         <td>2 958 (~2 958)</td>
-        <td>233 (~482)</td>
+        <td>120 (~392)</td>
     </tr><tr>
         <td title="1,2,4,8,16">(ST) Shubin SM0-10</td>
         <td>2 958 (~2 958)</td>
@@ -592,7 +592,7 @@
     </tr><tr>
         <td title="1,2,4,8,16">(ST) HDMS-Woodruff</td>
         <td>3 106 (~3 106)</td>
-        <td>6 000 (~4 725)</td>
+        <td>5 101 (~4 850)</td>
     </tr><tr>
         <td title="1,2,4,8,16">(ST) HDMS-Bezdek</td>
         <td>3 106 (~13 106)</td>
@@ -628,7 +628,7 @@
     </tr><tr>
         <td title="8,16,24,32">(ST) Nyx Gateway (Stanton)</td>
         <td>3 441 (~3 439)</td>
-        <td>1 981 (~4 042)</td>
+        <td>4 (~3 753)</td>
     </tr>
                 </table>
             </td>
@@ -785,8 +785,8 @@
         <td>0 (~3 235)</td>
     </tr><tr>
         <td title="8,16,24,32">(ST) Everus Harbor</td>
-        <td>7 315 (~7 345)</td>
-        <td>175 (~3 726)</td>
+        <td>7 315 (~7 344)</td>
+        <td>633 (~3 623)</td>
     </tr><tr>
         <td title="8,16,24,32">(ST) Baijini Point</td>
         <td>7 681 (~7 684)</td>
@@ -963,8 +963,8 @@
         <td>230 (~803)</td>
     </tr><tr>
         <td title="1,2,4,8,16">(ST) HUR-L1</td>
-        <td>8 978 (~9 085)</td>
-        <td>31 (~123)</td>
+        <td>8 970 (~9 079)</td>
+        <td>63 (~120)</td>
     </tr>
                 </table>
             </td>
@@ -1010,6 +1010,10 @@
         <td title="8,16,24,32">(PY) Orbituary</td>
         <td>4 400 (~4 388)</td>
         <td>5 243 (~5 422)</td>
+    </tr><tr>
+        <td title="1,2,4,8,16,24,32">(ST) Everus Harbor</td>
+        <td>3 900 (~3 804)</td>
+        <td>0 (~2 228)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) TDD Area 18</td>
         <td>3 700 (~3 700)</td>
@@ -1058,10 +1062,6 @@
         <td title="8,16,24,32">(PY) Dudley & Daughters</td>
         <td>3 500 (~3 500)</td>
         <td>0 (~0)</td>
-    </tr><tr>
-        <td title="1,2,4,8,16,24,32">(ST) Everus Harbor</td>
-        <td>3 500 (~3 800)</td>
-        <td>0 (~2 228)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Terra Gateway (Stanton)</td>
         <td>3 400 (~3 788)</td>
@@ -1113,8 +1113,8 @@
         <td>15 (~1 565)</td>
     </tr><tr>
         <td title="8,16,24,32">(ST) Nyx Gateway (Stanton)</td>
-        <td>3 159 (~3 222)</td>
-        <td>31 (~591)</td>
+        <td>3 159 (~3 217)</td>
+        <td>314 (~568)</td>
     </tr>
                 </table>
             </td>
@@ -1139,7 +1139,7 @@
             (PY) Bueno Ravine →
             (ST) HUR-L1
         </td>
-        <td class="text-right" title="Profit from the trip">~ 735 525 aUEC</td>
+        <td class="text-right" title="Profit from the trip">~ 715 050 aUEC</td>
         <td class="text-right" title="Amount of SCU to trade">~ 525 SCU</td>
         <td class="text-right padding-right-1" title="Required aUEC investment">
             ( ~ 3 444 525 aUEC )
@@ -1190,8 +1190,8 @@
         <td>420 (~420)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) HUR-L1</td>
-        <td>7 100 (~7 962)</td>
-        <td>665 (~642)</td>
+        <td>7 100 (~7 923)</td>
+        <td>684 (~644)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) ARC-L5</td>
         <td>7 100 (~8 000)</td>
@@ -1235,8 +1235,8 @@
                 <table>
                     <tr><th>Location</th><th>Price (avg)</th><th>In stock (avg)</th></tr><tr>
         <td title="1,2,4,8,16">(ST) MIC-L2</td>
-        <td>5 759 (~5 819)</td>
-        <td>54 (~66)</td>
+        <td>5 759 (~5 814)</td>
+        <td>54 (~65)</td>
     </tr><tr>
         <td title="1,2,4,8,16">(ST) HUR-L4</td>
         <td>6 269 (~6 393)</td>
@@ -1256,9 +1256,9 @@
         <tr>
         <td title="Most profitable trip based on latest reported data">
             (ST) ArcCorp 045 →
-            (ST) Pyro Gateway (Stanton)
+            (ST) Nyx Gateway (Stanton)
         </td>
-        <td class="text-right" title="Profit from the trip">262 550 aUEC</td>
+        <td class="text-right" title="Profit from the trip">1 241 550 aUEC</td>
         <td class="text-right" title="Amount of SCU to trade">890 SCU</td>
         <td class="text-right padding-right-1" title="Required aUEC investment">
             ( 3 297 450 aUEC )
@@ -1288,8 +1288,8 @@
         <td>0 (~5 005)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Nyx Gateway (Stanton)</td>
-        <td>5 500 (~5 058)</td>
-        <td>0 (~2 167)</td>
+        <td>5 100 (~5 062)</td>
+        <td>3 444 (~2 349)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Seraphim</td>
         <td>4 700 (~4 668)</td>
@@ -1398,7 +1398,7 @@
     </tr><tr>
         <td title="8,16">(ST) Shubin SM0-22</td>
         <td>2 964 (~2 964)</td>
-        <td>43 (~161)</td>
+        <td>423 (~248)</td>
     </tr><tr>
         <td title="8,16">(ST) Shubin SMCa-8</td>
         <td>3 120 (~3 120)</td>
@@ -1490,7 +1490,7 @@
         <td>0 (~0)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(PY) Endgame</td>
-        <td>8 700 (~8 667)</td>
+        <td>8 700 (~8 670)</td>
         <td>0 (~1 155)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(PY) Gaslight</td>
@@ -1631,6 +1631,10 @@
         <td>5 500 (~5 233)</td>
         <td>0 (~930)</td>
     </tr><tr>
+        <td title="1,2,4,8,16,24,32">(ST) HUR-L1</td>
+        <td>5 500 (~5 183)</td>
+        <td>0 (~763)</td>
+    </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) HUR-L4</td>
         <td>5 500 (~5 300)</td>
         <td>0 (~1 089)</td>
@@ -1659,10 +1663,6 @@
         <td>5 200 (~5 033)</td>
         <td>0 (~1 154)</td>
     </tr><tr>
-        <td title="1,2,4,8,16,24,32">(ST) HUR-L1</td>
-        <td>5 200 (~5 165)</td>
-        <td>459 (~763)</td>
-    </tr><tr>
         <td title="1,2,4,8,16,24,32">(PY) Rod's Fuel</td>
         <td>5 200 (~5 200)</td>
         <td>0 (~0)</td>
@@ -1677,7 +1677,7 @@
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(PY) Endgame</td>
         <td>5 200 (~5 200)</td>
-        <td>105 (~105)</td>
+        <td>0 (~105)</td>
     </tr><tr>
         <td title="1,2,4,8,16">(PY) Jackson's Swap</td>
         <td>5 200 (~5 200)</td>
@@ -1793,8 +1793,8 @@
         <td>122 (~526)</td>
     </tr><tr>
         <td title="1,2,4,8,16">(ST) MIC-L2</td>
-        <td>3 541 (~3 593)</td>
-        <td>0 (~232)</td>
+        <td>3 541 (~3 589)</td>
+        <td>34 (~214)</td>
     </tr><tr>
         <td title="1,2,4,8,16">(ST) MIC-L1</td>
         <td>3 607 (~3 665)</td>
@@ -1874,7 +1874,7 @@
         <td>0 (~1 271)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) MIC-L2</td>
-        <td>1 900 (~1 888)</td>
+        <td>1 900 (~1 889)</td>
         <td>0 (~0)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) HUR-L2</td>
@@ -2144,12 +2144,8 @@
         <td>0 (~0)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Port Tressler</td>
-        <td>5 700 (~5 440)</td>
-        <td>0 (~776)</td>
-    </tr><tr>
-        <td title="1,2,4,8,16,24,32">(ST) Everus Harbor</td>
-        <td>5 700 (~5 471)</td>
-        <td>0 (~1 206)</td>
+        <td>5 700 (~5 456)</td>
+        <td>602 (~747)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(NX) PSS Alpha</td>
         <td>5 700 (~5 657)</td>
@@ -2207,8 +2203,12 @@
         <td>5 500 (~5 540)</td>
         <td>0 (~1 075)</td>
     </tr><tr>
+        <td title="1,2,4,8,16,24,32">(ST) Everus Harbor</td>
+        <td>5 500 (~5 472)</td>
+        <td>420 (~1 075)</td>
+    </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Nyx Gateway (Stanton)</td>
-        <td>5 500 (~5 442)</td>
+        <td>5 500 (~5 446)</td>
         <td>0 (~1 264)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(PY) Nyx Gateway (Pyro)</td>
@@ -2276,8 +2276,8 @@
         <td>0 (~0)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(PY) Endgame</td>
-        <td>5 000 (~5 000)</td>
-        <td>0 (~0)</td>
+        <td>5 000 (~4 989)</td>
+        <td>0 (~77)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(PY) Dudley & Daughters</td>
         <td>5 000 (~4 950)</td>
@@ -2288,8 +2288,8 @@
         <td>0 (~1 150)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) HUR-L1</td>
-        <td>4 900 (~5 381)</td>
-        <td>1 251 (~990)</td>
+        <td>4 900 (~5 353)</td>
+        <td>1 295 (~1 018)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) HUR-L3</td>
         <td>4 900 (~5 650)</td>
@@ -2378,12 +2378,12 @@
         <tr>
         <td title="Most profitable trip based on latest reported data">
             (ST) Shubin SM0-10 →
-            (ST) Nyx Gateway (Stanton)
+            (ST) ARC-L2
         </td>
-        <td class="text-right" title="Profit from the trip">1 761 920 aUEC</td>
-        <td class="text-right" title="Amount of SCU to trade">2 753 SCU</td>
+        <td class="text-right" title="Profit from the trip">1 317 600 aUEC</td>
+        <td class="text-right" title="Amount of SCU to trade">2 440 SCU</td>
         <td class="text-right padding-right-1" title="Required aUEC investment">
-            ( 7 598 280 aUEC )
+            ( 6 734 400 aUEC )
         </td>
     </tr>
     <tr>
@@ -2391,10 +2391,10 @@
             (ST) Shubin SM0-22 →
             (ST) Nyx Gateway (Stanton)
         </td>
-        <td class="text-right" title="Profit from the trip">~ 2 344 542 aUEC</td>
+        <td class="text-right" title="Profit from the trip">~ 2 320 529 aUEC</td>
         <td class="text-right" title="Amount of SCU to trade">~ 2 183 SCU</td>
         <td class="text-right padding-right-1" title="Required aUEC investment">
-            ( ~ 6 018 531 aUEC )
+            ( ~ 6 020 714 aUEC )
         </td>
     </tr>
         <tr>
@@ -2412,6 +2412,10 @@
         <td title="1,2,4,8,16,24,32">(ST) ARC-L1</td>
         <td>3 900 (~3 576)</td>
         <td>0 (~1 636)</td>
+    </tr><tr>
+        <td title="1,2,4,8,16,24,32">(ST) Nyx Gateway (Stanton)</td>
+        <td>3 700 (~3 821)</td>
+        <td>0 (~2 183)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Terra Gateway (Stanton)</td>
         <td>3 700 (~3 633)</td>
@@ -2461,10 +2465,6 @@
         <td>3 500 (~3 500)</td>
         <td>0 (~0)</td>
     </tr><tr>
-        <td title="1,2,4,8,16,24,32">(ST) Nyx Gateway (Stanton)</td>
-        <td>3 400 (~3 831)</td>
-        <td>2 753 (~2 183)</td>
-    </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Seraphim</td>
         <td>3 400 (~3 400)</td>
         <td>0 (~133)</td>
@@ -2503,12 +2503,8 @@
         <td>57 (~550)</td>
     </tr><tr>
         <td title="1,2,4,8,16">(ST) MIC-L2</td>
-        <td>2 649 (~2 674)</td>
-        <td>256 (~563)</td>
-    </tr><tr>
-        <td title="1,2,4,8,16,24">(ST) Shubin SM0-22</td>
-        <td>2 750 (~2 757)</td>
-        <td>1 595 (~2 532)</td>
+        <td>2 649 (~2 672)</td>
+        <td>192 (~532)</td>
     </tr><tr>
         <td title="1,2,4,8,16">(ST) ArcCorp 056</td>
         <td>2 760 (~2 760)</td>
@@ -2517,6 +2513,10 @@
         <td title="1,2,4,8,16">(ST) ArcCorp 061</td>
         <td>2 760 (~2 760)</td>
         <td>300 (~300)</td>
+    </tr><tr>
+        <td title="1,2,4,8,16,24">(ST) Shubin SM0-22</td>
+        <td>2 760 (~2 758)</td>
+        <td>1 520 (~2 279)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24">(ST) Shubin SM0-10</td>
         <td>2 760 (~2 760)</td>
@@ -2544,7 +2544,7 @@
     </tr><tr>
         <td title="1,2,4,8,16,24">(ST) HDMS-Woodruff</td>
         <td>2 898 (~2 898)</td>
-        <td>3 000 (~2 541)</td>
+        <td>3 000 (~2 694)</td>
     </tr>
                 </table>
             </td>
@@ -2609,7 +2609,7 @@
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Port Tressler</td>
         <td>1 500 (~1 494)</td>
-        <td>3 542 (~3 458)</td>
+        <td>0 (~3 458)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) TDD Orison</td>
         <td>1 500 (~1 500)</td>
@@ -2674,7 +2674,7 @@
     </tr><tr>
         <td title="8,16,24,32">(ST) Nyx Gateway (Stanton)</td>
         <td>1 446 (~1 446)</td>
-        <td>6 000 (~6 000)</td>
+        <td>5 709 (~5 976)</td>
     </tr>
                 </table>
             </td>
@@ -2824,7 +2824,7 @@
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Nyx Gateway (Stanton)</td>
         <td>1 142 (~1 148)</td>
-        <td>4 892 (~5 261)</td>
+        <td>4 714 (~5 216)</td>
     </tr>
                 </table>
             </td>
@@ -3104,7 +3104,7 @@
         <tr>
         <td title="Most profitable trip based on latest reported data">
             (ST) Shubin SMCa-8 →
-            (ST) Nyx Gateway (Stanton)
+            (ST) Terra Gateway (Stanton)
         </td>
         <td class="text-right" title="Profit from the trip">363 755 aUEC</td>
         <td class="text-right" title="Amount of SCU to trade">133 SCU</td>
@@ -3141,7 +3141,7 @@
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Nyx Gateway (Stanton)</td>
         <td>11 000 (~11 000)</td>
-        <td>2 079 (~2 079)</td>
+        <td>0 (~2 079)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Terra Gateway (Stanton)</td>
         <td>11 000 (~11 000)</td>
@@ -3238,9 +3238,9 @@
         <tr>
         <td title="Most profitable trip based on latest reported data">
             (NX) Levski →
-            (NX) PSS Theta
+            (PY) Endgame
         </td>
-        <td class="text-right" title="Profit from the trip">110 640 aUEC</td>
+        <td class="text-right" title="Profit from the trip">134 640 aUEC</td>
         <td class="text-right" title="Amount of SCU to trade">24 SCU</td>
         <td class="text-right padding-right-1" title="Required aUEC investment">
             ( 369 360 aUEC )
@@ -3265,10 +3265,6 @@
             <td colspan="2">
                 <table>
                     <tr><th>Location</th><th>Price (avg)</th><th>Demand (avg)</th></tr><tr>
-        <td title="1,2,4,8,16,24,32">(ST) HUR-L1</td>
-        <td>22 000 (~21 833)</td>
-        <td>0 (~508)</td>
-    </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) HUR-L3</td>
         <td>22 000 (~21 600)</td>
         <td>0 (~258)</td>
@@ -3283,7 +3279,7 @@
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(PY) Endgame</td>
         <td>21 000 (~21 000)</td>
-        <td>0 (~84)</td>
+        <td>329 (~207)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) TDD Area 18</td>
         <td>20 000 (~20 000)</td>
@@ -3348,6 +3344,10 @@
         <td title="1,2,4,8,16,24,32">(PY) Dudley & Daughters</td>
         <td>19 000 (~19 000)</td>
         <td>0 (~0)</td>
+    </tr><tr>
+        <td title="1,2,4,8,16,24,32">(ST) HUR-L1</td>
+        <td>19 000 (~21 684)</td>
+        <td>812 (~546)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(PY) Orbituary</td>
         <td>19 000 (~19 000)</td>
@@ -3769,15 +3769,15 @@
     </tr><tr>
         <td title="4,8,16">(ST) Shubin SM0-22</td>
         <td>3 325 (~3 325)</td>
-        <td>722 (~682)</td>
+        <td>1 050 (~774)</td>
     </tr><tr>
         <td title="4,8,16">(ST) Rayari Deltana</td>
         <td>3 366 (~3 333)</td>
         <td>4 377 (~5 673)</td>
     </tr><tr>
         <td title="8,16,24,32">(ST) Nyx Gateway (Stanton)</td>
-        <td>3 658 (~3 672)</td>
-        <td>352 (~1 741)</td>
+        <td>3 658 (~3 671)</td>
+        <td>2 050 (~1 767)</td>
     </tr>
                 </table>
             </td>
@@ -3789,9 +3789,9 @@
         <tr>
         <td title="Most profitable trip based on latest reported data">
             (PY) Bueno Ravine →
-            (PY) Rod's Fuel
+            (PY) Endgame
         </td>
-        <td class="text-right" title="Profit from the trip">549 844 aUEC</td>
+        <td class="text-right" title="Profit from the trip">650 844 aUEC</td>
         <td class="text-right" title="Amount of SCU to trade">101 SCU</td>
         <td class="text-right padding-right-1" title="Required aUEC investment">
             ( 2 379 156 aUEC )
@@ -3821,8 +3821,8 @@
         <td>0 (~224)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(PY) Endgame</td>
-        <td>30 000 (~29 750)</td>
-        <td>0 (~510)</td>
+        <td>30 000 (~29 778)</td>
+        <td>203 (~407)</td>
     </tr><tr>
         <td title="1,2,4,8">(PY) Jackson's Swap</td>
         <td>30 000 (~30 000)</td>
@@ -3970,6 +3970,10 @@
         <td>4 800 (~4 800)</td>
         <td>0 (~0)</td>
     </tr><tr>
+        <td title="1,2,4,8,16,24,32">(ST) MIC-L4</td>
+        <td>4 800 (~4 825)</td>
+        <td>0 (~978)</td>
+    </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) TDD Orison</td>
         <td>4 800 (~4 800)</td>
         <td>0 (~0)</td>
@@ -3993,10 +3997,6 @@
         <td title="1,2,4,8,16">(ST) ARC-L5</td>
         <td>4 700 (~4 780)</td>
         <td>0 (~0)</td>
-    </tr><tr>
-        <td title="1,2,4,8,16,24,32">(ST) Everus Harbor</td>
-        <td>4 600 (~4 586)</td>
-        <td>0 (~130)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(PY) Ruin Station</td>
         <td>4 600 (~4 600)</td>
@@ -4042,9 +4042,9 @@
         <td>4 500 (~4 985)</td>
         <td>1 178 (~1 198)</td>
     </tr><tr>
-        <td title="1,2,4,8,16,24,32">(ST) MIC-L4</td>
-        <td>4 500 (~4 829)</td>
-        <td>1 202 (~978)</td>
+        <td title="1,2,4,8,16,24,32">(ST) Everus Harbor</td>
+        <td>4 400 (~4 578)</td>
+        <td>560 (~216)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(NX) Levski</td>
         <td>4 100 (~4 100)</td>
@@ -4203,10 +4203,10 @@
             (ST) HDMS-Woodruff →
             (ST) TDD Orison
         </td>
-        <td class="text-right" title="Profit from the trip">~ 295 920 aUEC</td>
-        <td class="text-right" title="Amount of SCU to trade">~ 45 SCU</td>
+        <td class="text-right" title="Profit from the trip">~ 249 888 aUEC</td>
+        <td class="text-right" title="Amount of SCU to trade">~ 38 SCU</td>
         <td class="text-right padding-right-1" title="Required aUEC investment">
-            ( ~ 986 580 aUEC )
+            ( ~ 833 112 aUEC )
         </td>
     </tr>
         <tr>
@@ -4300,7 +4300,7 @@
     </tr><tr>
         <td title="1,2,4,8">(ST) HDMS-Woodruff</td>
         <td>21 924 (~21 924)</td>
-        <td>45 (~45)</td>
+        <td>24 (~38)</td>
     </tr><tr>
         <td title="1,2,4,8">(ST) HDMS-Ryder</td>
         <td>21 924 (~21 924)</td>
@@ -4340,6 +4340,10 @@
     </tr><tr>
         <td title="1,2,4,8,16,24">(ST) Shubin SAL-5</td>
         <td>600 000 (~600 000)</td>
+        <td>0 (~0)</td>
+    </tr><tr>
+        <td title="1,2,4,8,16,24">(ST) Shubin SM0-22</td>
+        <td>600 000 (~586 667)</td>
         <td>0 (~0)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24">(ST) Shubin SM0-10</td>
@@ -4425,10 +4429,6 @@
         <td title="1,2">(ST) Rayari McGrath</td>
         <td>570 000 (~560 000)</td>
         <td>0 (~7)</td>
-    </tr><tr>
-        <td title="1,2,4,8,16,24">(ST) Shubin SM0-22</td>
-        <td>560 000 (~580 000)</td>
-        <td>0 (~0)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24">(ST) HDMS-Thedus</td>
         <td>560 000 (~570 000)</td>
@@ -4631,7 +4631,7 @@
     </tr><tr>
         <td title="8,16,24,32">(ST) Port Tressler</td>
         <td>1 122 (~1 134)</td>
-        <td>6 000 (~4 711)</td>
+        <td>1 808 (~4 558)</td>
     </tr><tr>
         <td title="4,8,16">(ST) Rayari Kaltag</td>
         <td>1 122 (~1 122)</td>
@@ -4734,10 +4734,6 @@
         <td>1 500 (~1 500)</td>
         <td>0 (~0)</td>
     </tr><tr>
-        <td title="1,2,4,8,16,24,32">(ST) MIC-L4</td>
-        <td>1 500 (~1 500)</td>
-        <td>0 (~0)</td>
-    </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) HUR-L5</td>
         <td>1 500 (~1 500)</td>
         <td>0 (~0)</td>
@@ -4752,7 +4748,7 @@
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Everus Harbor</td>
         <td>1 500 (~1 496)</td>
-        <td>3 262 (~2 478)</td>
+        <td>0 (~2 478)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) MIC-L5</td>
         <td>1 500 (~1 500)</td>
@@ -4814,6 +4810,10 @@
         <td>1 400 (~1 400)</td>
         <td>0 (~0)</td>
     </tr><tr>
+        <td title="1,2,4,8,16,24">(ST) Shubin SM0-22</td>
+        <td>1 400 (~1 367)</td>
+        <td>0 (~0)</td>
+    </tr><tr>
         <td title="1,2,4,8,16,24">(ST) Shubin SM0-10</td>
         <td>1 400 (~1 400)</td>
         <td>0 (~0)</td>
@@ -4869,6 +4869,10 @@
         <td title="1,2,4,8,16,24">(ST) HDMS-Hahn</td>
         <td>1 400 (~1 380)</td>
         <td>0 (~5 917)</td>
+    </tr><tr>
+        <td title="1,2,4,8,16,24,32">(ST) MIC-L4</td>
+        <td>1 400 (~1 488)</td>
+        <td>0 (~0)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Seraphim</td>
         <td>1 400 (~1 478)</td>
@@ -4938,10 +4942,6 @@
         <td>1 400 (~1 391)</td>
         <td>0 (~5 105)</td>
     </tr><tr>
-        <td title="1,2,4,8,16,24">(ST) Shubin SM0-22</td>
-        <td>1 300 (~1 350)</td>
-        <td>0 (~0)</td>
-    </tr><tr>
         <td title="1,2,4,8,16">(PY) The Golden Riviera</td>
         <td>1 300 (~1 390)</td>
         <td>0 (~0)</td>
@@ -4981,7 +4981,7 @@
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Nyx Gateway (Stanton)</td>
         <td>1 202 (~1 202)</td>
-        <td>12 000 (~11 315)</td>
+        <td>9 862 (~11 194)</td>
     </tr>
                 </table>
             </td>
@@ -4993,12 +4993,12 @@
         <tr>
         <td title="Most profitable trip based on latest reported data">
             (PY) Dudley & Daughters →
-            (ST) Everus Harbor
+            (PY) Checkmate
         </td>
-        <td class="text-right" title="Profit from the trip">2 513 952 aUEC</td>
-        <td class="text-right" title="Amount of SCU to trade">7 224 SCU</td>
+        <td class="text-right" title="Profit from the trip">2 136 000 aUEC</td>
+        <td class="text-right" title="Amount of SCU to trade">12 000 SCU</td>
         <td class="text-right padding-right-1" title="Required aUEC investment">
-            ( 5 432 448 aUEC )
+            ( 9 024 000 aUEC )
         </td>
     </tr>
     <tr>
@@ -5046,7 +5046,7 @@
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Everus Harbor</td>
         <td>1 100 (~1 095)</td>
-        <td>7 224 (~14 882)</td>
+        <td>0 (~14 882)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Baijini Point</td>
         <td>1 100 (~1 089)</td>
@@ -5210,6 +5210,10 @@
         <td>3 600 (~3 600)</td>
         <td>0 (~0)</td>
     </tr><tr>
+        <td title="1,2,4,8,16,24,32">(ST) Nyx Gateway (Stanton)</td>
+        <td>3 500 (~3 415)</td>
+        <td>0 (~3 758)</td>
+    </tr><tr>
         <td title="1,2,4,8,16,24,32">(PY) Rod's Fuel</td>
         <td>3 500 (~3 563)</td>
         <td>0 (~1 141)</td>
@@ -5229,10 +5233,6 @@
         <td title="1,2,4,8,16,24,32">(ST) TDD Orison</td>
         <td>3 400 (~3 280)</td>
         <td>0 (~13 876)</td>
-    </tr><tr>
-        <td title="1,2,4,8,16,24,32">(ST) Nyx Gateway (Stanton)</td>
-        <td>3 300 (~3 408)</td>
-        <td>0 (~3 758)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(PY) Endgame</td>
         <td>3 300 (~3 738)</td>
@@ -5312,8 +5312,8 @@
         <td>4 351 (~5 588)</td>
     </tr><tr>
         <td title="4,8,16">(ST) HDMS-Edmond</td>
-        <td>2 708 (~2 715)</td>
-        <td>15 (~79)</td>
+        <td>2 708 (~2 713)</td>
+        <td>19 (~58)</td>
     </tr><tr>
         <td title="4,8,16">(ST) HDMS-Bezdek</td>
         <td>2 708 (~2 708)</td>
@@ -5325,7 +5325,7 @@
     </tr><tr>
         <td title="4,8,16">(ST) HDMS-Woodruff</td>
         <td>2 708 (~2 708)</td>
-        <td>9 (~9)</td>
+        <td>48 (~22)</td>
     </tr><tr>
         <td title="4,8,16">(ST) HDMS-Hadley</td>
         <td>2 708 (~2 708)</td>
@@ -5361,7 +5361,7 @@
     </tr><tr>
         <td title="8,16,24,32">(ST) Everus Harbor</td>
         <td>2 760 (~2 781)</td>
-        <td>667 (~1 943)</td>
+        <td>425 (~1 888)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24">(ST) Shubin SMCa-8</td>
         <td>2 850 (~2 850)</td>
@@ -5489,7 +5489,7 @@
         <td>0 (~0)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Everus Harbor</td>
-        <td>35 000 (~34 826)</td>
+        <td>35 000 (~34 833)</td>
         <td>0 (~0)</td>
     </tr><tr>
         <td title="1,2,4,8,16">(PY) Jackson's Swap</td>
@@ -5590,8 +5590,8 @@
         <td>175 (~175)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Everus Harbor</td>
-        <td>5 100 (~5 178)</td>
-        <td>175 (~205)</td>
+        <td>5 100 (~5 175)</td>
+        <td>175 (~204)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) MIC-L2</td>
         <td>5 100 (~5 100)</td>
@@ -5610,7 +5610,7 @@
         <td>175 (~175)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Port Tressler</td>
-        <td>5 100 (~5 121)</td>
+        <td>5 100 (~5 120)</td>
         <td>175 (~175)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) MIC-L5</td>
@@ -5618,7 +5618,7 @@
         <td>175 (~175)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) HUR-L1</td>
-        <td>5 000 (~5 018)</td>
+        <td>5 000 (~5 017)</td>
         <td>70 (~70)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) HUR-L2</td>
@@ -5711,11 +5711,11 @@
         <td>0 (~0)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Everus Harbor</td>
-        <td>22 000 (~21 826)</td>
+        <td>22 000 (~21 833)</td>
         <td>0 (~0)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Port Tressler</td>
-        <td>19 000 (~19 071)</td>
+        <td>19 000 (~19 067)</td>
         <td>226 (~226)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) GrimHEX</td>
@@ -5943,7 +5943,7 @@
         <td>0 (~476)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(PY) Endgame</td>
-        <td>23 000 (~22 875)</td>
+        <td>23 000 (~22 889)</td>
         <td>0 (~98)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(PY) Gaslight</td>
@@ -6443,6 +6443,10 @@
         <td>160 000 (~160 000)</td>
         <td>0 (~0)</td>
     </tr><tr>
+        <td title="1,2,4,8,16,24">(ST) Shubin SM0-22</td>
+        <td>160 000 (~153 333)</td>
+        <td>0 (~0)</td>
+    </tr><tr>
         <td title="1,2,4,8,16,24">(ST) Shubin SM0-10</td>
         <td>160 000 (~160 000)</td>
         <td>0 (~0)</td>
@@ -6476,8 +6480,8 @@
         <td>0 (~0)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Port Tressler</td>
-        <td>150 000 (~149 333)</td>
-        <td>0 (~14)</td>
+        <td>150 000 (~149 375)</td>
+        <td>7 (~11)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24">(ST) ArcCorp 045</td>
         <td>150 000 (~150 000)</td>
@@ -6533,7 +6537,7 @@
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) MIC-L2</td>
         <td>150 000 (~150 000)</td>
-        <td>7 (~7)</td>
+        <td>0 (~7)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24">(ST) Shubin SMCa-6</td>
         <td>150 000 (~150 000)</td>
@@ -6608,7 +6612,7 @@
         <td>0 (~280)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) MIC-L4</td>
-        <td>150 000 (~148 571)</td>
+        <td>150 000 (~148 750)</td>
         <td>0 (~0)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24">(ST) HDMS-Edmond</td>
@@ -6628,16 +6632,12 @@
         <td>0 (~0)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Everus Harbor</td>
-        <td>150 000 (~149 130)</td>
+        <td>150 000 (~149 167)</td>
         <td>0 (~9)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Baijini Point</td>
         <td>150 000 (~149 444)</td>
         <td>0 (~7)</td>
-    </tr><tr>
-        <td title="1,2,4,8,16,24">(ST) Shubin SM0-22</td>
-        <td>140 000 (~150 000)</td>
-        <td>0 (~0)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24">(ST) Rayari Deltana</td>
         <td>140 000 (~148 333)</td>
@@ -6957,7 +6957,7 @@
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Everus Harbor</td>
         <td>7 587 (~7 587)</td>
-        <td>12 000 (~11 147)</td>
+        <td>12 000 (~11 204)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Pyro Gateway (Stanton)</td>
         <td>7 587 (~7 587)</td>
@@ -6969,7 +6969,7 @@
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Nyx Gateway (Stanton)</td>
         <td>7 587 (~7 587)</td>
-        <td>12 000 (~10 571)</td>
+        <td>12 000 (~10 750)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Orison Providence</td>
         <td>7 587 (~7 587)</td>
@@ -7052,13 +7052,13 @@
         <tr><th colspan="4" class="text-center">Waste ( 335 aUEC - 291.30% )</th></tr>
         <tr>
         <td title="Most profitable trip based on latest reported data">
-            (ST) ArcCorp 048 →
-            (ST) Rappel
+            (ST) Baijini Point →
+            (ST) Everus Harbor
         </td>
-        <td class="text-right" title="Profit from the trip">-0 aUEC</td>
-        <td class="text-right" title="Amount of SCU to trade">0 SCU</td>
+        <td class="text-right" title="Profit from the trip">5 671 008 aUEC</td>
+        <td class="text-right" title="Amount of SCU to trade">21 728 SCU</td>
         <td class="text-right padding-right-1" title="Required aUEC investment">
-            ( 0 aUEC )
+            ( 4 106 592 aUEC )
         </td>
     </tr>
     <tr>
@@ -7066,10 +7066,10 @@
             (ST) Baijini Point →
             (ST) Everus Harbor
         </td>
-        <td class="text-right" title="Profit from the trip">~ 4 091 436 aUEC</td>
-        <td class="text-right" title="Amount of SCU to trade">~ 15 676 SCU</td>
+        <td class="text-right" title="Profit from the trip">~ 4 196 619 aUEC</td>
+        <td class="text-right" title="Amount of SCU to trade">~ 16 079 SCU</td>
         <td class="text-right padding-right-1" title="Required aUEC investment">
-            ( ~ 2 962 764 aUEC )
+            ( ~ 3 038 931 aUEC )
         </td>
     </tr>
         <tr>
@@ -7082,7 +7082,7 @@
                     <tr><th>Location</th><th>Price (avg)</th><th>Demand (avg)</th></tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Everus Harbor</td>
         <td>450 (~450)</td>
-        <td>0 (~15 676)</td>
+        <td>21 728 (~16 079)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(PY) Orbituary</td>
         <td>450 (~450)</td>
@@ -7150,7 +7150,7 @@
         <td>1 (~1)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) MIC-L2</td>
-        <td>115 (~129)</td>
+        <td>115 (~128)</td>
         <td>1 (~1)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) MIC-L1</td>
@@ -7191,7 +7191,7 @@
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Port Tressler</td>
         <td>200 (~200)</td>
-        <td>90 000 (~89 679)</td>
+        <td>87 784 (~89 574)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24">(ST) ArcCorp 048</td>
         <td>229 (~229)</td>
@@ -7299,7 +7299,7 @@
     </tr><tr>
         <td title="1,2,4,8,16,24">(ST) HDMS-Woodruff</td>
         <td>229 (~229)</td>
-        <td>75 (~61)</td>
+        <td>75 (~65)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24">(ST) HDMS-Perlman</td>
         <td>229 (~229)</td>
@@ -7359,7 +7359,7 @@
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Nyx Gateway (Stanton)</td>
         <td>232 (~232)</td>
-        <td>250 000 (~249 988)</td>
+        <td>250 000 (~249 989)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) MTP New Babbage</td>
         <td>240 (~240)</td>
@@ -7411,6 +7411,10 @@
     </tr><tr>
         <td title="1,2,4,8,16,24">(ST) Shubin SM0-18</td>
         <td>110 000 (~110 000)</td>
+        <td>0 (~0)</td>
+    </tr><tr>
+        <td title="1,2,4,8,16,24">(ST) Shubin SM0-22</td>
+        <td>110 000 (~106 667)</td>
         <td>0 (~0)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24">(ST) Shubin SM0-10</td>
@@ -7499,11 +7503,7 @@
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Port Tressler</td>
         <td>100 000 (~100 000)</td>
-        <td>0 (~14)</td>
-    </tr><tr>
-        <td title="1,2,4,8,16,24">(ST) Shubin SM0-22</td>
-        <td>100 000 (~105 000)</td>
-        <td>0 (~0)</td>
+        <td>14 (~14)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24">(ST) HDMS-Hadley</td>
         <td>100 000 (~106 000)</td>
@@ -7579,13 +7579,13 @@
         <tr><th colspan="4" class="text-center">Scrap ( 1851 aUEC - 67.33% )</th></tr>
         <tr>
         <td title="Most profitable trip based on latest reported data">
-            (ST) MIC-L4 →
+            (PY) Chawla's Beach →
             (PY) Rod's Fuel
         </td>
-        <td class="text-right" title="Profit from the trip">1 111 675 aUEC</td>
+        <td class="text-right" title="Profit from the trip">915 575 aUEC</td>
         <td class="text-right" title="Amount of SCU to trade">1 325 SCU</td>
         <td class="text-right padding-right-1" title="Required aUEC investment">
-            ( 3 923 325 aUEC )
+            ( 4 119 425 aUEC )
         </td>
     </tr>
     <tr>
@@ -7652,8 +7652,8 @@
         <td>1 330 (~1 666)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Nyx Gateway (Stanton)</td>
-        <td>3 500 (~3 585)</td>
-        <td>2 678 (~2 397)</td>
+        <td>3 500 (~3 579)</td>
+        <td>2 232 (~2 383)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(PY) Megumi</td>
         <td>3 500 (~3 500)</td>
@@ -7746,11 +7746,11 @@
     </tr><tr>
         <td title="1,2,4,8,16">(ST) Everus Harbor</td>
         <td>2 954 (~2 958)</td>
-        <td>517 (~1 057)</td>
+        <td>133 (~1 027)</td>
     </tr><tr>
         <td title="1,2,4,8,16">(ST) MIC-L4</td>
         <td>2 961 (~2 961)</td>
-        <td>1 873 (~1 694)</td>
+        <td>44 (~1 488)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) CRU-L1</td>
         <td>2 990 (~2 990)</td>
@@ -7770,7 +7770,7 @@
     </tr><tr>
         <td title="1,2,4,8,16">(ST) MIC-L2</td>
         <td>2 990 (~2 990)</td>
-        <td>1 248 (~1 531)</td>
+        <td>210 (~1 421)</td>
     </tr><tr>
         <td title="1,2,4,8,16">(ST) MIC-L3</td>
         <td>2 990 (~2 990)</td>
@@ -7785,8 +7785,8 @@
         <td>31 (~1 125)</td>
     </tr><tr>
         <td title="1,2,4,8,16">(ST) Port Tressler</td>
-        <td>3 109 (~3 118)</td>
-        <td>253 (~1 421)</td>
+        <td>3 109 (~3 117)</td>
+        <td>682 (~1 384)</td>
     </tr><tr>
         <td title="1,2,4,8,16">(ST) Baijini Point</td>
         <td>3 109 (~3 109)</td>
@@ -7838,7 +7838,7 @@
         <tr>
         <td title="Most profitable trip based on latest reported data">
             (PY) Last Landings →
-            (ST) CRU-L4
+            (ST) Everus Harbor
         </td>
         <td class="text-right" title="Profit from the trip">3 126 900 aUEC</td>
         <td class="text-right" title="Amount of SCU to trade">1 050 SCU</td>
@@ -7851,10 +7851,10 @@
             (PY) Chawla's Beach →
             (ST) HUR-L1
         </td>
-        <td class="text-right" title="Profit from the trip">~ 2 630 052 aUEC</td>
-        <td class="text-right" title="Amount of SCU to trade">~ 774 SCU</td>
+        <td class="text-right" title="Profit from the trip">~ 2 680 944 aUEC</td>
+        <td class="text-right" title="Amount of SCU to trade">~ 808 SCU</td>
         <td class="text-right padding-right-1" title="Required aUEC investment">
-            ( ~ 8 081 334 aUEC )
+            ( ~ 8 436 328 aUEC )
         </td>
     </tr>
         <tr>
@@ -7869,13 +7869,9 @@
         <td>13 000 (~13 000)</td>
         <td>0 (~147)</td>
     </tr><tr>
-        <td title="1,2,4,8,16,24,32">(ST) MIC-L2</td>
-        <td>13 000 (~12 889)</td>
-        <td>0 (~603)</td>
-    </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Everus Harbor</td>
-        <td>13 000 (~13 476)</td>
-        <td>0 (~862)</td>
+        <td>13 000 (~13 455)</td>
+        <td>1 373 (~990)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) HUR-L3</td>
         <td>13 000 (~12 667)</td>
@@ -7891,11 +7887,15 @@
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) MIC-L4</td>
         <td>13 000 (~13 000)</td>
-        <td>91 (~368)</td>
+        <td>0 (~368)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Port Tressler</td>
-        <td>12 000 (~13 071)</td>
-        <td>1 356 (~860)</td>
+        <td>12 000 (~13 000)</td>
+        <td>1 134 (~929)</td>
+    </tr><tr>
+        <td title="1,2,4,8,16,24,32">(ST) MIC-L2</td>
+        <td>12 000 (~12 800)</td>
+        <td>0 (~603)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) HUR-L4</td>
         <td>12 000 (~13 333)</td>
@@ -7946,8 +7946,8 @@
         <td>0 (~0)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) HUR-L1</td>
-        <td>12 000 (~13 839)</td>
-        <td>1 220 (~774)</td>
+        <td>12 000 (~13 759)</td>
+        <td>1 386 (~808)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) TDD New Babbage</td>
         <td>12 000 (~12 000)</td>
@@ -8088,7 +8088,7 @@
         <td>0 (~47)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) HUR-L1</td>
-        <td>34 000 (~33 706)</td>
+        <td>34 000 (~33 722)</td>
         <td>0 (~82)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(NX) Levski</td>
@@ -8200,7 +8200,7 @@
         <td>0 (~0)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) MIC-L2</td>
-        <td>27 000 (~26 889)</td>
+        <td>27 000 (~26 900)</td>
         <td>0 (~42)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) HUR-L2</td>
@@ -8330,11 +8330,11 @@
         <td>0 (~56)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) MIC-L4</td>
-        <td>63 000 (~62 286)</td>
+        <td>63 000 (~62 375)</td>
         <td>0 (~51)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Port Tressler</td>
-        <td>63 000 (~62 786)</td>
+        <td>63 000 (~62 800)</td>
         <td>0 (~0)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) ARC-L4</td>
@@ -8418,10 +8418,10 @@
             (PY) Ruin Station →
             (ST) Nyx Gateway (Stanton)
         </td>
-        <td class="text-right" title="Profit from the trip">5 143 593 aUEC</td>
-        <td class="text-right" title="Amount of SCU to trade">18 841 SCU</td>
+        <td class="text-right" title="Profit from the trip">2 887 521 aUEC</td>
+        <td class="text-right" title="Amount of SCU to trade">10 577 SCU</td>
         <td class="text-right padding-right-1" title="Required aUEC investment">
-            ( 13 697 407 aUEC )
+            ( 7 689 479 aUEC )
         </td>
     </tr>
     <tr>
@@ -8429,10 +8429,10 @@
             (PY) Ruin Station →
             (ST) Nyx Gateway (Stanton)
         </td>
-        <td class="text-right" title="Profit from the trip">~ 5 507 568 aUEC</td>
-        <td class="text-right" title="Amount of SCU to trade">~ 12 078 SCU</td>
+        <td class="text-right" title="Profit from the trip">~ 5 255 380 aUEC</td>
+        <td class="text-right" title="Amount of SCU to trade">~ 11 890 SCU</td>
         <td class="text-right padding-right-1" title="Required aUEC investment">
-            ( ~ 8 780 706 aUEC )
+            ( ~ 8 644 030 aUEC )
         </td>
     </tr>
         <tr>
@@ -8464,8 +8464,8 @@
         <td>0 (~0)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Nyx Gateway (Stanton)</td>
-        <td>1 000 (~1 183)</td>
-        <td>18 841 (~12 078)</td>
+        <td>1 000 (~1 169)</td>
+        <td>10 577 (~11 890)</td>
     </tr><tr>
         <td title="8,16,24,32">(PY) Rod's Fuel</td>
         <td>1 000 (~1 000)</td>
@@ -8477,7 +8477,7 @@
     </tr><tr>
         <td title="8,16,24,32">(PY) Endgame</td>
         <td>1 000 (~1 000)</td>
-        <td>0 (~0)</td>
+        <td>4 977 (~4 977)</td>
     </tr><tr>
         <td title="8,16,24,32">(PY) Gaslight</td>
         <td>1 000 (~1 000)</td>
@@ -8642,7 +8642,7 @@
         <td>0 (~7)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) HDMS-Edmond</td>
-        <td>1 700 000 (~13 175 000)</td>
+        <td>1 700 000 (~10 880 000)</td>
         <td>0 (~0)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24">(ST) HDMS-Thedus</td>
@@ -9326,7 +9326,7 @@
                 <table>
                     <tr><th>Location</th><th>Price (avg)</th><th>Demand (avg)</th></tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) MIC-L4</td>
-        <td>63 000 (~62 571)</td>
+        <td>63 000 (~62 625)</td>
         <td>0 (~0)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) HUR-L4</td>
@@ -9400,12 +9400,12 @@
         <tr>
         <td title="Most profitable trip based on latest reported data">
             (ST) Nyx Gateway (Stanton) →
-            (ST) TDD New Babbage
+            (ST) CBD Lorville
         </td>
-        <td class="text-right" title="Profit from the trip">34 839 aUEC</td>
-        <td class="text-right" title="Amount of SCU to trade">49 SCU</td>
+        <td class="text-right" title="Profit from the trip">12 798 aUEC</td>
+        <td class="text-right" title="Amount of SCU to trade">18 SCU</td>
         <td class="text-right padding-right-1" title="Required aUEC investment">
-            ( 161 161 aUEC )
+            ( 59 202 aUEC )
         </td>
     </tr>
     <tr>
@@ -9413,10 +9413,10 @@
             (ST) Nyx Gateway (Stanton) →
             (ST) Baijini Point
         </td>
-        <td class="text-right" title="Profit from the trip">~ 414 408 aUEC</td>
-        <td class="text-right" title="Amount of SCU to trade">~ 372 SCU</td>
+        <td class="text-right" title="Profit from the trip">~ 386 055 aUEC</td>
+        <td class="text-right" title="Amount of SCU to trade">~ 345 SCU</td>
         <td class="text-right padding-right-1" title="Required aUEC investment">
-            ( ~ 1 247 316 aUEC )
+            ( ~ 1 155 060 aUEC )
         </td>
     </tr>
         <tr>
@@ -9529,8 +9529,8 @@
                 <table>
                     <tr><th>Location</th><th>Price (avg)</th><th>In stock (avg)</th></tr><tr>
         <td title="8,16,24,32">(ST) Nyx Gateway (Stanton)</td>
-        <td>3 289 (~3 353)</td>
-        <td>367 (~372)</td>
+        <td>3 289 (~3 348)</td>
+        <td>18 (~345)</td>
     </tr>
                 </table>
             </td>
@@ -9760,7 +9760,7 @@
         <td>0 (~1 572)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Nyx Gateway (Stanton)</td>
-        <td>560 (~558)</td>
+        <td>560 (~559)</td>
         <td>0 (~9 282)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) CBD Lorville</td>
@@ -9822,13 +9822,13 @@
     </table>
     
     <table class="commodity" id="comm-Pressurized Ice">
-        <tr><th colspan="4" class="text-center">Pressurized Ice ( 964 aUEC - 21.25% )</th></tr>
+        <tr><th colspan="4" class="text-center">Pressurized Ice ( 1164 aUEC - 25.66% )</th></tr>
         <tr>
         <td title="Most profitable trip based on latest reported data">
             (ST) Terra Mills →
             (PY) Endgame
         </td>
-        <td class="text-right" title="Profit from the trip">298 800 aUEC</td>
+        <td class="text-right" title="Profit from the trip">523 800 aUEC</td>
         <td class="text-right" title="Amount of SCU to trade">450 SCU</td>
         <td class="text-right padding-right-1" title="Required aUEC investment">
             ( 2 041 200 aUEC )
@@ -9853,6 +9853,10 @@
             <td colspan="2">
                 <table>
                     <tr><th>Location</th><th>Price (avg)</th><th>Demand (avg)</th></tr><tr>
+        <td title="1,2,4,8,16,24,32">(PY) Endgame</td>
+        <td>5 700 (~5 500)</td>
+        <td>985 (~1 314)</td>
+    </tr><tr>
         <td title="1,2,4,8,16">(PY) Chawla's Beach</td>
         <td>5 500 (~5 500)</td>
         <td>0 (~0)</td>
@@ -9904,10 +9908,6 @@
         <td title="1,2,4,8,16,24,32">(PY) Starlight Service</td>
         <td>5 200 (~5 200)</td>
         <td>0 (~0)</td>
-    </tr><tr>
-        <td title="1,2,4,8,16,24,32">(PY) Endgame</td>
-        <td>5 200 (~5 470)</td>
-        <td>1 500 (~1 449)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(PY) Rat's Nest</td>
         <td>5 200 (~5 200)</td>
@@ -9983,8 +9983,8 @@
         <td>450 (~450)</td>
     </tr><tr>
         <td title="8,16,24,32">(ST) Port Tressler</td>
-        <td>4 536 (~4 579)</td>
-        <td>109 (~380)</td>
+        <td>4 536 (~4 577)</td>
+        <td>155 (~368)</td>
     </tr>
                 </table>
             </td>
@@ -10438,8 +10438,8 @@
         <td>1 540 (~3 136)</td>
     </tr><tr>
         <td title="8,16,24,32">(PY) Endgame</td>
-        <td>1 700 (~1 930)</td>
-        <td>3 799 (~3 008)</td>
+        <td>1 700 (~1 909)</td>
+        <td>1 869 (~2 846)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) GrimHEX</td>
         <td>1 600 (~1 600)</td>
@@ -10464,7 +10464,7 @@
     </tr><tr>
         <td title="16,24,32">(ST) Port Tressler</td>
         <td>1 716 (~1 725)</td>
-        <td>2 643 (~2 096)</td>
+        <td>1 738 (~2 077)</td>
     </tr>
                 </table>
             </td>
@@ -10668,7 +10668,7 @@
     </tr><tr>
         <td title="8,16,24,32">(ST) Nyx Gateway (Stanton)</td>
         <td>744 (~745)</td>
-        <td>15 000 (~13 030)</td>
+        <td>15 000 (~13 209)</td>
     </tr><tr>
         <td title="8,16,24,32">(ST) HUR-L4</td>
         <td>791 (~791)</td>
@@ -10826,9 +10826,9 @@
         <tr>
         <td title="Most profitable trip based on latest reported data">
             (ST) Deakins Research →
-            (ST) HUR-L1
+            (ST) ARC-L4
         </td>
-        <td class="text-right" title="Profit from the trip">1 012 200 aUEC</td>
+        <td class="text-right" title="Profit from the trip">802 200 aUEC</td>
         <td class="text-right" title="Amount of SCU to trade">1 050 SCU</td>
         <td class="text-right padding-right-1" title="Required aUEC investment">
             ( 4 237 800 aUEC )
@@ -10854,8 +10854,8 @@
                 <table>
                     <tr><th>Location</th><th>Price (avg)</th><th>Demand (avg)</th></tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) HUR-L1</td>
-        <td>5 000 (~4 994)</td>
-        <td>1 120 (~851)</td>
+        <td>5 000 (~4 995)</td>
+        <td>0 (~851)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) HUR-L3</td>
         <td>5 000 (~4 950)</td>
@@ -11017,7 +11017,7 @@
         <td>12 000 (~12 000)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Nyx Gateway (Stanton)</td>
-        <td>978 (~1 345)</td>
+        <td>978 (~1 304)</td>
         <td>12 000 (~12 000)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(NX) Stanton Gateway (Nyx)</td>
@@ -11070,7 +11070,7 @@
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Everus Harbor</td>
         <td>978 (~978)</td>
-        <td>12 000 (~11 538)</td>
+        <td>12 000 (~11 567)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Pyro Gateway (Stanton)</td>
         <td>978 (~978)</td>
@@ -11097,13 +11097,13 @@
         <tr><th colspan="4" class="text-center">Steel ( 824 aUEC - 59.88% )</th></tr>
         <tr>
         <td title="Most profitable trip based on latest reported data">
-            (ST) Everus Harbor →
+            (ST) Nyx Gateway (Stanton) →
             (PY) Endgame
         </td>
-        <td class="text-right" title="Profit from the trip">249 948 aUEC</td>
-        <td class="text-right" title="Amount of SCU to trade">477 SCU</td>
+        <td class="text-right" title="Profit from the trip">351 869 aUEC</td>
+        <td class="text-right" title="Amount of SCU to trade">2 107 SCU</td>
         <td class="text-right padding-right-1" title="Required aUEC investment">
-            ( 656 352 aUEC )
+            ( 3 651 431 aUEC )
         </td>
     </tr>
     <tr>
@@ -11111,10 +11111,10 @@
             (ST) Nyx Gateway (Stanton) →
             (PY) Endgame
         </td>
-        <td class="text-right" title="Profit from the trip">~ 1 233 846 aUEC</td>
+        <td class="text-right" title="Profit from the trip">~ 1 235 817 aUEC</td>
         <td class="text-right" title="Amount of SCU to trade">~ 1 971 SCU</td>
         <td class="text-right padding-right-1" title="Required aUEC investment">
-            ( ~ 3 423 627 aUEC )
+            ( ~ 3 421 656 aUEC )
         </td>
     </tr>
         <tr>
@@ -11179,12 +11179,12 @@
                 <table>
                     <tr><th>Location</th><th>Price (avg)</th><th>In stock (avg)</th></tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Everus Harbor</td>
-        <td>1 376 (~1 412)</td>
-        <td>477 (~848)</td>
+        <td>1 376 (~1 411)</td>
+        <td>81 (~825)</td>
     </tr><tr>
         <td title="8,16,24,32">(ST) Nyx Gateway (Stanton)</td>
-        <td>1 733 (~1 737)</td>
-        <td>530 (~2 559)</td>
+        <td>1 733 (~1 736)</td>
+        <td>2 599 (~2 562)</td>
     </tr>
                 </table>
             </td>
@@ -11379,12 +11379,12 @@
         <td>128 (~128)</td>
     </tr><tr>
         <td title="1,2,4,8">(ST) HDMS-Edmond</td>
-        <td>22 943 (~23 094)</td>
-        <td>128 (~112)</td>
+        <td>22 943 (~23 044)</td>
+        <td>58 (~92)</td>
     </tr><tr>
         <td title="1,2,4,8">(ST) HDMS-Oparei</td>
-        <td>22 943 (~23 022)</td>
-        <td>128 (~111)</td>
+        <td>22 943 (~23 006)</td>
+        <td>85 (~106)</td>
     </tr>
                 </table>
             </td>
@@ -11871,10 +11871,10 @@
             (PY) Checkmate →
             (ST) Port Tressler
         </td>
-        <td class="text-right" title="Profit from the trip">340 025 aUEC</td>
-        <td class="text-right" title="Amount of SCU to trade">2 345 SCU</td>
+        <td class="text-right" title="Profit from the trip">1 021 090 aUEC</td>
+        <td class="text-right" title="Amount of SCU to trade">7 042 SCU</td>
         <td class="text-right padding-right-1" title="Required aUEC investment">
-            ( 551 075 aUEC )
+            ( 1 654 870 aUEC )
         </td>
     </tr>
     <tr>
@@ -11910,7 +11910,7 @@
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Port Tressler</td>
         <td>380 (~380)</td>
-        <td>2 345 (~1 622)</td>
+        <td>7 042 (~2 977)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(NX) Levski</td>
         <td>370 (~370)</td>
@@ -11971,7 +11971,7 @@
     </tr><tr>
         <td title="8,16,24,32">(ST) Everus Harbor</td>
         <td>269 (~270)</td>
-        <td>21 663 (~15 210)</td>
+        <td>15 115 (~15 207)</td>
     </tr><tr>
         <td title="8,16,24,32">(ST) Baijini Point</td>
         <td>283 (~284)</td>
@@ -12125,24 +12125,24 @@
         <tr><th colspan="4" class="text-center">Cobalt ( 6400 aUEC - 36.36% )</th></tr>
         <tr>
         <td title="Most profitable trip based on latest reported data">
-            (ST) HDMS-Edmond →
+            (ST) Shubin SMCa-8 →
             (NX) Levski
         </td>
-        <td class="text-right" title="Profit from the trip">846 670 aUEC</td>
+        <td class="text-right" title="Profit from the trip">690 940 aUEC</td>
         <td class="text-right" title="Amount of SCU to trade">179 SCU</td>
         <td class="text-right padding-right-1" title="Required aUEC investment">
-            ( 3 270 330 aUEC )
+            ( 3 426 060 aUEC )
         </td>
     </tr>
     <tr>
         <td title="Most profitable trip based on average data">
-            (ST) HDMS-Edmond →
+            (ST) Shubin SMCa-8 →
             (NX) Levski
         </td>
-        <td class="text-right" title="Profit from the trip">~ 1 013 970 aUEC</td>
-        <td class="text-right" title="Amount of SCU to trade">~ 219 SCU</td>
+        <td class="text-right" title="Profit from the trip">~ 970 080 aUEC</td>
+        <td class="text-right" title="Amount of SCU to trade">~ 258 SCU</td>
         <td class="text-right padding-right-1" title="Required aUEC investment">
-            ( ~ 4 001 130 aUEC )
+            ( ~ 4 938 120 aUEC )
         </td>
     </tr>
         <tr>
@@ -12212,11 +12212,11 @@
     </tr><tr>
         <td title="1,2,4,8">(ST) HDMS-Edmond</td>
         <td>18 270 (~18 270)</td>
-        <td>258 (~219)</td>
+        <td>4 (~149)</td>
     </tr><tr>
         <td title="1,2,4,8">(ST) HDMS-Oparei</td>
         <td>18 270 (~18 270)</td>
-        <td>258 (~190)</td>
+        <td>4 (~153)</td>
     </tr><tr>
         <td title="1,2,4,8">(ST) Shubin SM0-10</td>
         <td>19 140 (~19 140)</td>
@@ -12224,7 +12224,7 @@
     </tr><tr>
         <td title="1,2,4,8">(ST) Shubin SM0-22</td>
         <td>19 140 (~19 140)</td>
-        <td>247 (~182)</td>
+        <td>8 (~139)</td>
     </tr><tr>
         <td title="1,2,4,8">(ST) Shubin SMCa-8</td>
         <td>19 140 (~19 140)</td>
@@ -12285,7 +12285,7 @@
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Everus Harbor</td>
         <td>1 000 (~1 000)</td>
-        <td>2 856 (~2 856)</td>
+        <td>0 (~2 856)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) TDD Area 18</td>
         <td>1 000 (~1 000)</td>
@@ -12330,7 +12330,7 @@
     </tr><tr>
         <td title="8,16,24,32">(ST) Port Tressler</td>
         <td>783 (~784)</td>
-        <td>11 182 (~8 809)</td>
+        <td>12 000 (~9 009)</td>
     </tr>
                 </table>
             </td>
@@ -12618,8 +12618,8 @@
         <td>28 (~29)</td>
     </tr><tr>
         <td title="1,2,4,8,16">(ST) HDMS-Edmond</td>
-        <td>87 000 (~104 250)</td>
-        <td>26 (~26)</td>
+        <td>87 000 (~100 800)</td>
+        <td>31 (~28)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) GrimHEX</td>
         <td>75 000 (~78 333)</td>
@@ -12701,13 +12701,13 @@
     </table>
     
     <table class="commodity" id="comm-Thermalfoam">
-        <tr><th colspan="4" class="text-center">Thermalfoam ( 1712 aUEC - 33.65% )</th></tr>
+        <tr><th colspan="4" class="text-center">Thermalfoam ( 1412 aUEC - 27.75% )</th></tr>
         <tr>
         <td title="Most profitable trip based on latest reported data">
             (ST) Hickes Research →
-            (ST) MIC-L4
+            (ST) CRU-L1
         </td>
-        <td class="text-right" title="Profit from the trip">328 704 aUEC</td>
+        <td class="text-right" title="Profit from the trip">136 704 aUEC</td>
         <td class="text-right" title="Amount of SCU to trade">192 SCU</td>
         <td class="text-right padding-right-1" title="Required aUEC investment">
             ( 976 896 aUEC )
@@ -12732,10 +12732,6 @@
             <td colspan="2">
                 <table>
                     <tr><th>Location</th><th>Price (avg)</th><th>Demand (avg)</th></tr><tr>
-        <td title="1,2,4,8,16,24,32">(ST) MIC-L4</td>
-        <td>6 800 (~6 971)</td>
-        <td>329 (~329)</td>
-    </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) HUR-L4</td>
         <td>6 500 (~6 875)</td>
         <td>0 (~0)</td>
@@ -12755,6 +12751,10 @@
         <td title="1,2,4,8,16,24,32">(ST) ARC-L5</td>
         <td>6 300 (~6 300)</td>
         <td>0 (~0)</td>
+    </tr><tr>
+        <td title="1,2,4,8,16,24,32">(ST) MIC-L4</td>
+        <td>6 200 (~6 875)</td>
+        <td>0 (~329)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) CBD Lorville</td>
         <td>6 100 (~6 080)</td>
@@ -12999,7 +12999,7 @@
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Everus Harbor</td>
         <td>196 (~196)</td>
-        <td>12 000 (~11 553)</td>
+        <td>12 000 (~11 587)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Pyro Gateway (Stanton)</td>
         <td>196 (~196)</td>
@@ -13213,7 +13213,7 @@
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Port Tressler</td>
         <td>350 000 (~350 000)</td>
-        <td>0 (~0)</td>
+        <td>14 (~14)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Everus Harbor</td>
         <td>350 000 (~350 000)</td>
@@ -13373,10 +13373,10 @@
             (ST) Hickes Research →
             (PY) Endgame
         </td>
-        <td class="text-right" title="Profit from the trip">182 310 aUEC</td>
-        <td class="text-right" title="Amount of SCU to trade">10 SCU</td>
+        <td class="text-right" title="Profit from the trip">0 aUEC</td>
+        <td class="text-right" title="Amount of SCU to trade">0 SCU</td>
         <td class="text-right padding-right-1" title="Required aUEC investment">
-            ( 157 690 aUEC )
+            ( 0 aUEC )
         </td>
     </tr>
     <tr>
@@ -13398,13 +13398,13 @@
             <td colspan="2">
                 <table>
                     <tr><th>Location</th><th>Price (avg)</th><th>Demand (avg)</th></tr><tr>
+        <td title="8">(PY) Endgame</td>
+        <td>35 000 (~34 857)</td>
+        <td>0 (~35)</td>
+    </tr><tr>
         <td title="8">(PY) Gaslight</td>
         <td>35 000 (~34 867)</td>
         <td>0 (~56)</td>
-    </tr><tr>
-        <td title="8">(PY) Endgame</td>
-        <td>34 000 (~34 833)</td>
-        <td>35 (~35)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) GrimHEX</td>
         <td>21 000 (~21 000)</td>
@@ -13984,8 +13984,8 @@
         <td>12 000 (~12 000)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Everus Harbor</td>
-        <td>6 868 (~6 856)</td>
-        <td>12 000 (~10 734)</td>
+        <td>6 868 (~6 857)</td>
+        <td>12 000 (~10 804)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(PY) Nyx Gateway (Pyro)</td>
         <td>6 868 (~6 868)</td>
@@ -14084,9 +14084,13 @@
         <td>7 126 (~7 126)</td>
         <td>12 000 (~12 000)</td>
     </tr><tr>
+        <td title="1,2,4,8,16,24,32">(ST) Port Tressler</td>
+        <td>7 126 (~7 183)</td>
+        <td>12 000 (~12 000)</td>
+    </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Everus Harbor</td>
         <td>7 126 (~7 126)</td>
-        <td>12 000 (~10 874)</td>
+        <td>12 000 (~10 945)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(PY) Nyx Gateway (Pyro)</td>
         <td>7 126 (~7 126)</td>
@@ -14118,10 +14122,6 @@
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Seraphim</td>
         <td>7 348 (~7 153)</td>
-        <td>12 000 (~12 000)</td>
-    </tr><tr>
-        <td title="1,2,4,8,16,24,32">(ST) Port Tressler</td>
-        <td>7 384 (~7 191)</td>
         <td>12 000 (~12 000)</td>
     </tr>
                 </table>
@@ -14191,7 +14191,7 @@
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Everus Harbor</td>
         <td>7 384 (~7 384)</td>
-        <td>12 000 (~10 794)</td>
+        <td>12 000 (~10 874)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(PY) Nyx Gateway (Pyro)</td>
         <td>7 384 (~7 384)</td>
@@ -14215,7 +14215,7 @@
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Nyx Gateway (Stanton)</td>
         <td>7 384 (~7 384)</td>
-        <td>2 000 (~9 500)</td>
+        <td>12 000 (~10 000)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) GrimHEX</td>
         <td>7 384 (~7 384)</td>
@@ -14405,7 +14405,7 @@
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Everus Harbor</td>
         <td>7 985 (~7 985)</td>
-        <td>12 000 (~11 018)</td>
+        <td>12 000 (~11 100)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(PY) Nyx Gateway (Pyro)</td>
         <td>7 985 (~7 985)</td>
@@ -14513,7 +14513,7 @@
         <td>12 000 (~12 000)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Everus Harbor</td>
-        <td>8 328 (~8 299)</td>
+        <td>8 328 (~8 302)</td>
         <td>12 000 (~12 000)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Pyro Gateway (Stanton)</td>
@@ -14618,8 +14618,8 @@
         <td>12 000 (~10 889)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(ST) Everus Harbor</td>
-        <td>8 671 (~8 754)</td>
-        <td>12 000 (~11 167)</td>
+        <td>8 671 (~8 748)</td>
+        <td>12 000 (~11 231)</td>
     </tr><tr>
         <td title="1,2,4,8,16,24,32">(PY) Nyx Gateway (Pyro)</td>
         <td>8 671 (~8 671)</td>
