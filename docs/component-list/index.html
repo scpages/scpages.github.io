@@ -76,6 +76,35 @@
 
     .comp-name { font-weight: 600; color: #2a9fd6; }
 
+    .grade {
+      display: inline-block;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .cls {
+      display: inline-block;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .cls-military    { background: rgba(60, 180, 80,  0.15); color: #3cb450; border: 1px solid rgba(60, 180, 80,  0.3); }
+    .cls-competition { background: rgba(220, 50,  50,  0.15); color: #dc3232; border: 1px solid rgba(220, 50,  50,  0.3); }
+    .cls-stealth     { background: rgba(130, 80,  220, 0.15); color: #8250dc; border: 1px solid rgba(130, 80,  220, 0.3); }
+    .cls-industrial  { background: rgba(210, 140, 30,  0.15); color: #d28c1e; border: 1px solid rgba(210, 140, 30,  0.3); }
+    .cls-civilian    { background: rgba(100, 160, 200, 0.15); color: #64a0c8; border: 1px solid rgba(100, 160, 200, 0.3); }
+
+    .grade-a { background: rgba(180, 60, 255, 0.15); color: #bf40ff; border: 1px solid rgba(180, 60, 255, 0.35); }
+    .grade-b { background: rgba(255, 140, 0,  0.15); color: #ff8c00; border: 1px solid rgba(255, 140, 0,  0.35); }
+    .grade-c { background: rgba(255, 220, 0,  0.15); color: #ffd700; border: 1px solid rgba(255, 220, 0,  0.35); }
+    .grade-d { background: rgba(255, 255, 255, 0.08); color: #e8e8e8; border: 1px solid rgba(255, 255, 255, 0.2); }
+
     .section-header {
       background: rgba(42,159,214,0.1);
       border-left: 4px solid #2a9fd6;
@@ -131,446 +160,446 @@
         
       <tr>
         <td class="comp-name">Defiant</td>
-        <td>Industrial</td>
-        <td>B</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>0</td>
       </tr>
       <tr>
         <td class="comp-name">DuraJet</td>
-        <td>Civilian</td>
-        <td>D</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>0</td>
       </tr>
       <tr>
         <td class="comp-name">IonWave</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>0</td>
       </tr>
       <tr>
         <td class="comp-name">Jennet</td>
-        <td>Industrial</td>
-        <td>D</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>0</td>
       </tr>
       <tr>
         <td class="comp-name">Radix</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>0</td>
       </tr>
       <tr>
         <td class="comp-name">Steadfast</td>
-        <td>Industrial</td>
-        <td>C</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>0</td>
       </tr>
       <tr>
         <td class="comp-name">Breton</td>
-        <td>Industrial</td>
-        <td>A</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Charger</td>
-        <td>Military</td>
-        <td>D</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">DeltaMax</td>
-        <td>Stealth</td>
-        <td>B</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">DynaFlux</td>
-        <td>Military</td>
-        <td>B</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Endurance</td>
-        <td>Industrial</td>
-        <td>B</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Fierell Cascade</td>
-        <td>Military</td>
-        <td>B</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Fortitude</td>
-        <td>Industrial</td>
-        <td>C</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">HyperGen</td>
-        <td>Military</td>
-        <td>D</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">IonBurst</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">JS-300</td>
-        <td>Military</td>
-        <td>A</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">LightBlossom</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">LumaCore</td>
-        <td>Competition</td>
-        <td>A</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">MagnaBloom</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">OverDrive</td>
-        <td>Military</td>
-        <td>C</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">PowerBolt</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">QuadraCell</td>
-        <td>Military</td>
-        <td>A</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Regulus</td>
-        <td>Military</td>
-        <td>C</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Roughneck</td>
-        <td>Industrial</td>
-        <td>D</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Slipstream</td>
-        <td>Stealth</td>
-        <td>A</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">SonicLite</td>
-        <td>Stealth</td>
-        <td>C</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">StarHeart</td>
-        <td>Competition</td>
-        <td>B</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">SunFlare</td>
-        <td>Competition</td>
-        <td>C</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">WhiteRose</td>
-        <td>Civilian</td>
-        <td>A</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">ZapJet</td>
-        <td>Civilian</td>
-        <td>D</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Bolide</td>
-        <td>Military</td>
-        <td>B</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Cirrus</td>
-        <td>Stealth</td>
-        <td>C</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">DayBreak</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Diligence</td>
-        <td>Industrial</td>
-        <td>C</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Eclipse</td>
-        <td>Stealth</td>
-        <td>A</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">ExoGen</td>
-        <td>Military</td>
-        <td>D</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">FullForce</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">GammaMax</td>
-        <td>Stealth</td>
-        <td>B</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Genoa</td>
-        <td>Industrial</td>
-        <td>A</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">IonSurge</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">JS-400</td>
-        <td>Military</td>
-        <td>A</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Lotus</td>
-        <td>Civilian</td>
-        <td>A</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">LuxCore</td>
-        <td>Competition</td>
-        <td>A</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Maelstrom</td>
-        <td>Military</td>
-        <td>C</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">QuadraCell MT</td>
-        <td>Military</td>
-        <td>A</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Radiance</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Sedulity</td>
-        <td>Industrial</td>
-        <td>B</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">SolarFlare</td>
-        <td>Competition</td>
-        <td>C</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">SparkJet</td>
-        <td>Civilian</td>
-        <td>D</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">StarBurn</td>
-        <td>Competition</td>
-        <td>B</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Trommel</td>
-        <td>Industrial</td>
-        <td>D</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">TurboDrive</td>
-        <td>Military</td>
-        <td>C</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">UltraFlux</td>
-        <td>Military</td>
-        <td>B</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Vortex</td>
-        <td>Military</td>
-        <td>D</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Celestial</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Centurion</td>
-        <td>Military</td>
-        <td>C</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Drassik</td>
-        <td>Military</td>
-        <td>D</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Durango</td>
-        <td>Industrial</td>
-        <td>A</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Fulgur</td>
-        <td>Military</td>
-        <td>B</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">FullForce Pro</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Ginzel</td>
-        <td>Industrial</td>
-        <td>C</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">IonSurge Pro</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">JS-500</td>
-        <td>Military</td>
-        <td>A</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">MegaFlux</td>
-        <td>Military</td>
-        <td>B</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">NewDawn</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">QuadraCell MX</td>
-        <td>Military</td>
-        <td>A</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Reliance</td>
-        <td>Industrial</td>
-        <td>B</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">SmartGen</td>
-        <td>Military</td>
-        <td>D</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">SparkJet Pro</td>
-        <td>Civilian</td>
-        <td>D</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">SuperDrive</td>
-        <td>Military</td>
-        <td>C</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">TigerLilly</td>
-        <td>Civilian</td>
-        <td>A</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Idris Power Plant</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>4</td>
       </tr>
       <tr>
         <td class="comp-name">Reclaimer Power Plant</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>4</td>
       </tr>
       <tr>
         <td class="comp-name">Stellate</td>
-        <td>Civilian</td>
-        <td>A</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>4</td>
       </tr>
       </tbody>
@@ -592,434 +621,434 @@
         
       <tr>
         <td class="comp-name">Cryo-Star SL</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>0</td>
       </tr>
       <tr>
         <td class="comp-name">Fridan</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>0</td>
       </tr>
       <tr>
         <td class="comp-name">Frost-Star SL</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>0</td>
       </tr>
       <tr>
         <td class="comp-name">Kelvid</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>0</td>
       </tr>
       <tr>
         <td class="comp-name">Tepilo</td>
-        <td>Civilian</td>
-        <td>A</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>0</td>
       </tr>
       <tr>
         <td class="comp-name">Winter-Star SL</td>
-        <td>Civilian</td>
-        <td>D</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>0</td>
       </tr>
       <tr>
         <td class="comp-name">ArcticStorm</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Berian</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">BlastChill</td>
-        <td>Civilian</td>
-        <td>D</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Bracer</td>
-        <td>Military</td>
-        <td>C</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Cryo-Star</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Eco-Flow</td>
-        <td>Industrial</td>
-        <td>B</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Endo</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">FlashFreeze</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Frost-Star</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Gelid</td>
-        <td>Civilian</td>
-        <td>A</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Glacier</td>
-        <td>Military</td>
-        <td>A</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">HeatSafe</td>
-        <td>Stealth</td>
-        <td>C</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Hydrocel</td>
-        <td>Industrial</td>
-        <td>D</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">IcePlunge</td>
-        <td>Competition</td>
-        <td>C</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Polar</td>
-        <td>Military</td>
-        <td>B</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">QuikCool</td>
-        <td>Competition</td>
-        <td>D</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">SnowBlind</td>
-        <td>Stealth</td>
-        <td>A</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Thermax</td>
-        <td>Industrial</td>
-        <td>C</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Tundra</td>
-        <td>Military</td>
-        <td>D</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Ultra-Flow</td>
-        <td>Industrial</td>
-        <td>A</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">VaporBlock</td>
-        <td>Stealth</td>
-        <td>B</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Winter-Star</td>
-        <td>Civilian</td>
-        <td>D</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">ZeroRush</td>
-        <td>Competition</td>
-        <td>B</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">AbsoluteZero</td>
-        <td>Competition</td>
-        <td>B</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Arctic</td>
-        <td>Military</td>
-        <td>C</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Aufeis</td>
-        <td>Civilian</td>
-        <td>A</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Avalanche</td>
-        <td>Military</td>
-        <td>A</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Boreal</td>
-        <td>Military</td>
-        <td>D</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">ColdSnap</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">CoolCore</td>
-        <td>Industrial</td>
-        <td>C</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Cryo-Star EX</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Frost-Star EX</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">FullFrost</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Graupel</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">HeatSink</td>
-        <td>Stealth</td>
-        <td>C</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">HydroJet</td>
-        <td>Industrial</td>
-        <td>D</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">IceBox</td>
-        <td>Stealth</td>
-        <td>B</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">IceDive</td>
-        <td>Competition</td>
-        <td>C</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">NightFall</td>
-        <td>Stealth</td>
-        <td>A</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Permafrost</td>
-        <td>Military</td>
-        <td>B</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">RapidCool</td>
-        <td>Competition</td>
-        <td>D</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Snowfall</td>
-        <td>Industrial</td>
-        <td>B</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Snowpack</td>
-        <td>Industrial</td>
-        <td>A</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Taiga</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">WhiteOut</td>
-        <td>Civilian</td>
-        <td>D</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Winter-Star EX</td>
-        <td>Civilian</td>
-        <td>D</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Blizzard</td>
-        <td>Military</td>
-        <td>A</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Chill-Max</td>
-        <td>Industrial</td>
-        <td>A</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">ColdSurge</td>
-        <td>Civilian</td>
-        <td>D</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Cryo-Star XL</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Draug</td>
-        <td>Civilian</td>
-        <td>A</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Elsen</td>
-        <td>Civilian</td>
-        <td>A</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Frost-Star XL</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">FrostBite</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">FrostBurn</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Galinstan</td>
-        <td>Military</td>
-        <td>D</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Hydropulse</td>
-        <td>Industrial</td>
-        <td>D</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Ice-Flush</td>
-        <td>Industrial</td>
-        <td>B</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Kragen</td>
-        <td>Civilian</td>
-        <td>A</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Mercury</td>
-        <td>Military</td>
-        <td>C</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Tempest</td>
-        <td>Military</td>
-        <td>B</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">ThermalCore</td>
-        <td>Industrial</td>
-        <td>C</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Winter-Star XL</td>
-        <td>Civilian</td>
-        <td>D</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Algid</td>
-        <td>Industrial</td>
-        <td>A</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>4</td>
       </tr>
       <tr>
         <td class="comp-name">Exotherm</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>4</td>
       </tr>
       <tr>
         <td class="comp-name">Serac</td>
-        <td>Civilian</td>
-        <td>A</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>4</td>
       </tr>
       </tbody>
@@ -1041,380 +1070,380 @@
         
       <tr>
         <td class="comp-name">Castra</td>
-        <td>Industrial</td>
-        <td>C</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>0</td>
       </tr>
       <tr>
         <td class="comp-name">PIN</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>0</td>
       </tr>
       <tr>
         <td class="comp-name">5SA 'Rhada'</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">6SA 'Arbiter'</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">7SA 'Concord'</td>
-        <td>Civilian</td>
-        <td>A</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">AllStop</td>
-        <td>Military</td>
-        <td>C</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Bulwark</td>
-        <td>Industrial</td>
-        <td>C</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Cloak</td>
-        <td>Stealth</td>
-        <td>D</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Falco</td>
-        <td>Competition</td>
-        <td>D</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">ForceWall</td>
-        <td>Military</td>
-        <td>B</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">FR-66</td>
-        <td>Military</td>
-        <td>A</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Guardian</td>
-        <td>Industrial</td>
-        <td>B</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">HEX</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">INK</td>
-        <td>Civilian</td>
-        <td>D</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Jaghte</td>
-        <td>Competition</td>
-        <td>B</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Mirage</td>
-        <td>Stealth</td>
-        <td>A</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Palisade</td>
-        <td>Industrial</td>
-        <td>A</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">SecureHyde</td>
-        <td>Military</td>
-        <td>D</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Shimmer</td>
-        <td>Stealth</td>
-        <td>C</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Steward</td>
-        <td>Industrial</td>
-        <td>D</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Suldrath</td>
-        <td>Military</td>
-        <td>C</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Targa</td>
-        <td>Competition</td>
-        <td>C</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Veil</td>
-        <td>Stealth</td>
-        <td>B</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">WEB</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">5MA 'Chimalli'</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">6MA 'Kozane'</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">7MA 'Lorica'</td>
-        <td>Civilian</td>
-        <td>A</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Armada</td>
-        <td>Industrial</td>
-        <td>D</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Aspis</td>
-        <td>Industrial</td>
-        <td>C</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Bamoty</td>
-        <td>Competition</td>
-        <td>D</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">BLOC</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Citadel</td>
-        <td>Industrial</td>
-        <td>B</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">CoverAll</td>
-        <td>Military</td>
-        <td>B</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">FR-76</td>
-        <td>Military</td>
-        <td>A</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">FullStop</td>
-        <td>Military</td>
-        <td>C</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Haltur</td>
-        <td>Competition</td>
-        <td>B</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Obscura</td>
-        <td>Stealth</td>
-        <td>C</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Rampart</td>
-        <td>Industrial</td>
-        <td>A</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">RPEL</td>
-        <td>Civilian</td>
-        <td>D</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">SecureShield</td>
-        <td>Military</td>
-        <td>D</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Sheut</td>
-        <td>Stealth</td>
-        <td>B</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Shroud</td>
-        <td>Stealth</td>
-        <td>D</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">STOP</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Sukoran</td>
-        <td>Military</td>
-        <td>C</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Trenta</td>
-        <td>Competition</td>
-        <td>C</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Umbra</td>
-        <td>Stealth</td>
-        <td>A</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">5CA 'Akura'</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">6CA 'Bila'</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">7CA 'Nargun'</td>
-        <td>Civilian</td>
-        <td>A</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">ARMOR</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Barbican</td>
-        <td>Industrial</td>
-        <td>B</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">FR-86</td>
-        <td>Military</td>
-        <td>A</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">FullBlock</td>
-        <td>Military</td>
-        <td>B</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">GUARD</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">HAVEN</td>
-        <td>Civilian</td>
-        <td>D</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Parapet</td>
-        <td>Industrial</td>
-        <td>A</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">SecureScreen</td>
-        <td>Military</td>
-        <td>D</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Stronghold</td>
-        <td>Industrial</td>
-        <td>C</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">SureStop</td>
-        <td>Military</td>
-        <td>C</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Ward</td>
-        <td>Industrial</td>
-        <td>D</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Glacis</td>
-        <td>Industrial</td>
-        <td>A</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>4</td>
       </tr>
       <tr>
         <td class="comp-name">Holdstrong</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>4</td>
       </tr>
       <tr>
         <td class="comp-name">RS-Barrier</td>
-        <td>Industrial</td>
-        <td>A</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>4</td>
       </tr>
       </tbody>
@@ -1436,344 +1465,344 @@
         
       <tr>
         <td class="comp-name">Atlas</td>
-        <td>Civilian</td>
-        <td>A</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Beacon</td>
-        <td>Military</td>
-        <td>C</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Burst</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Colossus</td>
-        <td>Industrial</td>
-        <td>B</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Drift</td>
-        <td>Stealth</td>
-        <td>C</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Eos</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Expedition</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Flood</td>
-        <td>Civilian</td>
-        <td>D</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">FoxFire</td>
-        <td>Competition</td>
-        <td>B</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Goliath</td>
-        <td>Industrial</td>
-        <td>C</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Hyperion</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">LightFire</td>
-        <td>Competition</td>
-        <td>C</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Rush</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Siren</td>
-        <td>Military</td>
-        <td>B</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Spectre</td>
-        <td>Stealth</td>
-        <td>A</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">VK-00</td>
-        <td>Military</td>
-        <td>A</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Voyage</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Vulcan</td>
-        <td>Industrial</td>
-        <td>D</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Wayfare</td>
-        <td>Civilian</td>
-        <td>D</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Zephyr</td>
-        <td>Stealth</td>
-        <td>B</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Aither</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Bolon</td>
-        <td>Industrial</td>
-        <td>C</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Bolt</td>
-        <td>Stealth</td>
-        <td>B</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Cascade</td>
-        <td>Civilian</td>
-        <td>D</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Crossfield</td>
-        <td>Military</td>
-        <td>C</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Flash</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Hemera</td>
-        <td>Civilian</td>
-        <td>A</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Huracan</td>
-        <td>Industrial</td>
-        <td>B</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Khaos</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Nova</td>
-        <td>Stealth</td>
-        <td>C</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Odyssey</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Quest</td>
-        <td>Civilian</td>
-        <td>D</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Sojourn</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">SparkFire</td>
-        <td>Competition</td>
-        <td>C</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Spicule</td>
-        <td>Stealth</td>
-        <td>A</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">SunFire</td>
-        <td>Competition</td>
-        <td>B</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Torrent</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">XL-1</td>
-        <td>Military</td>
-        <td>A</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Yaluk</td>
-        <td>Industrial</td>
-        <td>D</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Yeager</td>
-        <td>Military</td>
-        <td>B</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Agni</td>
-        <td>Industrial</td>
-        <td>B</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Balandin</td>
-        <td>Military</td>
-        <td>B</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Drifter</td>
-        <td>Civilian</td>
-        <td>D</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Echo</td>
-        <td>Civilian</td>
-        <td>D</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Erebos</td>
-        <td>Civilian</td>
-        <td>A</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Fissure</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Impulse</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Kama</td>
-        <td>Industrial</td>
-        <td>C</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Metis</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Pontes</td>
-        <td>Military</td>
-        <td>C</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Ranger</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">TS-2</td>
-        <td>Military</td>
-        <td>A</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Tyche</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Vesta</td>
-        <td>Industrial</td>
-        <td>D</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Wanderer</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Allegro</td>
-        <td>Civilian</td>
-        <td>A</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>4</td>
       </tr>
       <tr>
         <td class="comp-name">Frontline</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>4</td>
       </tr>
       </tbody>
@@ -1795,890 +1824,890 @@
         
       <tr>
         <td class="comp-name">'WEAK'</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">9-Series Longsword</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Ardor-1 Salvaged</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Attrition-1</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">CF-117 Bulldog</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Deadbolt I</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Dominance-1</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">DR Model-XJ1</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">FL-11</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Havoc</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Jericho</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Liberator</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Lightstrike I</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">M2C "Swarm"</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">M3A</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">MRX "Torrent"</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">NDB-26</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">NN-13</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Omnisky III</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Singe-1</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Sledge I Mass Driver</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Suckerpunch</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">SureGrip HV-S1</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">SureGrip PR-S1</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">SureGrip S1</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">SureGrip TH1</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">SW16BR1 "Buzzsaw"</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Tarantula GT-870 Mk 1</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">ViseLock S1</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Yebira I</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">YellowJacket GT-210</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">'WASP'</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">'WHIP'</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">10-Series Greatsword</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Ardor-2 Salvaged</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Attrition-2</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">ATVS</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">BRVS</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">CF-227 Badger</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">CVSA</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Deadbolt II</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Dominance-2</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">DR Model-XJ2</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">EVSD</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">FL-22</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">GVSR</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Hellion</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Jericho X</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Liberator Prime</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Lightstrike II</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">M4A</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">MVSA</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">NDB-28</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">NN-14</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Omnisky VI</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Scorpion GT-215</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Singe-2</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Sledge II Mass Driver</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Strife Mass Driver</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Suckerpunch-L</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">SureGrip HV-S2</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">SureGrip PR-S2</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">SureGrip S2</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">SureGrip TH2</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">SW16BR2 "Sawbuck"</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Tarantula GT-870 Mk 2</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Thlilye Laser</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Tigerstrike T-19P</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">ViseLock S2</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Yebira II</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">'WARLORD'</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">11-Series Broadsword</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Ardor-3 Salvaged</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Attrition-3</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">CF-337 Panther</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Deadbolt III</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Dominance-3</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">DR Model-XJ3</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">FL-33</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Jericho XL</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Liberator Ultra</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Lightstrike III</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">M5A</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Mantis GT-220</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">NDB-30</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">NN-15</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Omnisky IX</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Predator</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">PyroBurst</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Quarreler</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Reign-3</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Singe-3</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Sledge III Mass Driver</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Suckerpunch-XL</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">SW16BR3 "Shredder"</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Tarantula GT-870 Mk 3</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Tormenter S3</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Yeng’tu</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">AD4B</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>4</td>
       </tr>
       <tr>
         <td class="comp-name">Attrition-4</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>4</td>
       </tr>
       <tr>
         <td class="comp-name">Axiom L-22</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>4</td>
       </tr>
       <tr>
         <td class="comp-name">Breakneck S4</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>4</td>
       </tr>
       <tr>
         <td class="comp-name">C-788</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>4</td>
       </tr>
       <tr>
         <td class="comp-name">CF-447 Rhino</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>4</td>
       </tr>
       <tr>
         <td class="comp-name">Deadbolt IV</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>4</td>
       </tr>
       <tr>
         <td class="comp-name">Lightstrike IV</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>4</td>
       </tr>
       <tr>
         <td class="comp-name">M6A</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>4</td>
       </tr>
       <tr>
         <td class="comp-name">Omnisky XII</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>4</td>
       </tr>
       <tr>
         <td class="comp-name">Relentless L-21</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>4</td>
       </tr>
       <tr>
         <td class="comp-name">Revenant</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>4</td>
       </tr>
       <tr>
         <td class="comp-name">Salvation</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>4</td>
       </tr>
       <tr>
         <td class="comp-name">SureGrip TH4</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>4</td>
       </tr>
       <tr>
         <td class="comp-name">TMSB-5 Gatling</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>4</td>
       </tr>
       <tr>
         <td class="comp-name">'WAR'</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>5</td>
       </tr>
       <tr>
         <td class="comp-name">'WRATH'</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>5</td>
       </tr>
       <tr>
         <td class="comp-name">Absolution</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>5</td>
       </tr>
       <tr>
         <td class="comp-name">AD5B</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>5</td>
       </tr>
       <tr>
         <td class="comp-name">Attrition-5</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>5</td>
       </tr>
       <tr>
         <td class="comp-name">CF-557 Galdereen</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>5</td>
       </tr>
       <tr>
         <td class="comp-name">Deadbolt V</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>5</td>
       </tr>
       <tr>
         <td class="comp-name">Echion</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>5</td>
       </tr>
       <tr>
         <td class="comp-name">Leonids</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>5</td>
       </tr>
       <tr>
         <td class="comp-name">Lightstrike V</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>5</td>
       </tr>
       <tr>
         <td class="comp-name">M7A</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>5</td>
       </tr>
       <tr>
         <td class="comp-name">NV57</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>5</td>
       </tr>
       <tr>
         <td class="comp-name">Omnisky XV</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>5</td>
       </tr>
       <tr>
         <td class="comp-name">Slayer</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>5</td>
       </tr>
       <tr>
         <td class="comp-name">AD6B</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>6</td>
       </tr>
       <tr>
         <td class="comp-name">Attrition-6</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>6</td>
       </tr>
       <tr>
         <td class="comp-name">CF-667 Mammoth</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>6</td>
       </tr>
       <tr>
         <td class="comp-name">Condemnation</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>6</td>
       </tr>
       <tr>
         <td class="comp-name">Deadbolt VI</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>6</td>
       </tr>
       <tr>
         <td class="comp-name">Draugar</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>6</td>
       </tr>
       <tr>
         <td class="comp-name">Lightstrike VI</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>6</td>
       </tr>
       <tr>
         <td class="comp-name">M8A</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>6</td>
       </tr>
       <tr>
         <td class="comp-name">Maris</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>6</td>
       </tr>
       <tr>
         <td class="comp-name">Omnisky XVIII</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>6</td>
       </tr>
       <tr>
         <td class="comp-name">C-07T</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>7</td>
       </tr>
       <tr>
         <td class="comp-name">Conqueror-7</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>7</td>
       </tr>
       <tr>
         <td class="comp-name">M9A</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>7</td>
       </tr>
       <tr>
         <td class="comp-name">SF7B</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>7</td>
       </tr>
       <tr>
         <td class="comp-name">SF7E</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>7</td>
       </tr>
       <tr>
         <td class="comp-name">M10A</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>8</td>
       </tr>
       <tr>
         <td class="comp-name">RSI Medusa</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>8</td>
       </tr>
       <tr>
         <td class="comp-name">M11A</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>9</td>
       </tr>
       <tr>
         <td class="comp-name">Destroyer Mass Driver</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>10</td>
       </tr>
       <tr>
         <td class="comp-name">Exodus-10</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>10</td>
       </tr>
       <tr>
         <td class="comp-name">Supremacy-10T</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>10</td>
       </tr>
       </tbody>
@@ -2700,363 +2729,363 @@
         
       <tr>
         <td class="comp-name">Agure</td>
-        <td>Military</td>
-        <td>D</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>0</td>
       </tr>
       <tr>
         <td class="comp-name">BroadSpec-Go</td>
-        <td>Industrial</td>
-        <td>B</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>0</td>
       </tr>
       <tr>
         <td class="comp-name">Denning</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>0</td>
       </tr>
       <tr>
         <td class="comp-name">Fabian</td>
-        <td>Civilian</td>
-        <td>A</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>0</td>
       </tr>
       <tr>
         <td class="comp-name">FullSpec-Go</td>
-        <td>Industrial</td>
-        <td>A</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>0</td>
       </tr>
       <tr>
         <td class="comp-name">Observer-Go</td>
-        <td>Industrial</td>
-        <td>D</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>0</td>
       </tr>
       <tr>
         <td class="comp-name">Prevenir</td>
-        <td>Military</td>
-        <td>C</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>0</td>
       </tr>
       <tr>
         <td class="comp-name">Sens</td>
-        <td>Military</td>
-        <td>B</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>0</td>
       </tr>
       <tr>
         <td class="comp-name">Surveyor-Go</td>
-        <td>Industrial</td>
-        <td>C</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>0</td>
       </tr>
       <tr>
         <td class="comp-name">V60-26</td>
-        <td>Military</td>
-        <td>A</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>0</td>
       </tr>
       <tr>
         <td class="comp-name">Vogel</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>0</td>
       </tr>
       <tr>
         <td class="comp-name">Abetti</td>
-        <td>Civilian</td>
-        <td>A</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Backlund</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Capston</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Ecouter</td>
-        <td>Military</td>
-        <td>C</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Fleming</td>
-        <td>Civilian</td>
-        <td>D</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Hunter</td>
-        <td>Stealth</td>
-        <td>B</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Observer-Lite</td>
-        <td>Industrial</td>
-        <td>D</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Pelerous</td>
-        <td>Stealth</td>
-        <td>A</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Prophet</td>
-        <td>Stealth</td>
-        <td>A</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">SNS-R6</td>
-        <td>Competition</td>
-        <td>C</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">SNSR5</td>
-        <td>Competition</td>
-        <td>D</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">SNSR7</td>
-        <td>Competition</td>
-        <td>B</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Surveyor-Lite</td>
-        <td>Industrial</td>
-        <td>C</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Tige</td>
-        <td>Military</td>
-        <td>B</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">V801-11</td>
-        <td>Military</td>
-        <td>A</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Voir</td>
-        <td>Military</td>
-        <td>D</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>1</td>
       </tr>
       <tr>
         <td class="comp-name">Agrippa</td>
-        <td>Civilian</td>
-        <td>A</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Battani</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Cassandra</td>
-        <td>Stealth</td>
-        <td>A</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Chernykh</td>
-        <td>Civilian</td>
-        <td>C</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Epier</td>
-        <td>Military</td>
-        <td>C</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Fawad</td>
-        <td>Civilian</td>
-        <td>D</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">FullSpec</td>
-        <td>Industrial</td>
-        <td>A</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Observer</td>
-        <td>Industrial</td>
-        <td>D</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Predator</td>
-        <td>Stealth</td>
-        <td>B</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Savoir</td>
-        <td>Military</td>
-        <td>D</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">SNS-R5x</td>
-        <td>Competition</td>
-        <td>D</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">SNS-R6x</td>
-        <td>Competition</td>
-        <td>C</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">SNS-R7x</td>
-        <td>Competition</td>
-        <td>B</td>
+        <td><span class="cls cls-competition">Competition</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Spyglass</td>
-        <td>Stealth</td>
-        <td>C</td>
+        <td><span class="cls cls-stealth">Stealth</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Surveyor</td>
-        <td>Industrial</td>
-        <td>C</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">V801-12</td>
-        <td>Military</td>
-        <td>A</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Vigilance</td>
-        <td>Military</td>
-        <td>B</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>2</td>
       </tr>
       <tr>
         <td class="comp-name">Idris radar</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Lephari</td>
-        <td>-</td>
-        <td>C</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Anysta</td>
-        <td>Civilian</td>
-        <td>A</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">BroadSpec</td>
-        <td>Industrial</td>
-        <td>B</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Capsulo</td>
-        <td>Civilian</td>
-        <td>B</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Devoue</td>
-        <td>Military</td>
-        <td>B</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Fidele</td>
-        <td>Military</td>
-        <td>D</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">FullSpec-Max</td>
-        <td>Industrial</td>
-        <td>A</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Observer-Max</td>
-        <td>Industrial</td>
-        <td>D</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Resolu</td>
-        <td>Military</td>
-        <td>C</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Socoria</td>
-        <td>Civilian</td>
-        <td>D</td>
+        <td><span class="cls cls-civilian">Civilian</span></td>
+        <td><span class="grade grade-d">D</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Surveyor-Max</td>
-        <td>Industrial</td>
-        <td>C</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-c">C</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">V880</td>
-        <td>Military</td>
-        <td>A</td>
+        <td><span class="cls cls-military">Military</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>3</td>
       </tr>
       <tr>
         <td class="comp-name">Polaris radar</td>
-        <td>-</td>
-        <td>A</td>
+        <td><span class="cls cls--">-</span></td>
+        <td><span class="grade grade-a">A</span></td>
         <td>4</td>
       </tr>
       <tr>
         <td class="comp-name">BroadSpec-Max</td>
-        <td>Industrial</td>
-        <td>B</td>
+        <td><span class="cls cls-industrial">Industrial</span></td>
+        <td><span class="grade grade-b">B</span></td>
         <td>4</td>
       </tr>
       </tbody>
     </table>
 
     <div class="footer">
-      Generated: Tue, 26 May 2026 16:31:27 GMT |
+      Generated: Tue, 26 May 2026 16:44:00 GMT |
       <a href="https://github.com/scpages/compoment_list" target="_blank">GitHub Repository</a> |
       Data from <a href="https://www.erkul.games" target="_blank">erkul.games</a>
     </div>
