@@ -1,0 +1,45 @@
+name: Update Component List
+
+on:
+  workflow_dispatch: # Manual trigger
+  schedule:
+    - cron: '14 12 * * *' # Daily at 12:14 UTC
+
+jobs:
+  generate-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout pages repo
+        uses: actions/checkout@v4
+
+      - name: Checkout generator repo
+        uses: actions/checkout@v4
+        with:
+          repository: scpages/compoment_list
+          path: generator
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Generate HTML
+        working-directory: generator
+        run: |
+          chmod +x main.sh
+          ./main.sh
+
+      - name: Copy generated file
+        run: |
+          mkdir -p docs/component-list
+          cp generator/index.html docs/component-list/index.html
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/component-list/index.html
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update component list" && git push)
