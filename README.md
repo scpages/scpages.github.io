@@ -1,77 +1,42 @@
-# Star Citizen Hub - GitHub Pages
+# Star Citizen Hub
 
-A comprehensive hub of useful tools and resources for Star Citizen players.
+A hub of tools and resources for Star Citizen players, hosted on GitHub Pages.
 
-🌐 **Live Site:** https://scpages.github.io
+Live at: **https://scpages.github.io**
 
-## Features
+## Integrated Tools
 
-### 📦 Integrated Tools
-- **Default Ship Components** - Database of default ship loadouts (auto-updated daily)
-- **Cargo Trading** - Trading routes and commodity prices (auto-updated every 15 minutes)
+| Tool | Repo | Description |
+|---|---|---|
+| Default Ship Components | [scpages/default_loadout](https://github.com/scpages/default_loadout) | Default loadouts for all ships |
+| Cargo Trading | [scpages/trading](https://github.com/scpages/trading) | Trading routes & commodity prices |
+| Ship Component List | [scpages/compoment_list](https://github.com/scpages/compoment_list) | Components with class, grade, size & buy prices |
+| Ship Prices | [scpages/ship_prices](https://github.com/scpages/ship_prices) | Pledge, in-game buy & rental prices |
 
-### 🔗 Community Tools
-Curated collection of 29 community tools with favicon logos organized by category:
-- Cargo Trading
-- Ship Loadouts & Information
-- Ship Visualizations
-- Contested Zones
-- Mining & Resources
-- Crafting & Manufacturing
-- Ship Management
-- Reference & Guides
-- And more...
+## Workflow
 
-Each community tool displays its website favicon and domain name for easy recognition.
+Each sub-repo generates its own `index.html`. The main site copies them into `docs/`:
 
-## Automated Workflows
+```bash
+bash main.sh
+```
 
-### Default Ship Components
-- **Frequency:** Daily at 12:07 UTC
-- **Source:** [scpages/default_loadout](https://github.com/scpages/default_loadout)
-- **Data:** Fetches from erkul.games API
-- **Output:** `docs/default-loadouts/index.html`
-
-### Trading Data
-- **Frequency:** Every 15 minutes
-- **Source:** UEX Corp API (via sctrading.dodoslav.eu)
-- **Method:** Downloads HTML via CURL
-- **Output:** `docs/trading/index.html`
-- **Safety:** Keeps old data if fetch fails
+This copies `index.html` from each sub-repo into the matching `docs/` subfolder, then commit and push to deploy.
 
 ## Structure
 
 ```
 docs/
 ├── index.html              # Main hub page
-├── default.css             # Styling
-├── default-loadouts/       # Ship components (auto-generated)
-│   └── index.html
-└── trading/                # Trading data (auto-fetched)
-    ├── index.html
-    ├── default.css
-    └── favicon.ico
+├── component-list/         # Ship Component List
+├── default-loadouts/       # Default Ship Components
+├── ship-prices/            # Ship Prices
+└── trading/                # Cargo Trading
 ```
-
-## Technologies
-
-- **GitHub Pages** - Static site hosting
-- **GitHub Actions** - Automated workflows
-- **Node.js 24** - Script execution for generators
 
 ## Related Repositories
 
-- [scpages/default_loadout](https://github.com/scpages/default_loadout) - Ship loadout generator
-- [dodoslavn/StarCitizen_Trading](https://github.com/dodoslavn/StarCitizen_Trading) - Trading website source
-
-## Contributing
-
-Feel free to suggest additional tools or report issues!
-
-## License
-
-See [LICENSE](LICENSE) for details.
-
----
-
-Built for the Star Citizen community 🚀
+- [scpages/compoment_list](https://github.com/scpages/compoment_list)
+- [scpages/default_loadout](https://github.com/scpages/default_loadout)
+- [scpages/ship_prices](https://github.com/scpages/ship_prices)
+- [scpages/trading](https://github.com/scpages/trading)
