@@ -1,0 +1,45 @@
+name: Update Ship Prices
+
+on:
+  workflow_dispatch: # Manual trigger
+  schedule:
+    - cron: '17 12 * * *' # Daily at 12:17 UTC
+
+jobs:
+  generate-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout pages repo
+        uses: actions/checkout@v4
+
+      - name: Checkout generator repo
+        uses: actions/checkout@v4
+        with:
+          repository: scpages/ship_prices
+          path: generator
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Generate HTML
+        working-directory: generator
+        run: |
+          chmod +x main.sh
+          ./main.sh
+
+      - name: Copy generated file
+        run: |
+          mkdir -p docs/ship-prices
+          cp generator/index.html docs/ship-prices/index.html
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/ship-prices/index.html
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update ship prices" && git push)
