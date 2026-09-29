@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mining Data — Star Citizen Pages</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E⛏️%3C/text%3E%3C/svg%3E">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:linear-gradient(135deg,#0a0e27 0%,#1a1f3a 100%);color:#e8e8e8;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;min-height:100vh}
+    header{background:rgba(10,14,39,.8);backdrop-filter:blur(10px);border-bottom:2px solid #2a9fd6;padding:20px 0;margin-bottom:30px;box-shadow:0 4px 6px rgba(0,0,0,.3)}
+    h1{color:#fff;font-size:2rem;font-weight:600;text-align:center;text-shadow:0 0 20px rgba(42,159,214,.5)}
+    .subtitle{text-align:center;color:#a0a0a0;font-size:.9rem;margin-top:8px}
+    .container{max-width:1400px;margin:0 auto;padding:0 20px 40px}
+
+    /* stats */
+    .stats{display:flex;gap:16px;justify-content:center;margin-bottom:24px;flex-wrap:wrap}
+    .stat{background:rgba(42,159,214,.08);border:1px solid rgba(42,159,214,.2);border-radius:6px;padding:8px 20px;text-align:center}
+    .stat-val{font-size:1.4rem;font-weight:700;color:#2a9fd6}
+    .stat-lbl{font-size:.75rem;color:#888;margin-top:2px}
+
+    /* controls */
+    .controls{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:24px;background:rgba(20,25,45,.6);padding:14px 18px;border-radius:10px}
+    .btn-group{display:flex;gap:4px}
+    .btn{background:rgba(42,159,214,.1);border:1px solid rgba(42,159,214,.25);color:#aaa;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:.85rem;transition:all .2s}
+    .btn:hover{background:rgba(42,159,214,.2);color:#e8e8e8}
+    .btn.active{background:rgba(42,159,214,.35);border-color:#2a9fd6;color:#fff;font-weight:600}
+    .search-wrap{flex:1;min-width:180px}
+    .search-wrap input{width:100%;background:rgba(10,14,39,.6);border:1px solid rgba(42,159,214,.25);color:#e8e8e8;padding:6px 12px;border-radius:6px;font-size:.85rem;outline:none}
+    .search-wrap input::placeholder{color:#555}
+    .search-wrap input:focus{border-color:#2a9fd6}
+    .controls-label{font-size:.78rem;color:#666;white-space:nowrap}
+
+    /* location cards grid */
+    .cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+    .card{background:rgba(20,25,45,.6);border:1px solid rgba(42,159,214,.15);border-radius:10px;padding:16px;transition:border-color .2s}
+    .card:hover{border-color:rgba(42,159,214,.4)}
+    .card-header{display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+    .card-name{font-size:1rem;font-weight:600;color:#e8e8e8;flex:1}
+    .badge{font-size:.7rem;padding:2px 7px;border-radius:4px;font-weight:600;white-space:nowrap}
+    .badge-stanton{background:rgba(42,159,214,.2);color:#4fc3f7;border:1px solid rgba(42,159,214,.3)}
+    .badge-pyro{background:rgba(255,120,50,.2);color:#ff9060;border:1px solid rgba(255,120,50,.3)}
+    .badge-nyx{background:rgba(160,90,220,.2);color:#c080ff;border:1px solid rgba(160,90,220,.3)}
+    .badge-type{background:rgba(255,255,255,.06);color:#888;border:1px solid rgba(255,255,255,.1)}
+
+    /* ore rows in card */
+    .ore-row{display:flex;align-items:center;gap:8px;padding:3px 0}
+    .ore-name{font-size:.82rem;width:110px;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .ore-bar-wrap{flex:1;background:rgba(255,255,255,.06);border-radius:3px;height:8px;overflow:hidden}
+    .ore-bar{height:100%;border-radius:3px;transition:width .3s}
+    .ore-pct{font-size:.8rem;width:36px;text-align:right;color:#aaa;flex-shrink:0}
+    .t1{color:#f0b040}.t1 .ore-bar{background:linear-gradient(90deg,#b87020,#f0a030)}
+    .t2{color:#7ec8e8}.t2 .ore-bar{background:linear-gradient(90deg,#1a6090,#2a9fd6)}
+    .t3{color:#606060}.t3 .ore-bar{background:rgba(100,100,100,.5)}
+
+    /* by-ore view */
+    .ore-section{background:rgba(20,25,45,.6);border:1px solid rgba(42,159,214,.15);border-radius:10px;margin-bottom:16px;overflow:hidden}
+    .ore-section-header{display:flex;align-items:center;gap:10px;padding:12px 18px;background:rgba(42,159,214,.07);border-bottom:1px solid rgba(42,159,214,.12);cursor:pointer;user-select:none}
+    .ore-section-name{font-size:1rem;font-weight:600}
+    .ore-count{font-size:.78rem;color:#666;margin-left:auto}
+    .ore-table{width:100%;border-collapse:collapse}
+    .ore-table th{font-size:.75rem;text-transform:uppercase;letter-spacing:.5px;color:#666;padding:8px 14px;text-align:left;border-bottom:1px solid rgba(255,255,255,.05)}
+    .ore-table td{padding:7px 14px;border-bottom:1px solid rgba(255,255,255,.04);font-size:.85rem}
+    .ore-table tr:last-child td{border-bottom:none}
+    .ore-table tr:hover td{background:rgba(42,159,214,.05)}
+    .td-loc{font-weight:500;color:#e8e8e8}
+    .td-sys{font-size:.78rem}
+    .td-type{font-size:.78rem;color:#888}
+    .td-pct{font-weight:700;text-align:right}
+    .td-bar-cell{width:120px}
+    .inline-bar{height:6px;border-radius:3px;display:inline-block}
+
+    /* no results */
+    .no-results{text-align:center;color:#555;padding:60px 20px;font-size:1rem}
+
+    .footer{margin-top:40px;padding:20px 0;border-top:1px solid rgba(42,159,214,.3);color:#666;font-size:.82rem;text-align:center}
+    .footer a{color:#2a9fd6;text-decoration:none}
+    .footer a:hover{color:#4fc3f7;text-decoration:underline}
+
+    @media(max-width:600px){
+      .cards-grid{grid-template-columns:1fr}
+      .controls{flex-direction:column;align-items:stretch}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <h1>⛏️ Mining Data</h1>
+    <div class="subtitle">Star Citizen · Ore Locations &amp; Spawn Percentages · Stanton, Pyro, Nyx</div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="stats">
+    <div class="stat"><div class="stat-val" id="stat-locs">—</div><div class="stat-lbl">Locations</div></div>
+    <div class="stat"><div class="stat-val" id="stat-ores">—</div><div class="stat-lbl">Ore Types</div></div>
+    <div class="stat"><div class="stat-val">3</div><div class="stat-lbl">Systems</div></div>
+  </div>
+
+  <div class="controls">
+    <span class="controls-label">System:</span>
+    <div class="btn-group" id="sys-tabs">
+      <button class="btn active" data-sys="All">All</button>
+      <button class="btn" data-sys="Stanton">Stanton</button>
+      <button class="btn" data-sys="Pyro">Pyro</button>
+      <button class="btn" data-sys="Nyx">Nyx</button>
+    </div>
+    <span class="controls-label" style="margin-left:8px">View:</span>
+    <div class="btn-group" id="view-tabs">
+      <button class="btn active" data-view="location">By Location</button>
+      <button class="btn" data-view="ore">By Ore</button>
+    </div>
+    <div class="search-wrap">
+      <input type="search" id="search" placeholder="Filter location or ore…"/>
+    </div>
+  </div>
+
+  <div id="content"></div>
+
+  <div class="footer">
+    Data sourced from <a href="https://scminer.rocks" target="_blank">SCMiner.rocks</a> and <a href="https://starcitizen.tools" target="_blank">starcitizen.tools</a> &nbsp;·&nbsp;
+    <a href="/">← Back to Star Citizen Pages</a>
+  </div>
+</div>
+
+<script>
+const T1 = new Set(['Quantanium','Bexalite','Borase','Laranite','Taranite','Agricium','Hephaestanite']);
+const T2 = new Set(['Gold','Beryl','Titanium','Tungsten','Aslarite','Stileron','Riccite','Lindinium','Savrilium','Ouratite','Corundum','Carinite','Aphorite','Sadaryx']);
+
+function tier(ore) {
+  if (T1.has(ore)) return 1;
+  if (T2.has(ore)) return 2;
+  return 3;
+}
+
+const LOCATIONS = [
+  {n:'Aaron Halo',       sys:'Stanton', type:'Belt',   ores:{Beryl:18,Agricium:14,Aslarite:14,Titanium:14,Ice:10,Aluminium:10,Copper:10,Corundum:10,Hephaestanite:10,Iron:10,Silicon:10,Tin:10,Quantanium:2}},
+  {n:'Aberdeen',         sys:'Stanton', type:'Moon',   ores:{Aluminium:30,Corundum:30,Agricium:29,Aslarite:29,Titanium:29,Ouratite:10,Beryl:2,Quantanium:2}},
+  {n:'ARC-L1',           sys:'Stanton', type:'Belt',   ores:{Tungsten:20,Taranite:13,Corundum:12,Aluminium:12,Hephaestanite:12}},
+  {n:'ARC-L2',           sys:'Stanton', type:'Belt',   ores:{Tungsten:20,Taranite:13,Corundum:12,Aluminium:12,Hephaestanite:12}},
+  {n:'ARC-L3',           sys:'Stanton', type:'Belt',   ores:{Agricium:16,Aslarite:16,Gold:10,Iron:10,Copper:10,Ice:10}},
+  {n:'ARC-L4',           sys:'Stanton', type:'Belt',   ores:{Tungsten:20,Taranite:13,Corundum:12,Aluminium:12,Hephaestanite:12}},
+  {n:'ARC-L5',           sys:'Stanton', type:'Belt',   ores:{Aslarite:9,Agricium:9,Gold:10,Iron:10,Copper:10,Ice:10}},
+  {n:'Arial',            sys:'Stanton', type:'Moon',   ores:{Aluminium:22,Copper:22,Corundum:22,Hephaestanite:22,Quartz:22,Silicon:22,Tin:22,Agricium:10,Ouratite:10,Beryl:2,Quantanium:2}},
+  {n:'Calliope',         sys:'Stanton', type:'Moon',   ores:{Iron:33,Hephaestanite:33,Ice:33,Quartz:33,Silicon:33,Beryl:2,Quantanium:2}},
+  {n:'Cellin',           sys:'Stanton', type:'Moon',   ores:{Agricium:29,Aslarite:29,Titanium:29,Hephaestanite:26,Silicon:26,Quartz:26,Taranite:18,Beryl:2,Quantanium:2}},
+  {n:'Clio',             sys:'Stanton', type:'Moon',   ores:{Copper:40,Ice:40,Tin:40,Taranite:18,Beryl:2,Quantanium:2}},
+  {n:'CRU-L1',           sys:'Stanton', type:'Belt',   ores:{Titanium:15,Bexalite:10,Iron:9,Copper:9,Ice:9}},
+  {n:'CRU-L2',           sys:'Stanton', type:'Belt',   ores:{Titanium:15,Bexalite:10,Iron:9,Copper:9,Ice:9}},
+  {n:'CRU-L3',           sys:'Stanton', type:'Belt',   ores:{Torite:11,Aluminium:9,Corundum:9,Hephaestanite:9}},
+  {n:'CRU-L4',           sys:'Stanton', type:'Belt',   ores:{Aslarite:16,Gold:10,Iron:10,Copper:10,Ice:10}},
+  {n:'CRU-L5',           sys:'Stanton', type:'Belt',   ores:{Agricium:9,Beryl:6,Iron:6,Copper:6,Ice:6}},
+  {n:'Daymar',           sys:'Stanton', type:'Moon',   ores:{Hephaestanite:35,Silicon:35,Quartz:35,Agricium:29,Aslarite:29,Titanium:29,Beryl:2,Quantanium:2}},
+  {n:'Euterpe',          sys:'Stanton', type:'Moon',   ores:{Copper:40,Ice:40,Tin:40,Taranite:18,Beryl:2,Quantanium:2}},
+  {n:'Hathor Caves',     sys:'Stanton', type:'Cave',   ores:{Carinite:100}},
+  {n:'HUR-L1',           sys:'Stanton', type:'Belt',   ores:{Laranite:13,Borase:8,Aluminium:8,Corundum:8,Hephaestanite:8}},
+  {n:'HUR-L2',           sys:'Stanton', type:'Belt',   ores:{Tungsten:20,Taranite:13,Corundum:12,Aluminium:12,Hephaestanite:12}},
+  {n:'HUR-L3',           sys:'Stanton', type:'Belt',   ores:{Titanium:15,Bexalite:10,Iron:9,Copper:9,Ice:9}},
+  {n:'HUR-L4',           sys:'Stanton', type:'Belt',   ores:{Laranite:13,Borase:8,Aluminium:8,Corundum:8,Hephaestanite:8}},
+  {n:'HUR-L5',           sys:'Stanton', type:'Belt',   ores:{Torite:11,Aluminium:9,Corundum:9,Hephaestanite:9}},
+  {n:'Hurston',          sys:'Stanton', type:'Planet', ores:{Aluminium:44,Copper:44,Corundum:44,Tin:44,Agricium:10,Ouratite:10,Beryl:2,Quantanium:2}},
+  {n:'Ita',              sys:'Stanton', type:'Moon',   ores:{Copper:35,Tin:35,Aluminium:35,Corundum:35,Agricium:29,Aslarite:29,Titanium:29,Beryl:2,Quantanium:2}},
+  {n:'Lyria',            sys:'Stanton', type:'Moon',   ores:{Copper:35,Iron:35,Tin:35,Laranite:28,Tungsten:28,Beryl:2,Quantanium:2}},
+  {n:'Magda',            sys:'Stanton', type:'Moon',   ores:{Aluminium:35,Corundum:35,Iron:35,Agricium:14,Aslarite:14,Titanium:14,Beryl:2,Quantanium:2}},
+  {n:'MIC-L1',           sys:'Stanton', type:'Belt',   ores:{Torite:11,Aluminium:9,Corundum:9,Hephaestanite:9}},
+  {n:'MIC-L2',           sys:'Stanton', type:'Belt',   ores:{Torite:11,Aluminium:9,Corundum:9,Hephaestanite:9}},
+  {n:'MIC-L3',           sys:'Stanton', type:'Belt',   ores:{Aslarite:16,Gold:10,Iron:10,Copper:10,Ice:10}},
+  {n:'MIC-L4',           sys:'Stanton', type:'Belt',   ores:{Agricium:9,Beryl:6,Iron:6,Copper:6,Ice:6}},
+  {n:'MIC-L5',           sys:'Stanton', type:'Belt',   ores:{Torite:11,Aluminium:9,Corundum:9,Hephaestanite:9}},
+  {n:'microTech',        sys:'Stanton', type:'Planet', ores:{Hephaestanite:33,Ice:33,Quartz:33,Silicon:33,Iron:33,Beryl:2,Quantanium:2}},
+  {n:'Wala',             sys:'Stanton', type:'Moon',   ores:{Laranite:29,Tungsten:29,Copper:26,Tin:26,Iron:26,Beryl:18,Quantanium:2}},
+  {n:'Yela',             sys:'Stanton', type:'Moon',   ores:{Agricium:29,Aslarite:29,Titanium:29,Hephaestanite:26,Silicon:26,Quartz:26,Taranite:18,Beryl:2,Quantanium:2}},
+  {n:'Yela Belt',        sys:'Stanton', type:'Belt',   ores:{Agricium:29,Aslarite:29,Titanium:29,Copper:21,Ice:21,Iron:21,Tin:21,Ouratite:10}},
+  // Pyro
+  {n:'Akiro Cluster',    sys:'Pyro',    type:'Belt',   ores:{Torite:29,Copper:15,Hephaestanite:15,Ice:15,Silicon:15,Tin:15,Iron:15,Laranite:10,Riccite:10,Stileron:2,Taranite:2}},
+  {n:'Pyro I',           sys:'Pyro',    type:'Planet', ores:{Iron:33,Copper:33,Tin:33,Stileron:2,Taranite:2}},
+  {n:'Monox',            sys:'Pyro',    type:'Planet', ores:{Hephaestanite:33,Quartz:33,Silicon:33,Copper:33,Iron:33,Tin:33,Stileron:2,Taranite:2}},
+  {n:'Bloom',            sys:'Pyro',    type:'Planet', ores:{Hephaestanite:35,Iron:35,Quartz:35,Silicon:35,Bexalite:18,Borase:18,Gold:18,Laranite:10,Riccite:10,Stileron:2,Taranite:2}},
+  {n:'Pyro IV',          sys:'Pyro',    type:'Planet', ores:{Laranite:29,Tungsten:29,Copper:26,Iron:26,Tin:26,Bexalite:18,Borase:18,Gold:18,Stileron:2,Taranite:2}},
+  {n:'Ignis',            sys:'Pyro',    type:'Moon',   ores:{Copper:36,Hephaestanite:36,Silicon:36,Tin:36,Bexalite:18,Borase:18,Gold:18,Laranite:10,Riccite:10}},
+  {n:'Vatra',            sys:'Pyro',    type:'Moon',   ores:{Hephaestanite:36,Iron:36,Silicon:36,Bexalite:18,Borase:18,Gold:18,Laranite:10,Riccite:10}},
+  {n:'Adir',             sys:'Pyro',    type:'Moon',   ores:{Iron:44,Laranite:29,Tungsten:29,Bexalite:18,Borase:18,Gold:18,Riccite:10}},
+  {n:'Fairo',            sys:'Pyro',    type:'Moon',   ores:{Laranite:29,Tungsten:29,Hephaestanite:27,Silicon:27,Iron:27,Bexalite:9,Borase:9,Gold:9}},
+  {n:'Fuego',            sys:'Pyro',    type:'Moon',   ores:{Agricium:29,Aslarite:29,Titanium:29,Iron:27,Hephaestanite:27,Quartz:27,Silicon:27,Bexalite:9,Borase:9,Gold:9}},
+  {n:'Vuur',             sys:'Pyro',    type:'Moon',   ores:{Hephaestanite:27,Iron:27,Quartz:27,Silicon:27,Bexalite:18,Borase:18,Gold:18,Agricium:14,Aslarite:14,Titanium:14}},
+  {n:'Terminus',         sys:'Pyro',    type:'Planet', ores:{Copper:21,Ice:21,Tin:21,Bexalite:18,Borase:18,Gold:18,Agricium:14,Aslarite:14,Titanium:14,Laranite:10,Riccite:10,Stileron:2,Taranite:2}},
+  // Nyx
+  {n:'Glaciem Ring',     sys:'Nyx',     type:'Belt',   ores:{Torite:29,Ice:21,Iron:21,Bexalite:18,Borase:18,Gold:18,Lindinium:10,Tungsten:10,Savrilium:2}},
+  {n:'Keeger Belt',      sys:'Nyx',     type:'Belt',   ores:{Torite:29,Aluminium:21,Corundum:21,Ice:21,Bexalite:18,Borase:18,Gold:18,Lindinium:10,Tungsten:10,Savrilium:2}},
+  {n:'Breaker Geodes',   sys:'Nyx',     type:'Cave',   ores:{Savrilium:100,Torite:100}},
+  {n:'Breaker Interior', sys:'Nyx',     type:'Cave',   ores:{Aphorite:75,Sadaryx:25}},
+];
+
+// derived: all ore names
+const ALL_ORES = [...new Set(LOCATIONS.flatMap(l => Object.keys(l.ores)))].sort();
+document.getElementById('stat-locs').textContent = LOCATIONS.length;
+document.getElementById('stat-ores').textContent = ALL_ORES.length;
+
+// ore index: ore -> [{loc, pct}] sorted desc
+const ORE_INDEX = {};
+ALL_ORES.forEach(ore => {
+  ORE_INDEX[ore] = LOCATIONS
+    .filter(l => l.ores[ore] !== undefined)
+    .map(l => ({loc: l, pct: l.ores[ore]}))
+    .sort((a,b) => b.pct - a.pct);
+});
+
+let currentSys = 'All';
+let currentView = 'location';
+let searchQ = '';
+
+function sysBadgeClass(sys) {
+  return sys === 'Stanton' ? 'badge-stanton' : sys === 'Pyro' ? 'badge-pyro' : 'badge-nyx';
+}
+
+function tierClass(ore) { return 't' + tier(ore); }
+
+function barColor(o) {
+  const t = tier(o);
+  return t === 1 ? 'linear-gradient(90deg,#b87020,#f0a030)'
+       : t === 2 ? 'linear-gradient(90deg,#1a6090,#2a9fd6)'
+       : 'rgba(100,100,100,.5)';
+}
+
+function renderByLocation(locs) {
+  if (!locs.length) return '<div class="no-results">No locations match your filter.</div>';
+  return '<div class="cards-grid">' + locs.map(loc => {
+    const entries = Object.entries(loc.ores).sort((a,b) => b[1]-a[1]);
+    const maxPct = entries[0][1];
+    const rows = entries.map(([ore, pct]) => {
+      const tc = tierClass(ore);
+      const w = Math.round(pct / maxPct * 100);
+      return `<div class="ore-row ${tc}">
+        <span class="ore-name" title="${ore}">${ore}</span>
+        <div class="ore-bar-wrap"><div class="ore-bar" style="width:${w}%;background:${barColor(ore)}"></div></div>
+        <span class="ore-pct">${pct}%</span>
+      </div>`;
+    }).join('');
+    return `<div class="card">
+      <div class="card-header">
+        <span class="card-name">${loc.n}</span>
+        <span class="badge ${sysBadgeClass(loc.sys)}">${loc.sys}</span>
+        <span class="badge badge-type">${loc.type}</span>
+      </div>
+      ${rows}
+    </div>`;
+  }).join('') + '</div>';
+}
+
+function renderByOre(ores) {
+  if (!ores.length) return '<div class="no-results">No ores match your filter.</div>';
+  return ores.map(ore => {
+    const entries = ORE_INDEX[ore].filter(e =>
+      currentSys === 'All' || e.loc.sys === currentSys
+    );
+    if (!entries.length) return '';
+    const tc = tierClass(ore);
+    const maxPct = entries[0].pct;
+    const rows = entries.map(e => {
+      const w = Math.round(e.pct / maxPct * 100);
+      return `<tr>
+        <td class="td-loc">${e.loc.n}</td>
+        <td class="td-sys"><span class="badge ${sysBadgeClass(e.loc.sys)}">${e.loc.sys}</span></td>
+        <td class="td-type">${e.loc.type}</td>
+        <td class="td-bar-cell"><div style="background:rgba(255,255,255,.06);border-radius:3px;height:6px;overflow:hidden"><div class="inline-bar" style="width:${w}%;height:100%;background:${barColor(ore)}"></div></div></td>
+        <td class="td-pct ${tc}">${e.pct}%</td>
+      </tr>`;
+    }).join('');
+    return `<div class="ore-section">
+      <div class="ore-section-header">
+        <span class="ore-section-name ${tc}">${ore}</span>
+        <span class="ore-count">${entries.length} location${entries.length!==1?'s':''}</span>
+      </div>
+      <table class="ore-table">
+        <thead><tr>
+          <th>Location</th><th>System</th><th>Type</th><th style="width:120px">Spawn</th><th style="text-align:right">%</th>
+        </tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
+  }).filter(Boolean).join('');
+}
+
+function getFilteredLocs() {
+  const q = searchQ.toLowerCase();
+  return LOCATIONS.filter(l => {
+    if (currentSys !== 'All' && l.sys !== currentSys) return false;
+    if (!q) return true;
+    if (l.n.toLowerCase().includes(q)) return true;
+    return Object.keys(l.ores).some(o => o.toLowerCase().includes(q));
+  });
+}
+
+function getFilteredOres() {
+  const q = searchQ.toLowerCase();
+  return ALL_ORES.filter(ore => {
+    if (q && !ore.toLowerCase().includes(q)) {
+      // also check if any matching location has this ore
+      const matchesLoc = LOCATIONS.some(l =>
+        l.ores[ore] !== undefined &&
+        (currentSys === 'All' || l.sys === currentSys) &&
+        l.n.toLowerCase().includes(q)
+      );
+      if (!matchesLoc) return false;
+    }
+    if (currentSys !== 'All') {
+      return LOCATIONS.some(l => l.sys === currentSys && l.ores[ore] !== undefined);
+    }
+    return true;
+  });
+}
+
+function render() {
+  const content = document.getElementById('content');
+  if (currentView === 'location') {
+    content.innerHTML = renderByLocation(getFilteredLocs());
+  } else {
+    content.innerHTML = renderByOre(getFilteredOres());
+  }
+}
+
+// system tabs
+document.getElementById('sys-tabs').addEventListener('click', e => {
+  const btn = e.target.closest('[data-sys]');
+  if (!btn) return;
+  currentSys = btn.dataset.sys;
+  document.querySelectorAll('[data-sys]').forEach(b => b.classList.toggle('active', b === btn));
+  render();
+});
+
+// view tabs
+document.getElementById('view-tabs').addEventListener('click', e => {
+  const btn = e.target.closest('[data-view]');
+  if (!btn) return;
+  currentView = btn.dataset.view;
+  document.querySelectorAll('[data-view]').forEach(b => b.classList.toggle('active', b === btn));
+  render();
+});
+
+// search
+document.getElementById('search').addEventListener('input', e => {
+  searchQ = e.target.value.trim();
+  render();
+});
+
+render();
+</script>
+</body>
+</html>
