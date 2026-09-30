@@ -450,7 +450,7 @@ function renderByOre(ores) {
       const locMain = [e.loc.sys, e.loc.n].filter(Boolean).join(' · ');
       const locSub = [e.loc.b, e.loc.type].filter(Boolean).join(' · ');
       return `<tr>
-        <td class="td-loc">${locMain}<span class="td-body">${locSub}</span></td>
+        <td class="td-loc" style="color:${sc.text}">${locMain}<span class="td-body">${locSub}</span></td>
         <td class="td-bar-cell"><div style="background:rgba(255,255,255,.06);border-radius:4px;height:10px;overflow:hidden"><div class="inline-bar" style="width:${w}%;background:${sc.bar}"></div></div></td>
         <td class="td-pct" style="color:${sc.text}">${e.pct}%</td>
       </tr>`;
