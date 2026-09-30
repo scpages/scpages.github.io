@@ -12,6 +12,7 @@ Live at: **https://scpages.github.io**
 | Cargo Trading | [scpages/trading](https://github.com/scpages/trading) | Trading routes & commodity prices |
 | Ship Component List | [scpages/compoment_list](https://github.com/scpages/compoment_list) | Components with class, grade, size & buy prices |
 | Ship Prices | [scpages/ship_prices](https://github.com/scpages/ship_prices) | Pledge, in-game buy & rental prices |
+| Mining Data | *(this repo)* | Ore locations & spawn percentages across Stanton, Pyro, Nyx — filterable by system, mining method (Ship / Ground / FPS), with By Location and By Ore views |
 
 ## Workflow
 
@@ -23,6 +24,8 @@ bash main.sh
 
 This copies `index.html` from each sub-repo into the matching `docs/` subfolder, then commit and push to deploy.
 
+The `mining/` page is maintained directly in this repo.
+
 ## Structure
 
 ```
@@ -30,6 +33,7 @@ docs/
 ├── index.html              # Main hub page
 ├── component-list/         # Ship Component List
 ├── default-loadouts/       # Default Ship Components
+├── mining/                 # Mining Data (static, maintained here)
 ├── ship-prices/            # Ship Prices
 └── trading/                # Cargo Trading
 ```
