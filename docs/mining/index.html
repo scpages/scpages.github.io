@@ -64,6 +64,7 @@
     .ore-table tr:last-child td{border-bottom:none}
     .ore-table tr:hover td{background:rgba(42,159,214,.05)}
     .td-loc{font-weight:500;color:#e8e8e8}
+    .td-body{display:block;font-size:.72rem;color:#555;margin-top:1px}
     .td-sys{font-size:.78rem}
     .td-type{font-size:.78rem;color:#888}
     .td-pct{font-weight:700;text-align:right}
@@ -135,56 +136,56 @@ function tier(ore) {
 }
 
 const LOCATIONS = [
-  {n:'Aaron Halo',       sys:'Stanton', type:'Belt',   ores:{Beryl:18,Agricium:14,Aslarite:14,Titanium:14,Ice:10,Aluminium:10,Copper:10,Corundum:10,Hephaestanite:10,Iron:10,Silicon:10,Tin:10,Quantanium:2}},
-  {n:'Aberdeen',         sys:'Stanton', type:'Moon',   ores:{Aluminium:30,Corundum:30,Agricium:29,Aslarite:29,Titanium:29,Ouratite:10,Beryl:2,Quantanium:2}},
-  {n:'ARC-L1',           sys:'Stanton', type:'Belt',   ores:{Tungsten:20,Taranite:13,Corundum:12,Aluminium:12,Hephaestanite:12}},
-  {n:'ARC-L2',           sys:'Stanton', type:'Belt',   ores:{Tungsten:20,Taranite:13,Corundum:12,Aluminium:12,Hephaestanite:12}},
-  {n:'ARC-L3',           sys:'Stanton', type:'Belt',   ores:{Agricium:16,Aslarite:16,Gold:10,Iron:10,Copper:10,Ice:10}},
-  {n:'ARC-L4',           sys:'Stanton', type:'Belt',   ores:{Tungsten:20,Taranite:13,Corundum:12,Aluminium:12,Hephaestanite:12}},
-  {n:'ARC-L5',           sys:'Stanton', type:'Belt',   ores:{Aslarite:9,Agricium:9,Gold:10,Iron:10,Copper:10,Ice:10}},
-  {n:'Arial',            sys:'Stanton', type:'Moon',   ores:{Aluminium:22,Copper:22,Corundum:22,Hephaestanite:22,Quartz:22,Silicon:22,Tin:22,Agricium:10,Ouratite:10,Beryl:2,Quantanium:2}},
-  {n:'Calliope',         sys:'Stanton', type:'Moon',   ores:{Iron:33,Hephaestanite:33,Ice:33,Quartz:33,Silicon:33,Beryl:2,Quantanium:2}},
-  {n:'Cellin',           sys:'Stanton', type:'Moon',   ores:{Agricium:29,Aslarite:29,Titanium:29,Hephaestanite:26,Silicon:26,Quartz:26,Taranite:18,Beryl:2,Quantanium:2}},
-  {n:'Clio',             sys:'Stanton', type:'Moon',   ores:{Copper:40,Ice:40,Tin:40,Taranite:18,Beryl:2,Quantanium:2}},
-  {n:'CRU-L1',           sys:'Stanton', type:'Belt',   ores:{Titanium:15,Bexalite:10,Iron:9,Copper:9,Ice:9}},
-  {n:'CRU-L2',           sys:'Stanton', type:'Belt',   ores:{Titanium:15,Bexalite:10,Iron:9,Copper:9,Ice:9}},
-  {n:'CRU-L3',           sys:'Stanton', type:'Belt',   ores:{Torite:11,Aluminium:9,Corundum:9,Hephaestanite:9}},
-  {n:'CRU-L4',           sys:'Stanton', type:'Belt',   ores:{Aslarite:16,Gold:10,Iron:10,Copper:10,Ice:10}},
-  {n:'CRU-L5',           sys:'Stanton', type:'Belt',   ores:{Agricium:9,Beryl:6,Iron:6,Copper:6,Ice:6}},
-  {n:'Daymar',           sys:'Stanton', type:'Moon',   ores:{Hephaestanite:35,Silicon:35,Quartz:35,Agricium:29,Aslarite:29,Titanium:29,Beryl:2,Quantanium:2}},
-  {n:'Euterpe',          sys:'Stanton', type:'Moon',   ores:{Copper:40,Ice:40,Tin:40,Taranite:18,Beryl:2,Quantanium:2}},
-  {n:'Hathor Caves',     sys:'Stanton', type:'Cave',   ores:{Carinite:100}},
-  {n:'HUR-L1',           sys:'Stanton', type:'Belt',   ores:{Laranite:13,Borase:8,Aluminium:8,Corundum:8,Hephaestanite:8}},
-  {n:'HUR-L2',           sys:'Stanton', type:'Belt',   ores:{Tungsten:20,Taranite:13,Corundum:12,Aluminium:12,Hephaestanite:12}},
-  {n:'HUR-L3',           sys:'Stanton', type:'Belt',   ores:{Titanium:15,Bexalite:10,Iron:9,Copper:9,Ice:9}},
-  {n:'HUR-L4',           sys:'Stanton', type:'Belt',   ores:{Laranite:13,Borase:8,Aluminium:8,Corundum:8,Hephaestanite:8}},
-  {n:'HUR-L5',           sys:'Stanton', type:'Belt',   ores:{Torite:11,Aluminium:9,Corundum:9,Hephaestanite:9}},
-  {n:'Hurston',          sys:'Stanton', type:'Planet', ores:{Aluminium:44,Copper:44,Corundum:44,Tin:44,Agricium:10,Ouratite:10,Beryl:2,Quantanium:2}},
-  {n:'Ita',              sys:'Stanton', type:'Moon',   ores:{Copper:35,Tin:35,Aluminium:35,Corundum:35,Agricium:29,Aslarite:29,Titanium:29,Beryl:2,Quantanium:2}},
-  {n:'Lyria',            sys:'Stanton', type:'Moon',   ores:{Copper:35,Iron:35,Tin:35,Laranite:28,Tungsten:28,Beryl:2,Quantanium:2}},
-  {n:'Magda',            sys:'Stanton', type:'Moon',   ores:{Aluminium:35,Corundum:35,Iron:35,Agricium:14,Aslarite:14,Titanium:14,Beryl:2,Quantanium:2}},
-  {n:'MIC-L1',           sys:'Stanton', type:'Belt',   ores:{Torite:11,Aluminium:9,Corundum:9,Hephaestanite:9}},
-  {n:'MIC-L2',           sys:'Stanton', type:'Belt',   ores:{Torite:11,Aluminium:9,Corundum:9,Hephaestanite:9}},
-  {n:'MIC-L3',           sys:'Stanton', type:'Belt',   ores:{Aslarite:16,Gold:10,Iron:10,Copper:10,Ice:10}},
-  {n:'MIC-L4',           sys:'Stanton', type:'Belt',   ores:{Agricium:9,Beryl:6,Iron:6,Copper:6,Ice:6}},
-  {n:'MIC-L5',           sys:'Stanton', type:'Belt',   ores:{Torite:11,Aluminium:9,Corundum:9,Hephaestanite:9}},
-  {n:'microTech',        sys:'Stanton', type:'Planet', ores:{Hephaestanite:33,Ice:33,Quartz:33,Silicon:33,Iron:33,Beryl:2,Quantanium:2}},
-  {n:'Wala',             sys:'Stanton', type:'Moon',   ores:{Laranite:29,Tungsten:29,Copper:26,Tin:26,Iron:26,Beryl:18,Quantanium:2}},
-  {n:'Yela',             sys:'Stanton', type:'Moon',   ores:{Agricium:29,Aslarite:29,Titanium:29,Hephaestanite:26,Silicon:26,Quartz:26,Taranite:18,Beryl:2,Quantanium:2}},
-  {n:'Yela Belt',        sys:'Stanton', type:'Belt',   ores:{Agricium:29,Aslarite:29,Titanium:29,Copper:21,Ice:21,Iron:21,Tin:21,Ouratite:10}},
+  {n:'Aaron Halo',       b:'ArcCorp',   sys:'Stanton', type:'Belt',   ores:{Beryl:18,Agricium:14,Aslarite:14,Titanium:14,Ice:10,Aluminium:10,Copper:10,Corundum:10,Hephaestanite:10,Iron:10,Silicon:10,Tin:10,Quantanium:2}},
+  {n:'Aberdeen',         b:'Hurston',   sys:'Stanton', type:'Moon',   ores:{Aluminium:30,Corundum:30,Agricium:29,Aslarite:29,Titanium:29,Ouratite:10,Beryl:2,Quantanium:2}},
+  {n:'ARC-L1',           b:'ArcCorp',   sys:'Stanton', type:'Belt',   ores:{Tungsten:20,Taranite:13,Corundum:12,Aluminium:12,Hephaestanite:12}},
+  {n:'ARC-L2',           b:'ArcCorp',   sys:'Stanton', type:'Belt',   ores:{Tungsten:20,Taranite:13,Corundum:12,Aluminium:12,Hephaestanite:12}},
+  {n:'ARC-L3',           b:'ArcCorp',   sys:'Stanton', type:'Belt',   ores:{Agricium:16,Aslarite:16,Gold:10,Iron:10,Copper:10,Ice:10}},
+  {n:'ARC-L4',           b:'ArcCorp',   sys:'Stanton', type:'Belt',   ores:{Tungsten:20,Taranite:13,Corundum:12,Aluminium:12,Hephaestanite:12}},
+  {n:'ARC-L5',           b:'ArcCorp',   sys:'Stanton', type:'Belt',   ores:{Aslarite:9,Agricium:9,Gold:10,Iron:10,Copper:10,Ice:10}},
+  {n:'Arial',            b:'Hurston',   sys:'Stanton', type:'Moon',   ores:{Aluminium:22,Copper:22,Corundum:22,Hephaestanite:22,Quartz:22,Silicon:22,Tin:22,Agricium:10,Ouratite:10,Beryl:2,Quantanium:2}},
+  {n:'Calliope',         b:'microTech', sys:'Stanton', type:'Moon',   ores:{Iron:33,Hephaestanite:33,Ice:33,Quartz:33,Silicon:33,Beryl:2,Quantanium:2}},
+  {n:'Cellin',           b:'Crusader',  sys:'Stanton', type:'Moon',   ores:{Agricium:29,Aslarite:29,Titanium:29,Hephaestanite:26,Silicon:26,Quartz:26,Taranite:18,Beryl:2,Quantanium:2}},
+  {n:'Clio',             b:'microTech', sys:'Stanton', type:'Moon',   ores:{Copper:40,Ice:40,Tin:40,Taranite:18,Beryl:2,Quantanium:2}},
+  {n:'CRU-L1',           b:'Crusader',  sys:'Stanton', type:'Belt',   ores:{Titanium:15,Bexalite:10,Iron:9,Copper:9,Ice:9}},
+  {n:'CRU-L2',           b:'Crusader',  sys:'Stanton', type:'Belt',   ores:{Titanium:15,Bexalite:10,Iron:9,Copper:9,Ice:9}},
+  {n:'CRU-L3',           b:'Crusader',  sys:'Stanton', type:'Belt',   ores:{Torite:11,Aluminium:9,Corundum:9,Hephaestanite:9}},
+  {n:'CRU-L4',           b:'Crusader',  sys:'Stanton', type:'Belt',   ores:{Aslarite:16,Gold:10,Iron:10,Copper:10,Ice:10}},
+  {n:'CRU-L5',           b:'Crusader',  sys:'Stanton', type:'Belt',   ores:{Agricium:9,Beryl:6,Iron:6,Copper:6,Ice:6}},
+  {n:'Daymar',           b:'Crusader',  sys:'Stanton', type:'Moon',   ores:{Hephaestanite:35,Silicon:35,Quartz:35,Agricium:29,Aslarite:29,Titanium:29,Beryl:2,Quantanium:2}},
+  {n:'Euterpe',          b:'microTech', sys:'Stanton', type:'Moon',   ores:{Copper:40,Ice:40,Tin:40,Taranite:18,Beryl:2,Quantanium:2}},
+  {n:'Hathor Caves',     b:'Hurston',   sys:'Stanton', type:'Cave',   ores:{Carinite:100}},
+  {n:'HUR-L1',           b:'Hurston',   sys:'Stanton', type:'Belt',   ores:{Laranite:13,Borase:8,Aluminium:8,Corundum:8,Hephaestanite:8}},
+  {n:'HUR-L2',           b:'Hurston',   sys:'Stanton', type:'Belt',   ores:{Tungsten:20,Taranite:13,Corundum:12,Aluminium:12,Hephaestanite:12}},
+  {n:'HUR-L3',           b:'Hurston',   sys:'Stanton', type:'Belt',   ores:{Titanium:15,Bexalite:10,Iron:9,Copper:9,Ice:9}},
+  {n:'HUR-L4',           b:'Hurston',   sys:'Stanton', type:'Belt',   ores:{Laranite:13,Borase:8,Aluminium:8,Corundum:8,Hephaestanite:8}},
+  {n:'HUR-L5',           b:'Hurston',   sys:'Stanton', type:'Belt',   ores:{Torite:11,Aluminium:9,Corundum:9,Hephaestanite:9}},
+  {n:'Hurston',          b:'',          sys:'Stanton', type:'Planet', ores:{Aluminium:44,Copper:44,Corundum:44,Tin:44,Agricium:10,Ouratite:10,Beryl:2,Quantanium:2}},
+  {n:'Ita',              b:'Hurston',   sys:'Stanton', type:'Moon',   ores:{Copper:35,Tin:35,Aluminium:35,Corundum:35,Agricium:29,Aslarite:29,Titanium:29,Beryl:2,Quantanium:2}},
+  {n:'Lyria',            b:'ArcCorp',   sys:'Stanton', type:'Moon',   ores:{Copper:35,Iron:35,Tin:35,Laranite:28,Tungsten:28,Beryl:2,Quantanium:2}},
+  {n:'Magda',            b:'Hurston',   sys:'Stanton', type:'Moon',   ores:{Aluminium:35,Corundum:35,Iron:35,Agricium:14,Aslarite:14,Titanium:14,Beryl:2,Quantanium:2}},
+  {n:'MIC-L1',           b:'microTech', sys:'Stanton', type:'Belt',   ores:{Torite:11,Aluminium:9,Corundum:9,Hephaestanite:9}},
+  {n:'MIC-L2',           b:'microTech', sys:'Stanton', type:'Belt',   ores:{Torite:11,Aluminium:9,Corundum:9,Hephaestanite:9}},
+  {n:'MIC-L3',           b:'microTech', sys:'Stanton', type:'Belt',   ores:{Aslarite:16,Gold:10,Iron:10,Copper:10,Ice:10}},
+  {n:'MIC-L4',           b:'microTech', sys:'Stanton', type:'Belt',   ores:{Agricium:9,Beryl:6,Iron:6,Copper:6,Ice:6}},
+  {n:'MIC-L5',           b:'microTech', sys:'Stanton', type:'Belt',   ores:{Torite:11,Aluminium:9,Corundum:9,Hephaestanite:9}},
+  {n:'microTech',        b:'',          sys:'Stanton', type:'Planet', ores:{Hephaestanite:33,Ice:33,Quartz:33,Silicon:33,Iron:33,Beryl:2,Quantanium:2}},
+  {n:'Wala',             b:'ArcCorp',   sys:'Stanton', type:'Moon',   ores:{Laranite:29,Tungsten:29,Copper:26,Tin:26,Iron:26,Beryl:18,Quantanium:2}},
+  {n:'Yela',             b:'Crusader',  sys:'Stanton', type:'Moon',   ores:{Agricium:29,Aslarite:29,Titanium:29,Hephaestanite:26,Silicon:26,Quartz:26,Taranite:18,Beryl:2,Quantanium:2}},
+  {n:'Yela Belt',        b:'Crusader',  sys:'Stanton', type:'Belt',   ores:{Agricium:29,Aslarite:29,Titanium:29,Copper:21,Ice:21,Iron:21,Tin:21,Ouratite:10}},
   // Pyro
-  {n:'Akiro Cluster',    sys:'Pyro',    type:'Belt',   ores:{Torite:29,Copper:15,Hephaestanite:15,Ice:15,Silicon:15,Tin:15,Iron:15,Laranite:10,Riccite:10,Stileron:2,Taranite:2}},
-  {n:'Pyro I',           sys:'Pyro',    type:'Planet', ores:{Iron:33,Copper:33,Tin:33,Stileron:2,Taranite:2}},
-  {n:'Monox',            sys:'Pyro',    type:'Planet', ores:{Hephaestanite:33,Quartz:33,Silicon:33,Copper:33,Iron:33,Tin:33,Stileron:2,Taranite:2}},
-  {n:'Bloom',            sys:'Pyro',    type:'Planet', ores:{Hephaestanite:35,Iron:35,Quartz:35,Silicon:35,Bexalite:18,Borase:18,Gold:18,Laranite:10,Riccite:10,Stileron:2,Taranite:2}},
-  {n:'Pyro IV',          sys:'Pyro',    type:'Planet', ores:{Laranite:29,Tungsten:29,Copper:26,Iron:26,Tin:26,Bexalite:18,Borase:18,Gold:18,Stileron:2,Taranite:2}},
-  {n:'Ignis',            sys:'Pyro',    type:'Moon',   ores:{Copper:36,Hephaestanite:36,Silicon:36,Tin:36,Bexalite:18,Borase:18,Gold:18,Laranite:10,Riccite:10}},
-  {n:'Vatra',            sys:'Pyro',    type:'Moon',   ores:{Hephaestanite:36,Iron:36,Silicon:36,Bexalite:18,Borase:18,Gold:18,Laranite:10,Riccite:10}},
-  {n:'Adir',             sys:'Pyro',    type:'Moon',   ores:{Iron:44,Laranite:29,Tungsten:29,Bexalite:18,Borase:18,Gold:18,Riccite:10}},
-  {n:'Fairo',            sys:'Pyro',    type:'Moon',   ores:{Laranite:29,Tungsten:29,Hephaestanite:27,Silicon:27,Iron:27,Bexalite:9,Borase:9,Gold:9}},
-  {n:'Fuego',            sys:'Pyro',    type:'Moon',   ores:{Agricium:29,Aslarite:29,Titanium:29,Iron:27,Hephaestanite:27,Quartz:27,Silicon:27,Bexalite:9,Borase:9,Gold:9}},
-  {n:'Vuur',             sys:'Pyro',    type:'Moon',   ores:{Hephaestanite:27,Iron:27,Quartz:27,Silicon:27,Bexalite:18,Borase:18,Gold:18,Agricium:14,Aslarite:14,Titanium:14}},
-  {n:'Terminus',         sys:'Pyro',    type:'Planet', ores:{Copper:21,Ice:21,Tin:21,Bexalite:18,Borase:18,Gold:18,Agricium:14,Aslarite:14,Titanium:14,Laranite:10,Riccite:10,Stileron:2,Taranite:2}},
+  {n:'Akiro Cluster',    b:'',          sys:'Pyro',    type:'Belt',   ores:{Torite:29,Copper:15,Hephaestanite:15,Ice:15,Silicon:15,Tin:15,Iron:15,Laranite:10,Riccite:10,Stileron:2,Taranite:2}},
+  {n:'Pyro I',           b:'',          sys:'Pyro',    type:'Planet', ores:{Iron:33,Copper:33,Tin:33,Stileron:2,Taranite:2}},
+  {n:'Monox',            b:'',          sys:'Pyro',    type:'Planet', ores:{Hephaestanite:33,Quartz:33,Silicon:33,Copper:33,Iron:33,Tin:33,Stileron:2,Taranite:2}},
+  {n:'Bloom',            b:'',          sys:'Pyro',    type:'Planet', ores:{Hephaestanite:35,Iron:35,Quartz:35,Silicon:35,Bexalite:18,Borase:18,Gold:18,Laranite:10,Riccite:10,Stileron:2,Taranite:2}},
+  {n:'Pyro IV',          b:'',          sys:'Pyro',    type:'Planet', ores:{Laranite:29,Tungsten:29,Copper:26,Iron:26,Tin:26,Bexalite:18,Borase:18,Gold:18,Stileron:2,Taranite:2}},
+  {n:'Ignis',            b:'Pyro V',    sys:'Pyro',    type:'Moon',   ores:{Copper:36,Hephaestanite:36,Silicon:36,Tin:36,Bexalite:18,Borase:18,Gold:18,Laranite:10,Riccite:10}},
+  {n:'Vatra',            b:'Pyro V',    sys:'Pyro',    type:'Moon',   ores:{Hephaestanite:36,Iron:36,Silicon:36,Bexalite:18,Borase:18,Gold:18,Laranite:10,Riccite:10}},
+  {n:'Adir',             b:'Pyro V',    sys:'Pyro',    type:'Moon',   ores:{Iron:44,Laranite:29,Tungsten:29,Bexalite:18,Borase:18,Gold:18,Riccite:10}},
+  {n:'Fairo',            b:'Pyro V',    sys:'Pyro',    type:'Moon',   ores:{Laranite:29,Tungsten:29,Hephaestanite:27,Silicon:27,Iron:27,Bexalite:9,Borase:9,Gold:9}},
+  {n:'Fuego',            b:'Pyro V',    sys:'Pyro',    type:'Moon',   ores:{Agricium:29,Aslarite:29,Titanium:29,Iron:27,Hephaestanite:27,Quartz:27,Silicon:27,Bexalite:9,Borase:9,Gold:9}},
+  {n:'Vuur',             b:'Pyro V',    sys:'Pyro',    type:'Moon',   ores:{Hephaestanite:27,Iron:27,Quartz:27,Silicon:27,Bexalite:18,Borase:18,Gold:18,Agricium:14,Aslarite:14,Titanium:14}},
+  {n:'Terminus',         b:'',          sys:'Pyro',    type:'Planet', ores:{Copper:21,Ice:21,Tin:21,Bexalite:18,Borase:18,Gold:18,Agricium:14,Aslarite:14,Titanium:14,Laranite:10,Riccite:10,Stileron:2,Taranite:2}},
   // Nyx
   {n:'Glaciem Ring',     sys:'Nyx',     type:'Belt',   ores:{Torite:29,Ice:21,Iron:21,Bexalite:18,Borase:18,Gold:18,Lindinium:10,Tungsten:10,Savrilium:2}},
   {n:'Keeger Belt',      sys:'Nyx',     type:'Belt',   ores:{Torite:29,Aluminium:21,Corundum:21,Ice:21,Bexalite:18,Borase:18,Gold:18,Lindinium:10,Tungsten:10,Savrilium:2}},
@@ -239,7 +240,7 @@ function renderByLocation(locs) {
     }).join('');
     return `<div class="card">
       <div class="card-header">
-        <span class="card-name">${loc.n}</span>
+        <span class="card-name">${loc.n}${loc.b ? `<span style="display:block;font-size:.72rem;color:#555;font-weight:400;margin-top:1px">${loc.b}</span>` : ''}</span>
         <span class="badge ${sysBadgeClass(loc.sys)}">${loc.sys}</span>
         <span class="badge badge-type">${loc.type}</span>
       </div>
@@ -260,7 +261,7 @@ function renderByOre(ores) {
     const rows = entries.map(e => {
       const w = Math.round(e.pct / maxPct * 100);
       return `<tr>
-        <td class="td-loc">${e.loc.n}</td>
+        <td class="td-loc">${e.loc.n}${e.loc.b ? `<span class="td-body">${e.loc.b}</span>` : ''}</td>
         <td class="td-bar-cell"><div style="background:rgba(255,255,255,.06);border-radius:4px;height:10px;overflow:hidden"><div class="inline-bar" style="width:${w}%;background:${barColor(ore)}"></div></div></td>
         <td class="td-pct ${tc}">${e.pct}%</td>
         <td class="td-sys"><span class="badge ${sysBadgeClass(e.loc.sys)}">${e.loc.sys}</span></td>
