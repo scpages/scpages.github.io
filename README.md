@@ -45,3 +45,4 @@ docs/
 - [scpages/mining_overlay](https://github.com/scpages/mining_overlay)
 - [scpages/ship_prices](https://github.com/scpages/ship_prices)
 - [scpages/trading](https://github.com/scpages/trading)
+- [scpages/trading_data](https://github.com/scpages/trading_data)
