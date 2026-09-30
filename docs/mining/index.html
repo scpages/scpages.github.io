@@ -68,7 +68,7 @@
     .td-type{font-size:.78rem;color:#888}
     .td-pct{font-weight:700;text-align:right}
     .td-bar-cell{width:120px}
-    .inline-bar{height:6px;border-radius:3px;display:inline-block}
+    .inline-bar{height:10px;border-radius:3px;display:block}
 
     /* no results */
     .no-results{text-align:center;color:#555;padding:60px 20px;font-size:1rem}
@@ -218,9 +218,9 @@ function tierClass(ore) { return 't' + tier(ore); }
 
 function barColor(o) {
   const t = tier(o);
-  return t === 1 ? 'linear-gradient(90deg,#b87020,#f0a030)'
-       : t === 2 ? 'linear-gradient(90deg,#1a6090,#2a9fd6)'
-       : 'rgba(100,100,100,.5)';
+  return t === 1 ? 'linear-gradient(90deg,#d4860a,#ffc040)'
+       : t === 2 ? 'linear-gradient(90deg,#1e7cb8,#4fc3f7)'
+       : 'rgba(120,120,120,.6)';
 }
 
 function renderByLocation(locs) {
@@ -263,7 +263,7 @@ function renderByOre(ores) {
         <td class="td-loc">${e.loc.n}</td>
         <td class="td-sys"><span class="badge ${sysBadgeClass(e.loc.sys)}">${e.loc.sys}</span></td>
         <td class="td-type">${e.loc.type}</td>
-        <td class="td-bar-cell"><div style="background:rgba(255,255,255,.06);border-radius:3px;height:6px;overflow:hidden"><div class="inline-bar" style="width:${w}%;height:100%;background:${barColor(ore)}"></div></div></td>
+        <td class="td-bar-cell"><div style="background:rgba(255,255,255,.06);border-radius:4px;height:10px;overflow:hidden"><div class="inline-bar" style="width:${w}%;background:${barColor(ore)}"></div></div></td>
         <td class="td-pct ${tc}">${e.pct}%</td>
       </tr>`;
     }).join('');
