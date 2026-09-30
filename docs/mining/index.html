@@ -96,7 +96,7 @@
     <div class="btn-group" id="method-tabs">
       <button class="btn active" data-method="All">All</button>
       <button class="btn" data-method="ship">Ship</button>
-      <button class="btn" data-method="roc">ROC</button>
+      <button class="btn" data-method="roc">Ground</button>
       <button class="btn" data-method="fps">FPS</button>
     </div>
     <span class="controls-label" style="margin-left:8px">View:</span>
@@ -385,7 +385,7 @@ function renderByOre(ores) {
     const rows = entries.map(e => {
       const w = Math.round(e.pct / maxPct * 100);
       const sc = SYS_COLOR[e.loc.sys] || SYS_COLOR.Stanton;
-      const methodLabel = {ship:'Ship',roc:'ROC',fps:'FPS'}[e.method];
+      const methodLabel = {ship:'Ship',roc:'Ground',fps:'FPS'}[e.method];
       const sub = [e.loc.type, e.loc.b, methodLabel].filter(Boolean).join(' · ');
       return `<tr>
         <td class="td-loc">${e.loc.n}<span class="td-body">${sub}</span></td>
