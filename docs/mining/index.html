@@ -104,6 +104,7 @@
       <button class="btn active" data-view="location">By Location</button>
       <button class="btn" data-view="ore">By Ore</button>
     </div>
+    <button class="btn" id="hide-belts-btn">Hide Belts</button>
     <div class="search-wrap">
       <input type="search" id="search" placeholder="Filter location or ore…"/>
     </div>
@@ -318,6 +319,7 @@ let currentSys = 'All';
 let currentMethod = 'All';
 let currentView = 'location';
 let searchQ = '';
+let hideBelts = false;
 
 function locMatchesMethod(loc) {
   if (currentMethod === 'All') return true;
@@ -343,24 +345,27 @@ function renderByLocation(locs) {
   if (!locs.length) return '<div class="no-results">No locations match your filter.</div>';
   const activeMethods = currentMethod === 'All' ? ['ship','roc','fps'] : [currentMethod];
   return '<div class="cards-grid">' + locs.map(loc => {
-    let oreRows = '';
-    let first = true;
+    // collect all ores across active methods, compute per-method max for bar scaling
+    const methodMax = {};
+    activeMethods.forEach(m => {
+      if (!loc[m]) return;
+      methodMax[m] = Math.max(...Object.values(loc[m]));
+    });
+    const allEntries = [];
     activeMethods.forEach(method => {
       if (!loc[method]) return;
-      const entries = Object.entries(loc[method]).sort((a,b) => b[1]-a[1]);
-      const maxPct = entries[0][1];
-      const mc = METHOD[method];
-      if (!first && currentMethod === 'All') oreRows += '<hr class="method-sep">';
-      first = false;
-      oreRows += entries.map(([ore, pct]) => {
-        const w = Math.round(pct / maxPct * 100);
-        return `<div class="ore-row">
-          <span class="ore-name" style="color:${mc.text}" title="${ore}">${ore}</span>
-          <div class="ore-bar-wrap"><div class="ore-bar" style="width:${w}%;background:${mc.bar}"></div></div>
-          <span class="ore-pct" style="color:${mc.text}">${pct}%</span>
-        </div>`;
-      }).join('');
+      Object.entries(loc[method]).forEach(([ore, pct]) => allEntries.push({ore, pct, method}));
     });
+    allEntries.sort((a,b) => b.pct - a.pct);
+    const oreRows = allEntries.map(({ore, pct, method}) => {
+      const mc = METHOD[method];
+      const w = Math.round(pct / methodMax[method] * 100);
+      return `<div class="ore-row">
+        <span class="ore-name" style="color:${mc.text}" title="${ore}">${ore}</span>
+        <div class="ore-bar-wrap"><div class="ore-bar" style="width:${w}%;background:${mc.bar}"></div></div>
+        <span class="ore-pct" style="color:${mc.text}">${pct}%</span>
+      </div>`;
+    }).join('');
     const sub = [loc.type, loc.sys, loc.b].filter(Boolean).join(' · ');
     return `<div class="card">
       <div class="card-header">
@@ -413,6 +418,7 @@ function getFilteredLocs() {
   const methods = currentMethod === 'All' ? ['ship','roc','fps'] : [currentMethod];
   return LOCATIONS.filter(l => {
     if (currentSys !== 'All' && l.sys !== currentSys) return false;
+    if (hideBelts && l.type === 'Belt') return false;
     if (!locMatchesMethod(l)) return false;
     if (!q) return true;
     if (l.n.toLowerCase().includes(q)) return true;
@@ -445,6 +451,12 @@ function render() {
     ? renderByLocation(getFilteredLocs())
     : renderByOre(getFilteredOres());
 }
+
+document.getElementById('hide-belts-btn').addEventListener('click', function() {
+  hideBelts = !hideBelts;
+  this.classList.toggle('active', hideBelts);
+  render();
+});
 
 document.getElementById('sys-tabs').addEventListener('click', e => {
   const btn = e.target.closest('[data-sys]');
