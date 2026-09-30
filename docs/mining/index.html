@@ -261,6 +261,18 @@ function renderByLocation(locs) {
   }).join('') + '</div>';
 }
 
+function oreMethodBadges(entries) {
+  const types = new Set(entries.map(e => e.loc.type));
+  const badges = [];
+  if (types.has('Belt')) badges.push('<span class="mbadge mbadge-ship">Ship</span>');
+  if (types.has('Moon') || types.has('Planet')) {
+    badges.push('<span class="mbadge mbadge-roc">ROC</span>');
+    badges.push('<span class="mbadge mbadge-hand">Hand</span>');
+  }
+  if (types.has('Cave')) badges.push('<span class="mbadge mbadge-hand">Hand</span>');
+  return [...new Set(badges)].join('');
+}
+
 function renderByOre(ores) {
   if (!ores.length) return '<div class="no-results">No ores match your filter.</div>';
   return ores.map(ore => {
@@ -277,17 +289,17 @@ function renderByOre(ores) {
         <td class="td-bar-cell"><div style="background:rgba(255,255,255,.06);border-radius:4px;height:10px;overflow:hidden"><div class="inline-bar" style="width:${w}%;background:${barColor(ore)}"></div></div></td>
         <td class="td-pct ${tc}">${e.pct}%</td>
         <td class="td-sys"><span class="badge ${sysBadgeClass(e.loc.sys)}">${e.loc.sys}</span></td>
-        <td><div class="method-badges">${miningMethodBadges(e.loc.type)}</div></td>
       </tr>`;
     }).join('');
     return `<div class="ore-section">
       <div class="ore-section-header">
         <span class="ore-section-name ${tc}">${ore}</span>
+        <div class="method-badges" style="margin-left:12px">${oreMethodBadges(entries)}</div>
         <span class="ore-count">${entries.length} location${entries.length!==1?'s':''}</span>
       </div>
       <table class="ore-table">
         <thead><tr>
-          <th>Location</th><th style="width:120px">Spawn</th><th style="text-align:right">%</th><th>System</th><th>Method</th>
+          <th>Location</th><th style="width:120px">Spawn</th><th style="text-align:right">%</th><th>System</th>
         </tr></thead>
         <tbody>${rows}</tbody>
       </table>
