@@ -67,6 +67,11 @@
     .td-body{display:block;font-size:.72rem;color:#555;margin-top:1px}
     .td-sys{font-size:.78rem}
     .td-type{font-size:.78rem;color:#888}
+    .method-badges{display:flex;gap:4px;flex-wrap:wrap}
+    .mbadge{font-size:.68rem;padding:2px 6px;border-radius:4px;font-weight:600;white-space:nowrap}
+    .mbadge-ship{background:rgba(42,159,214,.2);color:#4fc3f7;border:1px solid rgba(42,159,214,.3)}
+    .mbadge-roc{background:rgba(80,200,80,.15);color:#70d070;border:1px solid rgba(80,200,80,.3)}
+    .mbadge-hand{background:rgba(220,160,50,.15);color:#e0a030;border:1px solid rgba(220,160,50,.3)}
     .td-pct{font-weight:700;text-align:right}
     .td-bar-cell{width:120px}
     .inline-bar{height:10px;border-radius:3px;display:block}
@@ -211,6 +216,12 @@ let currentSys = 'All';
 let currentView = 'location';
 let searchQ = '';
 
+function miningMethodBadges(type) {
+  if (type === 'Belt') return '<span class="mbadge mbadge-ship">Ship</span>';
+  if (type === 'Cave') return '<span class="mbadge mbadge-hand">Hand</span>';
+  return '<span class="mbadge mbadge-roc">ROC</span><span class="mbadge mbadge-hand">Hand</span>';
+}
+
 function sysBadgeClass(sys) {
   return sys === 'Stanton' ? 'badge-stanton' : sys === 'Pyro' ? 'badge-pyro' : 'badge-nyx';
 }
@@ -244,6 +255,7 @@ function renderByLocation(locs) {
         <span class="badge ${sysBadgeClass(loc.sys)}">${loc.sys}</span>
         <span class="badge badge-type">${loc.type}</span>
       </div>
+      <div class="method-badges" style="margin-bottom:10px">${miningMethodBadges(loc.type)}</div>
       ${rows}
     </div>`;
   }).join('') + '</div>';
@@ -265,7 +277,7 @@ function renderByOre(ores) {
         <td class="td-bar-cell"><div style="background:rgba(255,255,255,.06);border-radius:4px;height:10px;overflow:hidden"><div class="inline-bar" style="width:${w}%;background:${barColor(ore)}"></div></div></td>
         <td class="td-pct ${tc}">${e.pct}%</td>
         <td class="td-sys"><span class="badge ${sysBadgeClass(e.loc.sys)}">${e.loc.sys}</span></td>
-        <td class="td-type">${e.loc.type}</td>
+        <td><div class="method-badges">${miningMethodBadges(e.loc.type)}</div></td>
       </tr>`;
     }).join('');
     return `<div class="ore-section">
@@ -275,7 +287,7 @@ function renderByOre(ores) {
       </div>
       <table class="ore-table">
         <thead><tr>
-          <th>Location</th><th style="width:120px">Spawn</th><th style="text-align:right">%</th><th>System</th><th>Type</th>
+          <th>Location</th><th style="width:120px">Spawn</th><th style="text-align:right">%</th><th>System</th><th>Method</th>
         </tr></thead>
         <tbody>${rows}</tbody>
       </table>
