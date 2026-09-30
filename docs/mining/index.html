@@ -261,10 +261,10 @@ function renderByOre(ores) {
       const w = Math.round(e.pct / maxPct * 100);
       return `<tr>
         <td class="td-loc">${e.loc.n}</td>
-        <td class="td-sys"><span class="badge ${sysBadgeClass(e.loc.sys)}">${e.loc.sys}</span></td>
-        <td class="td-type">${e.loc.type}</td>
         <td class="td-bar-cell"><div style="background:rgba(255,255,255,.06);border-radius:4px;height:10px;overflow:hidden"><div class="inline-bar" style="width:${w}%;background:${barColor(ore)}"></div></div></td>
         <td class="td-pct ${tc}">${e.pct}%</td>
+        <td class="td-sys"><span class="badge ${sysBadgeClass(e.loc.sys)}">${e.loc.sys}</span></td>
+        <td class="td-type">${e.loc.type}</td>
       </tr>`;
     }).join('');
     return `<div class="ore-section">
@@ -274,7 +274,7 @@ function renderByOre(ores) {
       </div>
       <table class="ore-table">
         <thead><tr>
-          <th>Location</th><th>System</th><th>Type</th><th style="width:120px">Spawn</th><th style="text-align:right">%</th>
+          <th>Location</th><th style="width:120px">Spawn</th><th style="text-align:right">%</th><th>System</th><th>Type</th>
         </tr></thead>
         <tbody>${rows}</tbody>
       </table>
