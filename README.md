@@ -42,5 +42,6 @@ docs/
 
 - [scpages/compoment_list](https://github.com/scpages/compoment_list)
 - [scpages/default_loadout](https://github.com/scpages/default_loadout)
+- [scpages/mining_overlay](https://github.com/scpages/mining_overlay)
 - [scpages/ship_prices](https://github.com/scpages/ship_prices)
 - [scpages/trading](https://github.com/scpages/trading)
