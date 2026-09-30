@@ -23,6 +23,16 @@
     .btn{background:rgba(42,159,214,.1);border:1px solid rgba(42,159,214,.25);color:#aaa;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:.85rem;transition:all .2s}
     .btn:hover{background:rgba(42,159,214,.2);color:#e8e8e8}
     .btn.active{background:rgba(42,159,214,.35);border-color:#2a9fd6;color:#fff;font-weight:600}
+    /* method-colored buttons */
+    .btn[data-method="ship"]{color:rgba(79,195,247,.55);border-color:rgba(79,195,247,.2)}
+    .btn[data-method="ship"]:hover{background:rgba(42,159,214,.2);color:#4fc3f7}
+    .btn[data-method="ship"].active{background:rgba(42,159,214,.3);border-color:#4fc3f7;color:#4fc3f7;font-weight:600}
+    .btn[data-method="roc"]{color:rgba(112,208,112,.55);border-color:rgba(112,208,112,.2)}
+    .btn[data-method="roc"]:hover{background:rgba(80,200,80,.15);color:#70d070}
+    .btn[data-method="roc"].active{background:rgba(80,200,80,.2);border-color:#70d070;color:#70d070;font-weight:600}
+    .btn[data-method="fps"]{color:rgba(224,160,48,.55);border-color:rgba(224,160,48,.2)}
+    .btn[data-method="fps"]:hover{background:rgba(220,160,50,.15);color:#e0a030}
+    .btn[data-method="fps"].active{background:rgba(220,160,50,.2);border-color:#e0a030;color:#e0a030;font-weight:600}
     .search-wrap{flex:1;min-width:180px}
     .search-wrap input{width:100%;background:rgba(10,14,39,.6);border:1px solid rgba(42,159,214,.25);color:#e8e8e8;padding:6px 12px;border-radius:6px;font-size:.85rem;outline:none}
     .search-wrap input::placeholder{color:#555}
@@ -59,10 +69,7 @@
     .inline-bar{height:10px;border-radius:3px;display:block}
 
     .no-results{text-align:center;color:#555;padding:60px 20px;font-size:1rem}
-    .legend{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px;padding:8px 14px;background:rgba(20,25,45,.4);border-radius:8px;border:1px solid rgba(255,255,255,.05)}
-    .legend-item{display:flex;align-items:center;gap:6px;font-size:.78rem;color:#aaa}
-    .legend-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0}
-    .footer{margin-top:40px;padding:20px 0;border-top:1px solid rgba(42,159,214,.3);color:#666;font-size:.82rem;text-align:center}
+.footer{margin-top:40px;padding:20px 0;border-top:1px solid rgba(42,159,214,.3);color:#666;font-size:.82rem;text-align:center}
     .footer a{color:#2a9fd6;text-decoration:none}
     .footer a:hover{color:#4fc3f7;text-decoration:underline}
 
@@ -111,12 +118,6 @@
     <div class="search-wrap">
       <input type="search" id="search" placeholder="Filter location or ore…"/>
     </div>
-  </div>
-
-  <div class="legend">
-    <span class="legend-item"><span class="legend-dot" style="background:#4fc3f7"></span>Ship</span>
-    <span class="legend-item"><span class="legend-dot" style="background:#70d070"></span>Ground</span>
-    <span class="legend-item"><span class="legend-dot" style="background:#e0a030"></span>FPS</span>
   </div>
 
   <div id="content"></div>
