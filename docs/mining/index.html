@@ -109,6 +109,13 @@
       <button class="btn" data-sys="Pyro">Pyro</button>
       <button class="btn" data-sys="Nyx">Nyx</button>
     </div>
+    <span class="controls-label" style="margin-left:8px">Method:</span>
+    <div class="btn-group" id="method-tabs">
+      <button class="btn active" data-method="All">All</button>
+      <button class="btn" data-method="ship">Ship</button>
+      <button class="btn" data-method="ground">ROC</button>
+      <button class="btn" data-method="fps">FPS</button>
+    </div>
     <span class="controls-label" style="margin-left:8px">View:</span>
     <div class="btn-group" id="view-tabs">
       <button class="btn active" data-view="location">By Location</button>
@@ -213,8 +220,14 @@ ALL_ORES.forEach(ore => {
 });
 
 let currentSys = 'All';
+let currentMethod = 'All';
 let currentView = 'location';
 let searchQ = '';
+
+function locMatchesMethod(loc) {
+  if (currentMethod === 'All') return true;
+  return methodFromType(loc.type) === currentMethod;
+}
 
 function miningMethodBadges(type) {
   if (type === 'Belt') return '<span class="mbadge mbadge-ship">Ship</span>';
@@ -241,19 +254,27 @@ function orePrimaryMethodColor(entries) {
   return '#e8e8e8';
 }
 
+function oreColors(oreName) {
+  const entries = ORE_INDEX[oreName] || [];
+  if (!entries.length) return { bar: 'linear-gradient(90deg,#3a3a3a,#666)', text: '#888' };
+  const counts = { ship: 0, ground: 0, fps: 0 };
+  entries.forEach(e => counts[methodFromType(e.loc.type)]++);
+  const dominant = Object.entries(counts).sort((a,b) => b[1]-a[1])[0][0];
+  return METHOD[dominant];
+}
+
 function renderByLocation(locs) {
   if (!locs.length) return '<div class="no-results">No locations match your filter.</div>';
   return '<div class="cards-grid">' + locs.map(loc => {
     const entries = Object.entries(loc.ores).sort((a,b) => b[1]-a[1]);
     const maxPct = entries[0][1];
-    const col = textColor(loc.type);
-    const bg = barColor(loc.type);
     const rows = entries.map(([ore, pct]) => {
       const w = Math.round(pct / maxPct * 100);
+      const mc = oreColors(ore);
       return `<div class="ore-row">
-        <span class="ore-name" style="color:${col}" title="${ore}">${ore}</span>
-        <div class="ore-bar-wrap"><div class="ore-bar" style="width:${w}%;background:${bg}"></div></div>
-        <span class="ore-pct" style="color:${col}">${pct}%</span>
+        <span class="ore-name" style="color:${mc.text}" title="${ore}">${ore}</span>
+        <div class="ore-bar-wrap"><div class="ore-bar" style="width:${w}%;background:${mc.bar}"></div></div>
+        <span class="ore-pct" style="color:${mc.text}">${pct}%</span>
       </div>`;
     }).join('');
     const sub = [loc.type, loc.sys, loc.b].filter(Boolean).join(' · ');
@@ -283,11 +304,12 @@ function renderByOre(ores) {
   if (!ores.length) return '<div class="no-results">No ores match your filter.</div>';
   return ores.map(ore => {
     const entries = ORE_INDEX[ore].filter(e =>
-      currentSys === 'All' || e.loc.sys === currentSys
+      (currentSys === 'All' || e.loc.sys === currentSys) &&
+      locMatchesMethod(e.loc)
     );
     if (!entries.length) return '';
     const maxPct = entries[0].pct;
-    const nameCol = orePrimaryMethodColor(entries);
+    const nameCol = oreColors(ore).text;
     const rows = entries.map(e => {
       const w = Math.round(e.pct / maxPct * 100);
       const sc = SYS_COLOR[e.loc.sys] || SYS_COLOR.Stanton;
@@ -301,7 +323,6 @@ function renderByOre(ores) {
     return `<div class="ore-section">
       <div class="ore-section-header">
         <span class="ore-section-name" style="color:${nameCol}">${ore}</span>
-        <div class="method-badges" style="margin-left:12px">${oreMethodBadges(entries)}</div>
         <span class="ore-count">${entries.length} location${entries.length!==1?'s':''}</span>
       </div>
       <table class="ore-table">
@@ -318,6 +339,7 @@ function getFilteredLocs() {
   const q = searchQ.toLowerCase();
   return LOCATIONS.filter(l => {
     if (currentSys !== 'All' && l.sys !== currentSys) return false;
+    if (!locMatchesMethod(l)) return false;
     if (!q) return true;
     if (l.n.toLowerCase().includes(q)) return true;
     return Object.keys(l.ores).some(o => o.toLowerCase().includes(q));
@@ -327,17 +349,19 @@ function getFilteredLocs() {
 function getFilteredOres() {
   const q = searchQ.toLowerCase();
   return ALL_ORES.filter(ore => {
+    const hasMatchingLoc = LOCATIONS.some(l =>
+      l.ores[ore] !== undefined &&
+      (currentSys === 'All' || l.sys === currentSys) &&
+      locMatchesMethod(l)
+    );
+    if (!hasMatchingLoc) return false;
     if (q && !ore.toLowerCase().includes(q)) {
-      // also check if any matching location has this ore
-      const matchesLoc = LOCATIONS.some(l =>
+      return LOCATIONS.some(l =>
         l.ores[ore] !== undefined &&
         (currentSys === 'All' || l.sys === currentSys) &&
+        locMatchesMethod(l) &&
         l.n.toLowerCase().includes(q)
       );
-      if (!matchesLoc) return false;
-    }
-    if (currentSys !== 'All') {
-      return LOCATIONS.some(l => l.sys === currentSys && l.ores[ore] !== undefined);
     }
     return true;
   });
@@ -358,6 +382,15 @@ document.getElementById('sys-tabs').addEventListener('click', e => {
   if (!btn) return;
   currentSys = btn.dataset.sys;
   document.querySelectorAll('[data-sys]').forEach(b => b.classList.toggle('active', b === btn));
+  render();
+});
+
+// method tabs
+document.getElementById('method-tabs').addEventListener('click', e => {
+  const btn = e.target.closest('[data-method]');
+  if (!btn) return;
+  currentMethod = btn.dataset.method;
+  document.querySelectorAll('[data-method]').forEach(b => b.classList.toggle('active', b === btn));
   render();
 });
 
