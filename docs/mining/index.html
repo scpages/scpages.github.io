@@ -59,6 +59,9 @@
     .inline-bar{height:10px;border-radius:3px;display:block}
 
     .no-results{text-align:center;color:#555;padding:60px 20px;font-size:1rem}
+    .legend{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px;padding:8px 14px;background:rgba(20,25,45,.4);border-radius:8px;border:1px solid rgba(255,255,255,.05)}
+    .legend-item{display:flex;align-items:center;gap:6px;font-size:.78rem;color:#aaa}
+    .legend-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0}
     .footer{margin-top:40px;padding:20px 0;border-top:1px solid rgba(42,159,214,.3);color:#666;font-size:.82rem;text-align:center}
     .footer a{color:#2a9fd6;text-decoration:none}
     .footer a:hover{color:#4fc3f7;text-decoration:underline}
@@ -104,10 +107,16 @@
       <button class="btn active" data-view="location">By Location</button>
       <button class="btn" data-view="ore">By Ore</button>
     </div>
-    <button class="btn" id="hide-belts-btn">Hide Belts</button>
+    <button class="btn active" id="hide-belts-btn">Show Belts</button>
     <div class="search-wrap">
       <input type="search" id="search" placeholder="Filter location or ore…"/>
     </div>
+  </div>
+
+  <div class="legend">
+    <span class="legend-item"><span class="legend-dot" style="background:#4fc3f7"></span>Ship (laser)</span>
+    <span class="legend-item"><span class="legend-dot" style="background:#70d070"></span>Ground (ROC)</span>
+    <span class="legend-item"><span class="legend-dot" style="background:#e0a030"></span>FPS (hand)</span>
   </div>
 
   <div id="content"></div>
@@ -319,7 +328,7 @@ let currentSys = 'All';
 let currentMethod = 'All';
 let currentView = 'location';
 let searchQ = '';
-let hideBelts = false;
+let hideBelts = true;
 
 function locMatchesMethod(loc) {
   if (currentMethod === 'All') return true;
@@ -332,13 +341,16 @@ const SYS_COLOR = {
   Nyx:     { bar: 'linear-gradient(90deg,#602090,#c080ff)', text: '#c080ff' },
 };
 
-function oreColors(oreName) {
+function oreDominantMethod(oreName) {
   const entries = ORE_INDEX[oreName] || [];
-  if (!entries.length) return METHOD.ship;
+  if (!entries.length) return 'ship';
   const counts = {ship:0, roc:0, fps:0};
   entries.forEach(e => counts[e.method]++);
-  const dominant = Object.entries(counts).sort((a,b) => b[1]-a[1])[0][0];
-  return METHOD[dominant];
+  return Object.entries(counts).sort((a,b) => b[1]-a[1])[0][0];
+}
+
+function oreColors(oreName) {
+  return METHOD[oreDominantMethod(oreName)];
 }
 
 function renderByLocation(locs) {
@@ -386,14 +398,16 @@ function renderByOre(ores) {
     );
     if (!entries.length) return '';
     const maxPct = entries[0].pct;
-    const nameCol = oreColors(ore).text;
+    const dominant = oreDominantMethod(ore);
+    const nameCol = METHOD[dominant].text;
+    const methodTag = {ship:'Ship',roc:'Ground',fps:'FPS'}[dominant];
     const rows = entries.map(e => {
       const w = Math.round(e.pct / maxPct * 100);
       const sc = SYS_COLOR[e.loc.sys] || SYS_COLOR.Stanton;
-      const methodLabel = {ship:'Ship',roc:'Ground',fps:'FPS'}[e.method];
-      const sub = [e.loc.type, e.loc.b, methodLabel].filter(Boolean).join(' · ');
+      const locMain = [e.loc.sys, e.loc.n].filter(Boolean).join(' · ');
+      const locSub = [e.loc.b, e.loc.type].filter(Boolean).join(' · ');
       return `<tr>
-        <td class="td-loc">${e.loc.n}<span class="td-body">${sub}</span></td>
+        <td class="td-loc">${locMain}<span class="td-body">${locSub}</span></td>
         <td class="td-bar-cell"><div style="background:rgba(255,255,255,.06);border-radius:4px;height:10px;overflow:hidden"><div class="inline-bar" style="width:${w}%;background:${sc.bar}"></div></div></td>
         <td class="td-pct" style="color:${sc.text}">${e.pct}%</td>
       </tr>`;
@@ -401,6 +415,7 @@ function renderByOre(ores) {
     return `<div class="ore-section">
       <div class="ore-section-header">
         <span class="ore-section-name" style="color:${nameCol}">${ore}</span>
+        <span style="font-size:.72rem;color:${nameCol};opacity:.75;margin-left:6px">${methodTag}</span>
         <span class="ore-count">${entries.length} location${entries.length!==1?'s':''}</span>
       </div>
       <table class="ore-table">
@@ -455,6 +470,7 @@ function render() {
 document.getElementById('hide-belts-btn').addEventListener('click', function() {
   hideBelts = !hideBelts;
   this.classList.toggle('active', hideBelts);
+  this.textContent = hideBelts ? 'Show Belts' : 'Hide Belts';
   render();
 });
 
