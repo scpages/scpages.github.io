@@ -35,13 +35,13 @@
     .cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
     .card{background:rgba(20,25,45,.6);border:1px solid rgba(42,159,214,.15);border-radius:10px;padding:16px;transition:border-color .2s}
     .card:hover{border-color:rgba(42,159,214,.4)}
-    .card-header{display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap}
-    .card-name{font-size:1rem;font-weight:600;color:#e8e8e8;flex:1}
+    .card-header{margin-bottom:10px}
+    .card-name{font-size:1rem;font-weight:600;color:#e8e8e8;display:block}
+    .card-sub{font-size:.75rem;color:#555;margin-top:3px;display:block}
     .badge{font-size:.7rem;padding:2px 7px;border-radius:4px;font-weight:600;white-space:nowrap}
     .badge-stanton{background:rgba(42,159,214,.2);color:#4fc3f7;border:1px solid rgba(42,159,214,.3)}
     .badge-pyro{background:rgba(255,120,50,.2);color:#ff9060;border:1px solid rgba(255,120,50,.3)}
     .badge-nyx{background:rgba(160,90,220,.2);color:#c080ff;border:1px solid rgba(160,90,220,.3)}
-    .badge-type{background:rgba(255,255,255,.06);color:#888;border:1px solid rgba(255,255,255,.1)}
 
     /* ore rows in card */
     .ore-row{display:flex;align-items:center;gap:8px;padding:3px 0}
@@ -49,9 +49,6 @@
     .ore-bar-wrap{flex:1;background:rgba(255,255,255,.06);border-radius:3px;height:8px;overflow:hidden}
     .ore-bar{height:100%;border-radius:3px;transition:width .3s}
     .ore-pct{font-size:.8rem;width:36px;text-align:right;flex-shrink:0}
-    .t1{color:#f0b040}.t1 .ore-bar{background:linear-gradient(90deg,#b87020,#f0a030)}
-    .t2{color:#7ec8e8}.t2 .ore-bar{background:linear-gradient(90deg,#1a6090,#2a9fd6)}
-    .t3{color:#606060}.t3 .ore-bar{background:rgba(100,100,100,.5)}
 
     /* by-ore view */
     .ore-section{background:rgba(20,25,45,.6);border:1px solid rgba(42,159,214,.15);border-radius:10px;margin-bottom:16px;overflow:hidden}
@@ -131,14 +128,17 @@
 </div>
 
 <script>
-const T1 = new Set(['Quantanium','Bexalite','Borase','Laranite','Taranite','Agricium','Hephaestanite']);
-const T2 = new Set(['Gold','Beryl','Titanium','Tungsten','Aslarite','Stileron','Riccite','Lindinium','Savrilium','Ouratite','Corundum','Carinite','Aphorite','Sadaryx']);
-
-function tier(ore) {
-  if (T1.has(ore)) return 1;
-  if (T2.has(ore)) return 2;
-  return 3;
+function methodFromType(type) {
+  if (type === 'Belt') return 'ship';
+  if (type === 'Cave') return 'fps';
+  return 'ground';
 }
+
+const METHOD = {
+  ship:   { bar: 'linear-gradient(90deg,#1e7cb8,#4fc3f7)', text: '#4fc3f7' },
+  ground: { bar: 'linear-gradient(90deg,#2a8a2a,#60d060)', text: '#70d070' },
+  fps:    { bar: 'linear-gradient(90deg,#a06010,#e09020)', text: '#e0a030' },
+};
 
 const LOCATIONS = [
   {n:'Aaron Halo',       b:'ArcCorp',   sys:'Stanton', type:'Belt',   ores:{Beryl:18,Agricium:14,Aslarite:14,Titanium:14,Ice:10,Aluminium:10,Copper:10,Corundum:10,Hephaestanite:10,Iron:10,Silicon:10,Tin:10,Quantanium:2}},
@@ -226,36 +226,30 @@ function sysBadgeClass(sys) {
   return sys === 'Stanton' ? 'badge-stanton' : sys === 'Pyro' ? 'badge-pyro' : 'badge-nyx';
 }
 
-function tierClass(ore) { return 't' + tier(ore); }
-
-function barColor(o) {
-  const t = tier(o);
-  return t === 1 ? 'linear-gradient(90deg,#d4860a,#ffc040)'
-       : t === 2 ? 'linear-gradient(90deg,#1e7cb8,#4fc3f7)'
-       : 'rgba(120,120,120,.6)';
-}
+function barColor(type) { return METHOD[methodFromType(type)].bar; }
+function textColor(type) { return METHOD[methodFromType(type)].text; }
 
 function renderByLocation(locs) {
   if (!locs.length) return '<div class="no-results">No locations match your filter.</div>';
   return '<div class="cards-grid">' + locs.map(loc => {
     const entries = Object.entries(loc.ores).sort((a,b) => b[1]-a[1]);
     const maxPct = entries[0][1];
+    const col = textColor(loc.type);
+    const bg = barColor(loc.type);
     const rows = entries.map(([ore, pct]) => {
-      const tc = tierClass(ore);
       const w = Math.round(pct / maxPct * 100);
-      return `<div class="ore-row ${tc}">
-        <span class="ore-name" title="${ore}">${ore}</span>
-        <div class="ore-bar-wrap"><div class="ore-bar" style="width:${w}%;background:${barColor(ore)}"></div></div>
-        <span class="ore-pct">${pct}%</span>
+      return `<div class="ore-row">
+        <span class="ore-name" style="color:${col}" title="${ore}">${ore}</span>
+        <div class="ore-bar-wrap"><div class="ore-bar" style="width:${w}%;background:${bg}"></div></div>
+        <span class="ore-pct" style="color:${col}">${pct}%</span>
       </div>`;
     }).join('');
+    const sub = [loc.type, loc.sys, loc.b].filter(Boolean).join(' · ');
     return `<div class="card">
       <div class="card-header">
-        <span class="card-name">${loc.n}${loc.b ? `<span style="display:block;font-size:.72rem;color:#555;font-weight:400;margin-top:1px">${loc.b}</span>` : ''}</span>
-        <span class="badge ${sysBadgeClass(loc.sys)}">${loc.sys}</span>
-        <span class="badge badge-type">${loc.type}</span>
+        <span class="card-name">${loc.n}</span>
+        <span class="card-sub">${sub}</span>
       </div>
-      <div class="method-badges" style="margin-bottom:10px">${miningMethodBadges(loc.type)}</div>
       ${rows}
     </div>`;
   }).join('') + '</div>';
@@ -280,26 +274,27 @@ function renderByOre(ores) {
       currentSys === 'All' || e.loc.sys === currentSys
     );
     if (!entries.length) return '';
-    const tc = tierClass(ore);
     const maxPct = entries[0].pct;
     const rows = entries.map(e => {
       const w = Math.round(e.pct / maxPct * 100);
+      const col = textColor(e.loc.type);
+      const bg = barColor(e.loc.type);
+      const sub = [e.loc.type, e.loc.sys, e.loc.b].filter(Boolean).join(' · ');
       return `<tr>
-        <td class="td-loc">${e.loc.n}${e.loc.b ? `<span class="td-body">${e.loc.b}</span>` : ''}</td>
-        <td class="td-bar-cell"><div style="background:rgba(255,255,255,.06);border-radius:4px;height:10px;overflow:hidden"><div class="inline-bar" style="width:${w}%;background:${barColor(ore)}"></div></div></td>
-        <td class="td-pct ${tc}">${e.pct}%</td>
-        <td class="td-sys"><span class="badge ${sysBadgeClass(e.loc.sys)}">${e.loc.sys}</span></td>
+        <td class="td-loc">${e.loc.n}<span class="td-body">${sub}</span></td>
+        <td class="td-bar-cell"><div style="background:rgba(255,255,255,.06);border-radius:4px;height:10px;overflow:hidden"><div class="inline-bar" style="width:${w}%;background:${bg}"></div></div></td>
+        <td class="td-pct" style="color:${col}">${e.pct}%</td>
       </tr>`;
     }).join('');
     return `<div class="ore-section">
       <div class="ore-section-header">
-        <span class="ore-section-name ${tc}">${ore}</span>
+        <span class="ore-section-name" style="color:#e8e8e8">${ore}</span>
         <div class="method-badges" style="margin-left:12px">${oreMethodBadges(entries)}</div>
         <span class="ore-count">${entries.length} location${entries.length!==1?'s':''}</span>
       </div>
       <table class="ore-table">
         <thead><tr>
-          <th>Location</th><th style="width:120px">Spawn</th><th style="text-align:right">%</th><th>System</th>
+          <th>Location</th><th style="width:120px">Spawn</th><th style="text-align:right">%</th>
         </tr></thead>
         <tbody>${rows}</tbody>
       </table>
