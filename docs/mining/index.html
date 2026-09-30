@@ -229,6 +229,18 @@ function sysBadgeClass(sys) {
 function barColor(type) { return METHOD[methodFromType(type)].bar; }
 function textColor(type) { return METHOD[methodFromType(type)].text; }
 
+const SYS_COLOR = {
+  Stanton: { bar: 'linear-gradient(90deg,#1a6090,#4fc3f7)', text: '#4fc3f7' },
+  Pyro:    { bar: 'linear-gradient(90deg,#a04020,#ff9060)', text: '#ff9060' },
+  Nyx:     { bar: 'linear-gradient(90deg,#602090,#c080ff)', text: '#c080ff' },
+};
+
+function orePrimaryMethodColor(entries) {
+  const methods = new Set(entries.map(e => methodFromType(e.loc.type)));
+  if (methods.size === 1) return METHOD[[...methods][0]].text;
+  return '#e8e8e8';
+}
+
 function renderByLocation(locs) {
   if (!locs.length) return '<div class="no-results">No locations match your filter.</div>';
   return '<div class="cards-grid">' + locs.map(loc => {
@@ -275,20 +287,20 @@ function renderByOre(ores) {
     );
     if (!entries.length) return '';
     const maxPct = entries[0].pct;
+    const nameCol = orePrimaryMethodColor(entries);
     const rows = entries.map(e => {
       const w = Math.round(e.pct / maxPct * 100);
-      const col = textColor(e.loc.type);
-      const bg = barColor(e.loc.type);
-      const sub = [e.loc.type, e.loc.sys, e.loc.b].filter(Boolean).join(' · ');
+      const sc = SYS_COLOR[e.loc.sys] || SYS_COLOR.Stanton;
+      const sub = [e.loc.type, e.loc.b].filter(Boolean).join(' · ');
       return `<tr>
         <td class="td-loc">${e.loc.n}<span class="td-body">${sub}</span></td>
-        <td class="td-bar-cell"><div style="background:rgba(255,255,255,.06);border-radius:4px;height:10px;overflow:hidden"><div class="inline-bar" style="width:${w}%;background:${bg}"></div></div></td>
-        <td class="td-pct" style="color:${col}">${e.pct}%</td>
+        <td class="td-bar-cell"><div style="background:rgba(255,255,255,.06);border-radius:4px;height:10px;overflow:hidden"><div class="inline-bar" style="width:${w}%;background:${sc.bar}"></div></div></td>
+        <td class="td-pct" style="color:${sc.text}">${e.pct}%</td>
       </tr>`;
     }).join('');
     return `<div class="ore-section">
       <div class="ore-section-header">
-        <span class="ore-section-name" style="color:#e8e8e8">${ore}</span>
+        <span class="ore-section-name" style="color:${nameCol}">${ore}</span>
         <div class="method-badges" style="margin-left:12px">${oreMethodBadges(entries)}</div>
         <span class="ore-count">${entries.length} location${entries.length!==1?'s':''}</span>
       </div>
