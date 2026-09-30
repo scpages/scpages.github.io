@@ -13,13 +13,11 @@
     .subtitle{text-align:center;color:#a0a0a0;font-size:.9rem;margin-top:8px}
     .container{max-width:1400px;margin:0 auto;padding:0 20px 40px}
 
-    /* stats */
     .stats{display:flex;gap:16px;justify-content:center;margin-bottom:24px;flex-wrap:wrap}
     .stat{background:rgba(42,159,214,.08);border:1px solid rgba(42,159,214,.2);border-radius:6px;padding:8px 20px;text-align:center}
     .stat-val{font-size:1.4rem;font-weight:700;color:#2a9fd6}
     .stat-lbl{font-size:.75rem;color:#888;margin-top:2px}
 
-    /* controls */
     .controls{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:24px;background:rgba(20,25,45,.6);padding:14px 18px;border-radius:10px}
     .btn-group{display:flex;gap:4px}
     .btn{background:rgba(42,159,214,.1);border:1px solid rgba(42,159,214,.25);color:#aaa;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:.85rem;transition:all .2s}
@@ -31,28 +29,22 @@
     .search-wrap input:focus{border-color:#2a9fd6}
     .controls-label{font-size:.78rem;color:#666;white-space:nowrap}
 
-    /* location cards grid */
     .cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
     .card{background:rgba(20,25,45,.6);border:1px solid rgba(42,159,214,.15);border-radius:10px;padding:16px;transition:border-color .2s}
     .card:hover{border-color:rgba(42,159,214,.4)}
     .card-header{margin-bottom:10px}
     .card-name{font-size:1rem;font-weight:600;color:#e8e8e8;display:block}
     .card-sub{font-size:.75rem;color:#555;margin-top:3px;display:block}
-    .badge{font-size:.7rem;padding:2px 7px;border-radius:4px;font-weight:600;white-space:nowrap}
-    .badge-stanton{background:rgba(42,159,214,.2);color:#4fc3f7;border:1px solid rgba(42,159,214,.3)}
-    .badge-pyro{background:rgba(255,120,50,.2);color:#ff9060;border:1px solid rgba(255,120,50,.3)}
-    .badge-nyx{background:rgba(160,90,220,.2);color:#c080ff;border:1px solid rgba(160,90,220,.3)}
 
-    /* ore rows in card */
     .ore-row{display:flex;align-items:center;gap:8px;padding:3px 0}
     .ore-name{font-size:.82rem;width:110px;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .ore-bar-wrap{flex:1;background:rgba(255,255,255,.06);border-radius:3px;height:8px;overflow:hidden}
     .ore-bar{height:100%;border-radius:3px;transition:width .3s}
     .ore-pct{font-size:.8rem;width:36px;text-align:right;flex-shrink:0}
+    .method-sep{border:none;border-top:1px solid rgba(255,255,255,.05);margin:5px 0 3px}
 
-    /* by-ore view */
     .ore-section{background:rgba(20,25,45,.6);border:1px solid rgba(42,159,214,.15);border-radius:10px;margin-bottom:16px;overflow:hidden}
-    .ore-section-header{display:flex;align-items:center;gap:10px;padding:12px 18px;background:rgba(42,159,214,.07);border-bottom:1px solid rgba(42,159,214,.12);cursor:pointer;user-select:none}
+    .ore-section-header{display:flex;align-items:center;gap:10px;padding:12px 18px;background:rgba(42,159,214,.07);border-bottom:1px solid rgba(42,159,214,.12)}
     .ore-section-name{font-size:1rem;font-weight:600}
     .ore-count{font-size:.78rem;color:#666;margin-left:auto}
     .ore-table{width:100%;border-collapse:collapse}
@@ -62,20 +54,11 @@
     .ore-table tr:hover td{background:rgba(42,159,214,.05)}
     .td-loc{font-weight:500;color:#e8e8e8}
     .td-body{display:block;font-size:.72rem;color:#555;margin-top:1px}
-    .td-sys{font-size:.78rem}
-    .td-type{font-size:.78rem;color:#888}
-    .method-badges{display:flex;gap:4px;flex-wrap:wrap}
-    .mbadge{font-size:.68rem;padding:2px 6px;border-radius:4px;font-weight:600;white-space:nowrap}
-    .mbadge-ship{background:rgba(42,159,214,.2);color:#4fc3f7;border:1px solid rgba(42,159,214,.3)}
-    .mbadge-roc{background:rgba(80,200,80,.15);color:#70d070;border:1px solid rgba(80,200,80,.3)}
-    .mbadge-hand{background:rgba(220,160,50,.15);color:#e0a030;border:1px solid rgba(220,160,50,.3)}
     .td-pct{font-weight:700;text-align:right}
     .td-bar-cell{width:120px}
     .inline-bar{height:10px;border-radius:3px;display:block}
 
-    /* no results */
     .no-results{text-align:center;color:#555;padding:60px 20px;font-size:1rem}
-
     .footer{margin-top:40px;padding:20px 0;border-top:1px solid rgba(42,159,214,.3);color:#666;font-size:.82rem;text-align:center}
     .footer a{color:#2a9fd6;text-decoration:none}
     .footer a:hover{color:#4fc3f7;text-decoration:underline}
@@ -113,7 +96,7 @@
     <div class="btn-group" id="method-tabs">
       <button class="btn active" data-method="All">All</button>
       <button class="btn" data-method="ship">Ship</button>
-      <button class="btn" data-method="ground">ROC</button>
+      <button class="btn" data-method="roc">Ground</button>
       <button class="btn" data-method="fps">FPS</button>
     </div>
     <span class="controls-label" style="margin-left:8px">View:</span>
@@ -135,88 +118,200 @@
 </div>
 
 <script>
-function methodFromType(type) {
-  if (type === 'Belt') return 'ship';
-  if (type === 'Cave') return 'fps';
-  return 'ground';
-}
-
 const METHOD = {
-  ship:   { bar: 'linear-gradient(90deg,#1e7cb8,#4fc3f7)', text: '#4fc3f7' },
-  ground: { bar: 'linear-gradient(90deg,#2a8a2a,#60d060)', text: '#70d070' },
-  fps:    { bar: 'linear-gradient(90deg,#a06010,#e09020)', text: '#e0a030' },
+  ship: { bar: 'linear-gradient(90deg,#1e7cb8,#4fc3f7)', text: '#4fc3f7' },
+  roc:  { bar: 'linear-gradient(90deg,#2a8a2a,#60d060)', text: '#70d070' },
+  fps:  { bar: 'linear-gradient(90deg,#a06010,#e09020)', text: '#e0a030' },
 };
 
+// Each location has explicit ship/roc/fps sub-objects for the three mining methods.
+// ship = ship laser mining, roc = ROC ground vehicle, fps = hand/multitool in caves
 const LOCATIONS = [
-  {n:'Aaron Halo',       b:'ArcCorp',   sys:'Stanton', type:'Belt',   ores:{Beryl:18,Agricium:14,Aslarite:14,Titanium:14,Ice:10,Aluminium:10,Copper:10,Corundum:10,Hephaestanite:10,Iron:10,Silicon:10,Tin:10,Quantanium:2}},
-  {n:'Aberdeen',         b:'Hurston',   sys:'Stanton', type:'Moon',   ores:{Aluminium:30,Corundum:30,Agricium:29,Aslarite:29,Titanium:29,Ouratite:10,Beryl:2,Quantanium:2}},
-  {n:'ARC-L1',           b:'ArcCorp',   sys:'Stanton', type:'Belt',   ores:{Tungsten:20,Taranite:13,Corundum:12,Aluminium:12,Hephaestanite:12}},
-  {n:'ARC-L2',           b:'ArcCorp',   sys:'Stanton', type:'Belt',   ores:{Tungsten:20,Taranite:13,Corundum:12,Aluminium:12,Hephaestanite:12}},
-  {n:'ARC-L3',           b:'ArcCorp',   sys:'Stanton', type:'Belt',   ores:{Agricium:16,Aslarite:16,Gold:10,Iron:10,Copper:10,Ice:10}},
-  {n:'ARC-L4',           b:'ArcCorp',   sys:'Stanton', type:'Belt',   ores:{Tungsten:20,Taranite:13,Corundum:12,Aluminium:12,Hephaestanite:12}},
-  {n:'ARC-L5',           b:'ArcCorp',   sys:'Stanton', type:'Belt',   ores:{Aslarite:9,Agricium:9,Gold:10,Iron:10,Copper:10,Ice:10}},
-  {n:'Arial',            b:'Hurston',   sys:'Stanton', type:'Moon',   ores:{Aluminium:22,Copper:22,Corundum:22,Hephaestanite:22,Quartz:22,Silicon:22,Tin:22,Agricium:10,Ouratite:10,Beryl:2,Quantanium:2}},
-  {n:'Calliope',         b:'microTech', sys:'Stanton', type:'Moon',   ores:{Iron:33,Hephaestanite:33,Ice:33,Quartz:33,Silicon:33,Beryl:2,Quantanium:2}},
-  {n:'Cellin',           b:'Crusader',  sys:'Stanton', type:'Moon',   ores:{Agricium:29,Aslarite:29,Titanium:29,Hephaestanite:26,Silicon:26,Quartz:26,Taranite:18,Beryl:2,Quantanium:2}},
-  {n:'Clio',             b:'microTech', sys:'Stanton', type:'Moon',   ores:{Copper:40,Ice:40,Tin:40,Taranite:18,Beryl:2,Quantanium:2}},
-  {n:'CRU-L1',           b:'Crusader',  sys:'Stanton', type:'Belt',   ores:{Titanium:15,Bexalite:10,Iron:9,Copper:9,Ice:9}},
-  {n:'CRU-L2',           b:'Crusader',  sys:'Stanton', type:'Belt',   ores:{Titanium:15,Bexalite:10,Iron:9,Copper:9,Ice:9}},
-  {n:'CRU-L3',           b:'Crusader',  sys:'Stanton', type:'Belt',   ores:{Torite:11,Aluminium:9,Corundum:9,Hephaestanite:9}},
-  {n:'CRU-L4',           b:'Crusader',  sys:'Stanton', type:'Belt',   ores:{Aslarite:16,Gold:10,Iron:10,Copper:10,Ice:10}},
-  {n:'CRU-L5',           b:'Crusader',  sys:'Stanton', type:'Belt',   ores:{Agricium:9,Beryl:6,Iron:6,Copper:6,Ice:6}},
-  {n:'Daymar',           b:'Crusader',  sys:'Stanton', type:'Moon',   ores:{Hephaestanite:35,Silicon:35,Quartz:35,Agricium:29,Aslarite:29,Titanium:29,Beryl:2,Quantanium:2}},
-  {n:'Euterpe',          b:'microTech', sys:'Stanton', type:'Moon',   ores:{Copper:40,Ice:40,Tin:40,Taranite:18,Beryl:2,Quantanium:2}},
-  {n:'Hathor Caves',     b:'Hurston',   sys:'Stanton', type:'Cave',   ores:{Carinite:100}},
-  {n:'HUR-L1',           b:'Hurston',   sys:'Stanton', type:'Belt',   ores:{Laranite:13,Borase:8,Aluminium:8,Corundum:8,Hephaestanite:8}},
-  {n:'HUR-L2',           b:'Hurston',   sys:'Stanton', type:'Belt',   ores:{Tungsten:20,Taranite:13,Corundum:12,Aluminium:12,Hephaestanite:12}},
-  {n:'HUR-L3',           b:'Hurston',   sys:'Stanton', type:'Belt',   ores:{Titanium:15,Bexalite:10,Iron:9,Copper:9,Ice:9}},
-  {n:'HUR-L4',           b:'Hurston',   sys:'Stanton', type:'Belt',   ores:{Laranite:13,Borase:8,Aluminium:8,Corundum:8,Hephaestanite:8}},
-  {n:'HUR-L5',           b:'Hurston',   sys:'Stanton', type:'Belt',   ores:{Torite:11,Aluminium:9,Corundum:9,Hephaestanite:9}},
-  {n:'Hurston',          b:'',          sys:'Stanton', type:'Planet', ores:{Aluminium:44,Copper:44,Corundum:44,Tin:44,Agricium:10,Ouratite:10,Beryl:2,Quantanium:2}},
-  {n:'Ita',              b:'Hurston',   sys:'Stanton', type:'Moon',   ores:{Copper:35,Tin:35,Aluminium:35,Corundum:35,Agricium:29,Aslarite:29,Titanium:29,Beryl:2,Quantanium:2}},
-  {n:'Lyria',            b:'ArcCorp',   sys:'Stanton', type:'Moon',   ores:{Copper:35,Iron:35,Tin:35,Laranite:28,Tungsten:28,Beryl:2,Quantanium:2}},
-  {n:'Magda',            b:'Hurston',   sys:'Stanton', type:'Moon',   ores:{Aluminium:35,Corundum:35,Iron:35,Agricium:14,Aslarite:14,Titanium:14,Beryl:2,Quantanium:2}},
-  {n:'MIC-L1',           b:'microTech', sys:'Stanton', type:'Belt',   ores:{Torite:11,Aluminium:9,Corundum:9,Hephaestanite:9}},
-  {n:'MIC-L2',           b:'microTech', sys:'Stanton', type:'Belt',   ores:{Torite:11,Aluminium:9,Corundum:9,Hephaestanite:9}},
-  {n:'MIC-L3',           b:'microTech', sys:'Stanton', type:'Belt',   ores:{Aslarite:16,Gold:10,Iron:10,Copper:10,Ice:10}},
-  {n:'MIC-L4',           b:'microTech', sys:'Stanton', type:'Belt',   ores:{Agricium:9,Beryl:6,Iron:6,Copper:6,Ice:6}},
-  {n:'MIC-L5',           b:'microTech', sys:'Stanton', type:'Belt',   ores:{Torite:11,Aluminium:9,Corundum:9,Hephaestanite:9}},
-  {n:'microTech',        b:'',          sys:'Stanton', type:'Planet', ores:{Hephaestanite:33,Ice:33,Quartz:33,Silicon:33,Iron:33,Beryl:2,Quantanium:2}},
-  {n:'Wala',             b:'ArcCorp',   sys:'Stanton', type:'Moon',   ores:{Laranite:29,Tungsten:29,Copper:26,Tin:26,Iron:26,Beryl:18,Quantanium:2}},
-  {n:'Yela',             b:'Crusader',  sys:'Stanton', type:'Moon',   ores:{Agricium:29,Aslarite:29,Titanium:29,Hephaestanite:26,Silicon:26,Quartz:26,Taranite:18,Beryl:2,Quantanium:2}},
-  {n:'Yela Belt',        b:'Crusader',  sys:'Stanton', type:'Belt',   ores:{Agricium:29,Aslarite:29,Titanium:29,Copper:21,Ice:21,Iron:21,Tin:21,Ouratite:10}},
-  // Pyro
-  {n:'Akiro Cluster',    b:'',          sys:'Pyro',    type:'Belt',   ores:{Torite:29,Copper:15,Hephaestanite:15,Ice:15,Silicon:15,Tin:15,Iron:15,Laranite:10,Riccite:10,Stileron:2,Taranite:2}},
-  {n:'Pyro I',           b:'',          sys:'Pyro',    type:'Planet', ores:{Iron:33,Copper:33,Tin:33,Stileron:2,Taranite:2}},
-  {n:'Monox',            b:'',          sys:'Pyro',    type:'Planet', ores:{Hephaestanite:33,Quartz:33,Silicon:33,Copper:33,Iron:33,Tin:33,Stileron:2,Taranite:2}},
-  {n:'Bloom',            b:'',          sys:'Pyro',    type:'Planet', ores:{Hephaestanite:35,Iron:35,Quartz:35,Silicon:35,Bexalite:18,Borase:18,Gold:18,Laranite:10,Riccite:10,Stileron:2,Taranite:2}},
-  {n:'Pyro IV',          b:'',          sys:'Pyro',    type:'Planet', ores:{Laranite:29,Tungsten:29,Copper:26,Iron:26,Tin:26,Bexalite:18,Borase:18,Gold:18,Stileron:2,Taranite:2}},
-  {n:'Ignis',            b:'Pyro V',    sys:'Pyro',    type:'Moon',   ores:{Copper:36,Hephaestanite:36,Silicon:36,Tin:36,Bexalite:18,Borase:18,Gold:18,Laranite:10,Riccite:10}},
-  {n:'Vatra',            b:'Pyro V',    sys:'Pyro',    type:'Moon',   ores:{Hephaestanite:36,Iron:36,Silicon:36,Bexalite:18,Borase:18,Gold:18,Laranite:10,Riccite:10}},
-  {n:'Adir',             b:'Pyro V',    sys:'Pyro',    type:'Moon',   ores:{Iron:44,Laranite:29,Tungsten:29,Bexalite:18,Borase:18,Gold:18,Riccite:10}},
-  {n:'Fairo',            b:'Pyro V',    sys:'Pyro',    type:'Moon',   ores:{Laranite:29,Tungsten:29,Hephaestanite:27,Silicon:27,Iron:27,Bexalite:9,Borase:9,Gold:9}},
-  {n:'Fuego',            b:'Pyro V',    sys:'Pyro',    type:'Moon',   ores:{Agricium:29,Aslarite:29,Titanium:29,Iron:27,Hephaestanite:27,Quartz:27,Silicon:27,Bexalite:9,Borase:9,Gold:9}},
-  {n:'Vuur',             b:'Pyro V',    sys:'Pyro',    type:'Moon',   ores:{Hephaestanite:27,Iron:27,Quartz:27,Silicon:27,Bexalite:18,Borase:18,Gold:18,Agricium:14,Aslarite:14,Titanium:14}},
-  {n:'Terminus',         b:'',          sys:'Pyro',    type:'Planet', ores:{Copper:21,Ice:21,Tin:21,Bexalite:18,Borase:18,Gold:18,Agricium:14,Aslarite:14,Titanium:14,Laranite:10,Riccite:10,Stileron:2,Taranite:2}},
-  // Nyx
-  {n:'Glaciem Ring',     sys:'Nyx',     type:'Belt',   ores:{Torite:29,Ice:21,Iron:21,Bexalite:18,Borase:18,Gold:18,Lindinium:10,Tungsten:10,Savrilium:2}},
-  {n:'Keeger Belt',      sys:'Nyx',     type:'Belt',   ores:{Torite:29,Aluminium:21,Corundum:21,Ice:21,Bexalite:18,Borase:18,Gold:18,Lindinium:10,Tungsten:10,Savrilium:2}},
-  {n:'Breaker Geodes',   sys:'Nyx',     type:'Cave',   ores:{Savrilium:100,Torite:100}},
-  {n:'Breaker Interior', sys:'Nyx',     type:'Cave',   ores:{Aphorite:75,Sadaryx:25}},
+  // ── Stanton Belts ──────────────────────────────────────────────────────────
+  {n:'Aaron Halo',   b:'ArcCorp',   sys:'Stanton', type:'Belt',
+   ship:{Beryl:18,Agricium:14,Aslarite:14,Titanium:14,Ice:10,Aluminium:10,Copper:10,Corundum:10,Hephaestanite:10,Iron:10,Silicon:10,Tin:10,Quantanium:2}},
+  {n:'ARC-L1',       b:'ArcCorp',   sys:'Stanton', type:'Belt',
+   ship:{Tungsten:20,Taranite:13,Corundum:12,Aluminium:12,Hephaestanite:12}},
+  {n:'ARC-L2',       b:'ArcCorp',   sys:'Stanton', type:'Belt',
+   ship:{Tungsten:20,Taranite:13,Corundum:12,Aluminium:12,Hephaestanite:12}},
+  {n:'ARC-L3',       b:'ArcCorp',   sys:'Stanton', type:'Belt',
+   ship:{Agricium:9,Beryl:6,Iron:6,Copper:6,Ice:6}},
+  {n:'ARC-L4',       b:'ArcCorp',   sys:'Stanton', type:'Belt',
+   ship:{Tungsten:20,Taranite:13,Corundum:12,Aluminium:12,Hephaestanite:12}},
+  {n:'ARC-L5',       b:'ArcCorp',   sys:'Stanton', type:'Belt',
+   ship:{Aslarite:16,Gold:10,Iron:10,Copper:10,Ice:10}},
+  {n:'CRU-L1',       b:'Crusader',  sys:'Stanton', type:'Belt',
+   ship:{Titanium:15,Bexalite:10,Iron:9,Copper:9,Ice:9}},
+  {n:'CRU-L2',       b:'Crusader',  sys:'Stanton', type:'Belt',
+   ship:{Titanium:15,Bexalite:10,Iron:9,Copper:9,Ice:9}},
+  {n:'CRU-L3',       b:'Crusader',  sys:'Stanton', type:'Belt',
+   ship:{Torite:11,Aluminium:9,Corundum:9,Hephaestanite:9}},
+  {n:'CRU-L4',       b:'Crusader',  sys:'Stanton', type:'Belt',
+   ship:{Aslarite:16,Gold:10,Iron:10,Copper:10,Ice:10}},
+  {n:'CRU-L5',       b:'Crusader',  sys:'Stanton', type:'Belt',
+   ship:{Agricium:9,Beryl:6,Iron:6,Copper:6,Ice:6}},
+  {n:'HUR-L1',       b:'Hurston',   sys:'Stanton', type:'Belt',
+   ship:{Laranite:13,Borase:8,Aluminium:8,Corundum:8,Hephaestanite:8}},
+  {n:'HUR-L2',       b:'Hurston',   sys:'Stanton', type:'Belt',
+   ship:{Tungsten:20,Taranite:13,Corundum:12,Aluminium:12,Hephaestanite:12}},
+  {n:'HUR-L3',       b:'Hurston',   sys:'Stanton', type:'Belt',
+   ship:{Titanium:15,Bexalite:10,Iron:9,Copper:9,Ice:9}},
+  {n:'HUR-L4',       b:'Hurston',   sys:'Stanton', type:'Belt',
+   ship:{Laranite:13,Borase:8,Aluminium:8,Corundum:8,Hephaestanite:8}},
+  {n:'HUR-L5',       b:'Hurston',   sys:'Stanton', type:'Belt',
+   ship:{Torite:11,Aluminium:9,Corundum:9,Hephaestanite:9}},
+  {n:'MIC-L1',       b:'microTech', sys:'Stanton', type:'Belt',
+   ship:{Torite:11,Aluminium:9,Corundum:9,Hephaestanite:9}},
+  {n:'MIC-L2',       b:'microTech', sys:'Stanton', type:'Belt',
+   ship:{Torite:11,Aluminium:9,Corundum:9,Hephaestanite:9}},
+  {n:'MIC-L3',       b:'microTech', sys:'Stanton', type:'Belt',
+   ship:{Aslarite:16,Gold:10,Iron:10,Copper:10,Ice:10}},
+  {n:'MIC-L4',       b:'microTech', sys:'Stanton', type:'Belt',
+   ship:{Agricium:9,Beryl:6,Iron:6,Copper:6,Ice:6}},
+  {n:'MIC-L5',       b:'microTech', sys:'Stanton', type:'Belt',
+   ship:{Torite:11,Aluminium:9,Corundum:9,Hephaestanite:9}},
+  {n:'Yela Belt',    b:'Crusader',  sys:'Stanton', type:'Belt',
+   ship:{Agricium:29,Aslarite:29,Titanium:29,Copper:21,Ice:21,Iron:21,Tin:21,Ouratite:10}},
+  // ── Stanton Moons ──────────────────────────────────────────────────────────
+  {n:'Aberdeen',     b:'Hurston',   sys:'Stanton', type:'Moon',
+   ship:{Aluminium:30,Corundum:30,Agricium:29,Aslarite:29,Titanium:29,Ouratite:10,Beryl:2,Quantanium:2},
+   roc:{Feynmaline:64,Glacosite:32,Beradom:4},
+   fps:{Aphorite:59,Dolivine:35,Hadanite:6}},
+  {n:'Arial',        b:'Hurston',   sys:'Stanton', type:'Moon',
+   ship:{Aluminium:22,Copper:22,Corundum:22,Hephaestanite:22,Quartz:22,Silicon:22,Tin:22,Agricium:10,Ouratite:10,Beryl:2,Quantanium:2},
+   roc:{Feynmaline:52,Glacosite:32,Beradom:16},
+   fps:{Aphorite:59,Dolivine:35,Hadanite:6}},
+  {n:'Calliope',     b:'microTech', sys:'Stanton', type:'Moon',
+   ship:{Iron:33,Hephaestanite:33,Ice:33,Quartz:33,Silicon:33,Beryl:2,Quantanium:2},
+   roc:{Glacosite:84,Beradom:12,Feynmaline:4},
+   fps:{Aphorite:61,Dolivine:37,Janalite:2}},
+  {n:'Cellin',       b:'Crusader',  sys:'Stanton', type:'Moon',
+   ship:{Agricium:29,Aslarite:29,Titanium:29,Hephaestanite:26,Silicon:26,Quartz:26,Taranite:18,Beryl:2,Quantanium:2},
+   roc:{Beradom:56,Glacosite:32,Feynmaline:12},
+   fps:{Aphorite:59,Dolivine:35,Hadanite:6}},
+  {n:'Clio',         b:'microTech', sys:'Stanton', type:'Moon',
+   ship:{Copper:40,Ice:40,Tin:40,Taranite:18,Beryl:2,Quantanium:2},
+   roc:{Glacosite:68,Beradom:20,Feynmaline:12},
+   fps:{Aphorite:61,Dolivine:37,Janalite:2}},
+  {n:'Daymar',       b:'Crusader',  sys:'Stanton', type:'Moon',
+   ship:{Hephaestanite:35,Silicon:35,Quartz:35,Agricium:29,Aslarite:29,Titanium:29,Beryl:2,Quantanium:2},
+   roc:{Beradom:48,Feynmaline:40,Glacosite:12},
+   fps:{Aphorite:59,Dolivine:35,Hadanite:6}},
+  {n:'Euterpe',      b:'microTech', sys:'Stanton', type:'Moon',
+   ship:{Copper:40,Ice:40,Tin:40,Taranite:18,Beryl:2,Quantanium:2},
+   roc:{Glacosite:88,Beradom:12},
+   fps:{Aphorite:61,Dolivine:37,Janalite:2}},
+  {n:'Ita',          b:'Hurston',   sys:'Stanton', type:'Moon',
+   ship:{Copper:35,Tin:35,Aluminium:35,Corundum:35,Agricium:29,Aslarite:29,Titanium:29,Beryl:2,Quantanium:2},
+   roc:{Glacosite:69,Feynmaline:27,Beradom:4},
+   fps:{Aphorite:59,Dolivine:35,Hadanite:6}},
+  {n:'Lyria',        b:'ArcCorp',   sys:'Stanton', type:'Moon',
+   ship:{Copper:35,Iron:35,Tin:35,Laranite:28,Tungsten:28,Beryl:2,Quantanium:2},
+   roc:{Beradom:48,Glacosite:48,Feynmaline:4},
+   fps:{Aphorite:61,Dolivine:37,Janalite:2}},
+  {n:'Magda',        b:'Hurston',   sys:'Stanton', type:'Moon',
+   ship:{Aluminium:35,Corundum:35,Iron:35,Agricium:14,Aslarite:14,Titanium:14,Beryl:2,Quantanium:2},
+   roc:{Glacosite:59,Feynmaline:37,Beradom:4},
+   fps:{Aphorite:59,Dolivine:35,Hadanite:6}},
+  {n:'Wala',         b:'ArcCorp',   sys:'Stanton', type:'Moon',
+   ship:{Laranite:29,Tungsten:29,Copper:26,Tin:26,Iron:26,Beryl:18,Quantanium:2},
+   roc:{Beradom:56,Glacosite:40,Feynmaline:4},
+   fps:{Aphorite:61,Dolivine:37,Janalite:2}},
+  {n:'Yela',         b:'Crusader',  sys:'Stanton', type:'Moon',
+   ship:{Agricium:29,Aslarite:29,Titanium:29,Hephaestanite:26,Silicon:26,Quartz:26,Taranite:18,Beryl:2,Quantanium:2},
+   roc:{Glacosite:68,Beradom:24,Feynmaline:8},
+   fps:{Aphorite:59,Dolivine:35,Hadanite:6}},
+  // ── Stanton Planets ────────────────────────────────────────────────────────
+  {n:'Hurston',      b:'',          sys:'Stanton', type:'Planet',
+   ship:{Aluminium:44,Copper:44,Corundum:44,Tin:44,Agricium:10,Ouratite:10,Beryl:2,Quantanium:2},
+   roc:{Beradom:64,Glacosite:32,Feynmaline:4},
+   fps:{Aphorite:59,Dolivine:35,Hadanite:6}},
+  {n:'microTech',    b:'',          sys:'Stanton', type:'Planet',
+   ship:{Hephaestanite:33,Ice:33,Quartz:33,Silicon:33,Iron:33,Beryl:2,Quantanium:2},
+   roc:{Glacosite:68,Beradom:28,Feynmaline:4},
+   fps:{Aphorite:61,Dolivine:37,Janalite:2}},
+  // ── Stanton Caves ──────────────────────────────────────────────────────────
+  {n:'Hathor Caves', b:'Hurston',   sys:'Stanton', type:'Cave',
+   fps:{Carinite:100,Aphorite:30,Jaclium:19,Dolivine:18,Saldynium:16,Hadanite:3,Janalite:1}},
+  // ── Pyro Belts ─────────────────────────────────────────────────────────────
+  {n:'Akiro Cluster',b:'',          sys:'Pyro',    type:'Belt',
+   ship:{Torite:29,Copper:15,Hephaestanite:15,Ice:15,Silicon:15,Tin:15,Iron:15,Laranite:10,Riccite:10,Stileron:2,Taranite:2}},
+  // ── Pyro Planets ───────────────────────────────────────────────────────────
+  {n:'Pyro I',       b:'',          sys:'Pyro',    type:'Planet',
+   ship:{Iron:33,Copper:33,Tin:33,Stileron:2,Taranite:2},
+   roc:{Beradom:100},
+   fps:{Aphorite:59,Dolivine:35,Hadanite:6}},
+  {n:'Monox',        b:'',          sys:'Pyro',    type:'Planet',
+   ship:{Hephaestanite:33,Quartz:33,Silicon:33,Copper:33,Iron:33,Tin:33,Stileron:2,Taranite:2},
+   roc:{Glacosite:100},
+   fps:{Aphorite:59,Dolivine:35,Hadanite:6}},
+  {n:'Bloom',        b:'',          sys:'Pyro',    type:'Planet',
+   ship:{Hephaestanite:35,Iron:35,Quartz:35,Silicon:35,Bexalite:18,Borase:18,Gold:18,Laranite:10,Riccite:10,Stileron:2,Taranite:2},
+   roc:{Beradom:100},
+   fps:{Aphorite:61,Dolivine:37,Janalite:2}},
+  {n:'Pyro IV',      b:'',          sys:'Pyro',    type:'Planet',
+   ship:{Laranite:29,Tungsten:29,Copper:26,Iron:26,Tin:26,Bexalite:18,Borase:18,Gold:18,Stileron:2,Taranite:2},
+   roc:{Feynmaline:100},
+   fps:{Aphorite:59,Dolivine:35,Hadanite:6}},
+  {n:'Terminus',     b:'',          sys:'Pyro',    type:'Planet',
+   ship:{Copper:21,Ice:21,Tin:21,Bexalite:18,Borase:18,Gold:18,Agricium:14,Aslarite:14,Titanium:14,Laranite:10,Riccite:10,Stileron:2,Taranite:2},
+   roc:{Feynmaline:100},
+   fps:{Aphorite:61,Dolivine:37,Janalite:2}},
+  // ── Pyro Moons (Pyro V) ────────────────────────────────────────────────────
+  {n:'Ignis',        b:'Pyro V',    sys:'Pyro',    type:'Moon',
+   ship:{Copper:36,Hephaestanite:36,Silicon:36,Tin:36,Bexalite:18,Borase:18,Gold:18,Laranite:10,Riccite:10},
+   roc:{Feynmaline:100},
+   fps:{Aphorite:59,Dolivine:35,Hadanite:6}},
+  {n:'Vatra',        b:'Pyro V',    sys:'Pyro',    type:'Moon',
+   ship:{Hephaestanite:36,Iron:36,Silicon:36,Bexalite:18,Borase:18,Gold:18,Laranite:10,Riccite:10},
+   roc:{Beradom:50,Glacosite:50},
+   fps:{Aphorite:59,Dolivine:35,Hadanite:6}},
+  {n:'Adir',         b:'Pyro V',    sys:'Pyro',    type:'Moon',
+   ship:{Iron:44,Laranite:29,Tungsten:29,Bexalite:18,Borase:18,Gold:18,Riccite:10},
+   roc:{Glacosite:100},
+   fps:{Aphorite:59,Dolivine:35,Hadanite:6}},
+  {n:'Fairo',        b:'Pyro V',    sys:'Pyro',    type:'Moon',
+   ship:{Laranite:29,Tungsten:29,Hephaestanite:27,Silicon:27,Iron:27,Bexalite:9,Borase:9,Gold:9},
+   roc:{Beradom:100},
+   fps:{Aphorite:59,Dolivine:35,Hadanite:6}},
+  {n:'Fuego',        b:'Pyro V',    sys:'Pyro',    type:'Moon',
+   ship:{Agricium:29,Aslarite:29,Titanium:29,Iron:27,Hephaestanite:27,Quartz:27,Silicon:27,Bexalite:9,Borase:9,Gold:9},
+   roc:{Feynmaline:100},
+   fps:{Aphorite:61,Dolivine:37,Janalite:2}},
+  {n:'Vuur',         b:'Pyro V',    sys:'Pyro',    type:'Moon',
+   ship:{Hephaestanite:27,Iron:27,Quartz:27,Silicon:27,Bexalite:18,Borase:18,Gold:18,Agricium:14,Aslarite:14,Titanium:14},
+   roc:{Glacosite:100},
+   fps:{Aphorite:59,Dolivine:35,Hadanite:6}},
+  // ── Nyx ────────────────────────────────────────────────────────────────────
+  {n:'Glaciem Ring',     sys:'Nyx', type:'Belt',
+   ship:{Torite:29,Ice:21,Iron:21,Bexalite:18,Borase:18,Gold:18,Lindinium:10,Tungsten:10,Savrilium:2}},
+  {n:'Keeger Belt',      sys:'Nyx', type:'Belt',
+   ship:{Torite:29,Aluminium:21,Corundum:21,Ice:21,Bexalite:18,Borase:18,Gold:18,Lindinium:10,Tungsten:10,Savrilium:2}},
+  {n:'Breaker Geodes',   sys:'Nyx', type:'Belt',
+   ship:{Savrilium:100,Torite:100}},
+  {n:'Breaker Interior', sys:'Nyx', type:'Cave',
+   fps:{Aphorite:75,Sadaryx:25}},
 ];
 
-// derived: all ore names
-const ALL_ORES = [...new Set(LOCATIONS.flatMap(l => Object.keys(l.ores)))].sort();
+const ALL_ORES = [...new Set(
+  LOCATIONS.flatMap(l => ['ship','roc','fps'].flatMap(m => Object.keys(l[m]||{})))
+)].sort();
+
 document.getElementById('stat-locs').textContent = LOCATIONS.length;
 document.getElementById('stat-ores').textContent = ALL_ORES.length;
 
-// ore index: ore -> [{loc, pct}] sorted desc
+// ore index: ore -> [{loc, pct, method}] sorted by pct desc
 const ORE_INDEX = {};
 ALL_ORES.forEach(ore => {
-  ORE_INDEX[ore] = LOCATIONS
-    .filter(l => l.ores[ore] !== undefined)
-    .map(l => ({loc: l, pct: l.ores[ore]}))
-    .sort((a,b) => b.pct - a.pct);
+  ORE_INDEX[ore] = [];
+  LOCATIONS.forEach(loc => {
+    ['ship','roc','fps'].forEach(method => {
+      if (loc[method] && loc[method][ore] !== undefined) {
+        ORE_INDEX[ore].push({loc, pct: loc[method][ore], method});
+      }
+    });
+  });
+  ORE_INDEX[ore].sort((a,b) => b.pct - a.pct);
 });
 
 let currentSys = 'All';
@@ -226,21 +321,8 @@ let searchQ = '';
 
 function locMatchesMethod(loc) {
   if (currentMethod === 'All') return true;
-  return methodFromType(loc.type) === currentMethod;
+  return !!loc[currentMethod];
 }
-
-function miningMethodBadges(type) {
-  if (type === 'Belt') return '<span class="mbadge mbadge-ship">Ship</span>';
-  if (type === 'Cave') return '<span class="mbadge mbadge-hand">Hand</span>';
-  return '<span class="mbadge mbadge-roc">ROC</span><span class="mbadge mbadge-hand">Hand</span>';
-}
-
-function sysBadgeClass(sys) {
-  return sys === 'Stanton' ? 'badge-stanton' : sys === 'Pyro' ? 'badge-pyro' : 'badge-nyx';
-}
-
-function barColor(type) { return METHOD[methodFromType(type)].bar; }
-function textColor(type) { return METHOD[methodFromType(type)].text; }
 
 const SYS_COLOR = {
   Stanton: { bar: 'linear-gradient(90deg,#1a6090,#4fc3f7)', text: '#4fc3f7' },
@@ -248,56 +330,46 @@ const SYS_COLOR = {
   Nyx:     { bar: 'linear-gradient(90deg,#602090,#c080ff)', text: '#c080ff' },
 };
 
-function orePrimaryMethodColor(entries) {
-  const methods = new Set(entries.map(e => methodFromType(e.loc.type)));
-  if (methods.size === 1) return METHOD[[...methods][0]].text;
-  return '#e8e8e8';
-}
-
 function oreColors(oreName) {
   const entries = ORE_INDEX[oreName] || [];
-  if (!entries.length) return { bar: 'linear-gradient(90deg,#3a3a3a,#666)', text: '#888' };
-  const counts = { ship: 0, ground: 0, fps: 0 };
-  entries.forEach(e => counts[methodFromType(e.loc.type)]++);
+  if (!entries.length) return METHOD.ship;
+  const counts = {ship:0, roc:0, fps:0};
+  entries.forEach(e => counts[e.method]++);
   const dominant = Object.entries(counts).sort((a,b) => b[1]-a[1])[0][0];
   return METHOD[dominant];
 }
 
 function renderByLocation(locs) {
   if (!locs.length) return '<div class="no-results">No locations match your filter.</div>';
+  const activeMethods = currentMethod === 'All' ? ['ship','roc','fps'] : [currentMethod];
   return '<div class="cards-grid">' + locs.map(loc => {
-    const entries = Object.entries(loc.ores).sort((a,b) => b[1]-a[1]);
-    const maxPct = entries[0][1];
-    const rows = entries.map(([ore, pct]) => {
-      const w = Math.round(pct / maxPct * 100);
-      const mc = oreColors(ore);
-      return `<div class="ore-row">
-        <span class="ore-name" style="color:${mc.text}" title="${ore}">${ore}</span>
-        <div class="ore-bar-wrap"><div class="ore-bar" style="width:${w}%;background:${mc.bar}"></div></div>
-        <span class="ore-pct" style="color:${mc.text}">${pct}%</span>
-      </div>`;
-    }).join('');
+    let oreRows = '';
+    let first = true;
+    activeMethods.forEach(method => {
+      if (!loc[method]) return;
+      const entries = Object.entries(loc[method]).sort((a,b) => b[1]-a[1]);
+      const maxPct = entries[0][1];
+      const mc = METHOD[method];
+      if (!first && currentMethod === 'All') oreRows += '<hr class="method-sep">';
+      first = false;
+      oreRows += entries.map(([ore, pct]) => {
+        const w = Math.round(pct / maxPct * 100);
+        return `<div class="ore-row">
+          <span class="ore-name" style="color:${mc.text}" title="${ore}">${ore}</span>
+          <div class="ore-bar-wrap"><div class="ore-bar" style="width:${w}%;background:${mc.bar}"></div></div>
+          <span class="ore-pct" style="color:${mc.text}">${pct}%</span>
+        </div>`;
+      }).join('');
+    });
     const sub = [loc.type, loc.sys, loc.b].filter(Boolean).join(' · ');
     return `<div class="card">
       <div class="card-header">
         <span class="card-name">${loc.n}</span>
         <span class="card-sub">${sub}</span>
       </div>
-      ${rows}
+      ${oreRows}
     </div>`;
   }).join('') + '</div>';
-}
-
-function oreMethodBadges(entries) {
-  const types = new Set(entries.map(e => e.loc.type));
-  const badges = [];
-  if (types.has('Belt')) badges.push('<span class="mbadge mbadge-ship">Ship</span>');
-  if (types.has('Moon') || types.has('Planet')) {
-    badges.push('<span class="mbadge mbadge-roc">ROC</span>');
-    badges.push('<span class="mbadge mbadge-hand">Hand</span>');
-  }
-  if (types.has('Cave')) badges.push('<span class="mbadge mbadge-hand">Hand</span>');
-  return [...new Set(badges)].join('');
 }
 
 function renderByOre(ores) {
@@ -305,7 +377,7 @@ function renderByOre(ores) {
   return ores.map(ore => {
     const entries = ORE_INDEX[ore].filter(e =>
       (currentSys === 'All' || e.loc.sys === currentSys) &&
-      locMatchesMethod(e.loc)
+      (currentMethod === 'All' || e.method === currentMethod)
     );
     if (!entries.length) return '';
     const maxPct = entries[0].pct;
@@ -313,7 +385,8 @@ function renderByOre(ores) {
     const rows = entries.map(e => {
       const w = Math.round(e.pct / maxPct * 100);
       const sc = SYS_COLOR[e.loc.sys] || SYS_COLOR.Stanton;
-      const sub = [e.loc.type, e.loc.b].filter(Boolean).join(' · ');
+      const methodLabel = {ship:'Ship',roc:'Ground',fps:'FPS'}[e.method];
+      const sub = [e.loc.type, e.loc.b, methodLabel].filter(Boolean).join(' · ');
       return `<tr>
         <td class="td-loc">${e.loc.n}<span class="td-body">${sub}</span></td>
         <td class="td-bar-cell"><div style="background:rgba(255,255,255,.06);border-radius:4px;height:10px;overflow:hidden"><div class="inline-bar" style="width:${w}%;background:${sc.bar}"></div></div></td>
@@ -337,30 +410,29 @@ function renderByOre(ores) {
 
 function getFilteredLocs() {
   const q = searchQ.toLowerCase();
+  const methods = currentMethod === 'All' ? ['ship','roc','fps'] : [currentMethod];
   return LOCATIONS.filter(l => {
     if (currentSys !== 'All' && l.sys !== currentSys) return false;
     if (!locMatchesMethod(l)) return false;
     if (!q) return true;
     if (l.n.toLowerCase().includes(q)) return true;
-    return Object.keys(l.ores).some(o => o.toLowerCase().includes(q));
+    return methods.some(m => l[m] && Object.keys(l[m]).some(o => o.toLowerCase().includes(q)));
   });
 }
 
 function getFilteredOres() {
   const q = searchQ.toLowerCase();
   return ALL_ORES.filter(ore => {
-    const hasMatchingLoc = LOCATIONS.some(l =>
-      l.ores[ore] !== undefined &&
-      (currentSys === 'All' || l.sys === currentSys) &&
-      locMatchesMethod(l)
+    const hasMatch = ORE_INDEX[ore].some(e =>
+      (currentSys === 'All' || e.loc.sys === currentSys) &&
+      (currentMethod === 'All' || e.method === currentMethod)
     );
-    if (!hasMatchingLoc) return false;
+    if (!hasMatch) return false;
     if (q && !ore.toLowerCase().includes(q)) {
-      return LOCATIONS.some(l =>
-        l.ores[ore] !== undefined &&
-        (currentSys === 'All' || l.sys === currentSys) &&
-        locMatchesMethod(l) &&
-        l.n.toLowerCase().includes(q)
+      return ORE_INDEX[ore].some(e =>
+        (currentSys === 'All' || e.loc.sys === currentSys) &&
+        (currentMethod === 'All' || e.method === currentMethod) &&
+        e.loc.n.toLowerCase().includes(q)
       );
     }
     return true;
@@ -369,14 +441,11 @@ function getFilteredOres() {
 
 function render() {
   const content = document.getElementById('content');
-  if (currentView === 'location') {
-    content.innerHTML = renderByLocation(getFilteredLocs());
-  } else {
-    content.innerHTML = renderByOre(getFilteredOres());
-  }
+  content.innerHTML = currentView === 'location'
+    ? renderByLocation(getFilteredLocs())
+    : renderByOre(getFilteredOres());
 }
 
-// system tabs
 document.getElementById('sys-tabs').addEventListener('click', e => {
   const btn = e.target.closest('[data-sys]');
   if (!btn) return;
@@ -385,7 +454,6 @@ document.getElementById('sys-tabs').addEventListener('click', e => {
   render();
 });
 
-// method tabs
 document.getElementById('method-tabs').addEventListener('click', e => {
   const btn = e.target.closest('[data-method]');
   if (!btn) return;
@@ -394,7 +462,6 @@ document.getElementById('method-tabs').addEventListener('click', e => {
   render();
 });
 
-// view tabs
 document.getElementById('view-tabs').addEventListener('click', e => {
   const btn = e.target.closest('[data-view]');
   if (!btn) return;
@@ -403,7 +470,6 @@ document.getElementById('view-tabs').addEventListener('click', e => {
   render();
 });
 
-// search
 document.getElementById('search').addEventListener('input', e => {
   searchQ = e.target.value.trim();
   render();
