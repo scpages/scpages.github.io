@@ -125,7 +125,7 @@
 
   <div class="legend">
     <div class="leg-item"><div class="leg-dot fit"></div>Fits comfortably</div>
-    <div class="leg-item"><div class="leg-dot tight"></div>Tight / not recommended</div>
+    <div class="leg-item"><div class="leg-dot tight"></div>Problematic / not recommended</div>
     <div class="leg-item"><div class="leg-dot no"></div>Does not fit</div>
     <div class="leg-item"><div class="leg-dot unknown"></div>Unknown</div>
   </div>
@@ -285,7 +285,7 @@ function statusClass(s) {
 }
 
 function statusLabel(s) {
-  return s === 'y' ? 'Fits' : s === 'w' ? 'Tight' : s === 'n' ? 'No' : '?';
+  return s === 'y' ? 'Fits' : s === 'w' ? 'Problematic' : s === 'n' ? 'No' : '?';
 }
 
 function statusIcon(s) {
