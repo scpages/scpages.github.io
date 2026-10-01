@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vehicle Fits — Star Citizen Pages</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🚗%3C/text%3E%3C/svg%3E">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:linear-gradient(135deg,#0a0e27 0%,#1a1f3a 100%);color:#e8e8e8;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;min-height:100vh}
+
+    header{background:rgba(10,14,39,.85);backdrop-filter:blur(10px);border-bottom:2px solid #2a9fd6;padding:20px 0;margin-bottom:24px;box-shadow:0 4px 6px rgba(0,0,0,.3)}
+    .hdr-inner{max-width:1400px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+    .hdr-back{color:#2a9fd6;text-decoration:none;font-size:.9rem;padding:6px 12px;border:1px solid rgba(42,159,214,.3);border-radius:6px;transition:all .2s;white-space:nowrap}
+    .hdr-back:hover{background:rgba(42,159,214,.15);border-color:#2a9fd6}
+    h1{color:#fff;font-size:1.7rem;font-weight:600;text-shadow:0 0 20px rgba(42,159,214,.4)}
+    .hdr-sub{color:#888;font-size:.85rem;margin-left:auto}
+
+    .container{max-width:1400px;margin:0 auto;padding:0 20px 40px}
+
+    /* controls */
+    .controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+    .view-btns{display:flex;border:1px solid rgba(42,159,214,.3);border-radius:8px;overflow:hidden}
+    .view-btn{padding:8px 18px;background:transparent;border:none;color:#aaa;cursor:pointer;font-size:.88rem;transition:all .2s;font-family:inherit}
+    .view-btn.active{background:rgba(42,159,214,.25);color:#fff;font-weight:600}
+    .view-btn:hover:not(.active){background:rgba(42,159,214,.1);color:#e8e8e8}
+    .search-wrap{position:relative;flex:1;max-width:280px}
+    .search-wrap::before{content:'🔍';position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:.8rem;pointer-events:none}
+    #searchInput{width:100%;background:rgba(20,25,45,.8);border:1px solid rgba(42,159,214,.2);border-radius:8px;color:#e8e8e8;padding:8px 10px 8px 32px;font-size:.88rem;outline:none;transition:border-color .2s;font-family:inherit}
+    #searchInput:focus{border-color:rgba(42,159,214,.5)}
+    #searchInput::placeholder{color:#555}
+
+    /* legend */
+    .legend{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:18px;font-size:.8rem}
+    .leg-item{display:flex;align-items:center;gap:5px}
+    .leg-dot{width:12px;height:12px;border-radius:3px}
+    .leg-dot.fit{background:#3a8c3a}
+    .leg-dot.tight{background:#8c6a10}
+    .leg-dot.no{background:#333;border:1px solid #555}
+    .leg-dot.unknown{background:#1e1e2e;border:1px solid #333}
+
+    /* layout */
+    .layout{display:grid;grid-template-columns:220px 1fr;gap:16px}
+    @media(max-width:700px){.layout{grid-template-columns:1fr}}
+
+    /* selector */
+    .selector{background:rgba(15,19,38,.7);border:1px solid rgba(42,159,214,.15);border-radius:10px;overflow:hidden;max-height:calc(100vh - 220px);overflow-y:auto;position:sticky;top:16px}
+    .selector::-webkit-scrollbar{width:4px}
+    .selector::-webkit-scrollbar-track{background:transparent}
+    .selector::-webkit-scrollbar-thumb{background:rgba(42,159,214,.3);border-radius:2px}
+    .sel-group-label{padding:7px 12px;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:#555;background:rgba(0,0,0,.2);border-bottom:1px solid rgba(255,255,255,.04)}
+    .sel-item{padding:9px 14px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,.03);font-size:.85rem;transition:background .12s;display:flex;align-items:center;gap:8px}
+    .sel-item:hover{background:rgba(42,159,214,.08)}
+    .sel-item.active{background:rgba(42,159,214,.22);border-left:3px solid #2a9fd6;padding-left:11px;color:#fff;font-weight:600}
+    .sel-item.hidden{display:none}
+    .sel-maker{font-size:.7rem;color:#555;margin-left:auto}
+
+    /* results panel */
+    .results{background:rgba(15,19,38,.7);border:1px solid rgba(42,159,214,.15);border-radius:10px;padding:22px}
+    .results-empty{text-align:center;padding:60px 20px;color:#444}
+    .results-empty .icon{font-size:2.5rem;margin-bottom:10px}
+
+    .results-title{font-size:1.2rem;font-weight:600;color:#fff;margin-bottom:4px}
+    .results-meta{font-size:.8rem;color:#666;margin-bottom:20px}
+
+    .cat-section{margin-bottom:24px}
+    .cat-section:last-child{margin-bottom:0}
+    .cat-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:#2a9fd6;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(42,159,214,.15)}
+
+    /* vehicle cards */
+    .vehicle-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:7px}
+    .v-card{border-radius:7px;padding:9px 10px;text-align:center;border:1px solid transparent;transition:opacity .15s}
+    .v-card.fit{background:rgba(56,140,56,.14);border-color:rgba(56,140,56,.3)}
+    .v-card.tight{background:rgba(190,130,30,.12);border-color:rgba(190,130,30,.28)}
+    .v-card.no{background:rgba(30,30,40,.4);border-color:rgba(255,255,255,.05)}
+    .v-card.unknown{background:rgba(25,25,38,.3);border-color:rgba(255,255,255,.04);opacity:.5}
+    .v-name{font-size:.8rem;font-weight:600;color:#e8e8e8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .v-status{font-size:.68rem;margin-top:3px}
+    .v-card.fit .v-status{color:#5ec05e}
+    .v-card.tight .v-status{color:#c99030}
+    .v-card.no .v-status{color:#555}
+    .v-card.unknown .v-status{color:#444}
+    .v-note{font-size:.63rem;color:#888;margin-top:2px}
+
+    /* ship list (by vehicle view) */
+    .ship-list{display:flex;flex-direction:column;gap:5px}
+    .s-row{display:grid;grid-template-columns:1fr auto;align-items:center;padding:9px 12px;border-radius:7px;border:1px solid transparent;gap:12px}
+    .s-row.fit{background:rgba(56,140,56,.12);border-color:rgba(56,140,56,.25)}
+    .s-row.tight{background:rgba(190,130,30,.1);border-color:rgba(190,130,30,.22)}
+    .s-row.no{background:rgba(30,30,40,.35);border-color:rgba(255,255,255,.05)}
+    .s-row.unknown{background:rgba(25,25,38,.25);border-color:rgba(255,255,255,.04);opacity:.55}
+    .s-name{font-size:.88rem;font-weight:600;color:#e8e8e8}
+    .s-maker{font-size:.72rem;color:#666;margin-top:1px}
+    .s-badge{font-size:.72rem;font-weight:600;white-space:nowrap;text-align:right}
+    .s-row.fit .s-badge{color:#5ec05e}
+    .s-row.tight .s-badge{color:#c99030}
+    .s-row.no .s-badge{color:#555}
+    .s-row.unknown .s-badge{color:#444}
+    .s-note{font-size:.65rem;color:#888}
+
+    footer{max-width:1400px;margin:0 auto;padding:16px 20px 30px;border-top:1px solid rgba(42,159,214,.2);color:#555;font-size:.8rem;text-align:center}
+    footer a{color:#2a9fd6;text-decoration:none}
+    footer a:hover{text-decoration:underline}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="hdr-inner">
+    <a href="/" class="hdr-back">← Star Citizen Pages</a>
+    <h1>🚗 Vehicle Fits</h1>
+    <div class="hdr-sub">Which ground vehicles fit in which ships</div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="controls">
+    <div class="view-btns">
+      <button class="view-btn active" id="btnByShip" onclick="setView('ship')">By Ship</button>
+      <button class="view-btn" id="btnByVehicle" onclick="setView('vehicle')">By Vehicle</button>
+    </div>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Search…" oninput="onSearch(this.value)"/>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="leg-item"><div class="leg-dot fit"></div>Fits comfortably</div>
+    <div class="leg-item"><div class="leg-dot tight"></div>Tight / not recommended</div>
+    <div class="leg-item"><div class="leg-dot no"></div>Does not fit</div>
+    <div class="leg-item"><div class="leg-dot unknown"></div>Unknown</div>
+  </div>
+
+  <div class="layout">
+    <div class="selector" id="selector"></div>
+    <div class="results" id="results">
+      <div class="results-empty">
+        <div class="icon">🚗</div>
+        <div>Select a ship or vehicle to see compatibility</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Data sourced from <a href="https://starcitizen.tools/Ground_vehicles" target="_blank">starcitizen.tools/Ground_vehicles</a> &mdash;
+  <a href="https://github.com/scpages/scpages.github.io" target="_blank">GitHub</a>
+</footer>
+
+<script>
+// ── data ──────────────────────────────────────────────────────────────────────
+
+const VEHICLES = [
+  {id:'ptv',        name:'PTV',        cat:'Wheeled'},
+  {id:'utv',        name:'UTV',        cat:'Wheeled'},
+  {id:'stv',        name:'STV',        cat:'Wheeled'},
+  {id:'mule',       name:'Mule',       cat:'Wheeled'},
+  {id:'cyclone',    name:'Cyclone',    cat:'Wheeled'},
+  {id:'cyclone-mt', name:'Cyclone MT', cat:'Wheeled'},
+  {id:'roc',        name:'ROC',        cat:'Wheeled'},
+  {id:'csv',        name:'CSV',        cat:'Wheeled'},
+  {id:'roc-ds',     name:'ROC-DS',     cat:'Wheeled'},
+  {id:'ursa',       name:'Ursa',       cat:'Wheeled'},
+  {id:'mtc',        name:'MTC',        cat:'Wheeled'},
+  {id:'storm',      name:'Storm',      cat:'Wheeled'},
+  {id:'spartan',    name:'Spartan',    cat:'Wheeled'},
+  {id:'centurion',  name:'Centurion',  cat:'Wheeled'},
+  {id:'ballista',   name:'Ballista',   cat:'Wheeled'},
+  {id:'nova',       name:'Nova',       cat:'Wheeled'},
+  {id:'pulse',      name:'Pulse',      cat:'Bike'},
+  {id:'hoverquad',  name:'HoverQuad',  cat:'Bike'},
+  {id:'x1',         name:'X1',         cat:'Bike'},
+  {id:'nox',        name:'Nox',        cat:'Bike'},
+  {id:'dragonfly',  name:'Dragonfly',  cat:'Bike'},
+  {id:'atls',       name:'ATLS',       cat:'Bike'},
+];
+
+const SHIPS = [
+  {id:'pisces',        name:'Pisces',           maker:'Anvil'},
+  {id:'300s',          name:'300 series',        maker:'Origin'},
+  {id:'reliant',       name:'Reliant Kore',      maker:'MISC'},
+  {id:'avenger',       name:'Avenger Titan',     maker:'Aegis'},
+  {id:'cutter',        name:'Cutter',            maker:'Drake'},
+  {id:'vulture',       name:'Vulture',           maker:'Drake'},
+  {id:'cutlass-red',   name:'Cutlass Red',       maker:'Drake'},
+  {id:'freelancer',    name:'Freelancer',        maker:'MISC'},
+  {id:'400i',          name:'400i',              maker:'Origin'},
+  {id:'a1-spirit',     name:'A1 Spirit',         maker:'RSI'},
+  {id:'c1-spirit',     name:'C1 Spirit',         maker:'RSI'},
+  {id:'cutlass-black', name:'Cutlass Black',     maker:'Drake'},
+  {id:'hermes',        name:'Hermes',            maker:'RSI'},
+  {id:'nomad',         name:'Nomad',             maker:'MISC'},
+  {id:'zeus-cl',       name:'Zeus Mk II CL',     maker:'RSI'},
+  {id:'caterpillar',   name:'Caterpillar',       maker:'Drake'},
+  {id:'freelancer-max',name:'Freelancer MAX',    maker:'MISC'},
+  {id:'constellation', name:'Constellation',    maker:'RSI'},
+  {id:'600i',          name:'600i Explorer',     maker:'Origin'},
+  {id:'msr',           name:'MSR',               maker:'MISC'},
+  {id:'valkyrie',      name:'Valkyrie',          maker:'Anvil'},
+  {id:'hammerhead',    name:'Hammerhead',        maker:'Aegis'},
+  {id:'perseus',       name:'Perseus',           maker:'RSI'},
+  {id:'corsair',       name:'Corsair',           maker:'Drake'},
+  {id:'starfarer',     name:'Starfarer',         maker:'MISC'},
+  {id:'carrack',       name:'Carrack',           maker:'Anvil'},
+  {id:'reclaimer',     name:'Reclaimer',         maker:'Aegis'},
+  {id:'starlancer',    name:'Starlancer',        maker:'MISC'},
+  {id:'asgard',        name:'Asgard',            maker:'RSI'},
+  {id:'polaris-c',     name:'Polaris (Cargo)',   maker:'RSI'},
+  {id:'polaris-h',     name:'Polaris (Hangar)',  maker:'RSI'},
+  {id:'890',           name:'890 Jump',          maker:'Origin'},
+  {id:'hercules',      name:'Hercules',          maker:'Crusader'},
+];
+
+// status: y=comfortable, w=tight, n=no, ?=unknown
+// vehicle order: ptv,utv,stv,mule,cyclone,cyclone-mt,roc,csv,roc-ds,ursa,mtc,storm,spartan,centurion,ballista,nova, pulse,hoverquad,x1,nox,dragonfly,atls
+const COMPAT = {
+  'pisces':        ['n','n','n','n','n','n','n','n','n','n','n','n','n','n','n','n', 'y','n','n','n','n','n'],
+  '300s':          ['w','n','n','n','n','n','n','n','n','n','n','n','n','n','n','n', 'w','w','n','n','n','n'],
+  'reliant':       ['y','n','n','n','n','n','n','n','n','n','n','n','n','n','n','n', 'y','w','w','w','n','n'],
+  'avenger':       ['y','w','n','n','n','n','n','n','n','n','n','n','n','n','n','n', 'y','y','n','w','n','n'],
+  'cutter':        ['y','y','y','w','n','n','w','n','n','n','n','n','n','n','n','n', 'y','y','y','y','w','y'],
+  'vulture':       ['y','y','y','y','w','n','n','n','n','n','n','n','n','n','n','n', 'y','y','y','y','y','y'],
+  'cutlass-red':   ['y','y','w','w','w','n','w','n','n','n','n','n','n','n','n','n', '?','?','?','?','?','?'],
+  'freelancer':    ['y','y','y','y','y','n','y','n','n','n','n','n','n','n','n','n', '?','?','?','?','?','?'],
+  '400i':          ['y','y','y','y','y','n','w','y','n','n','n','n','n','n','n','n', '?','?','?','?','?','?'],
+  'a1-spirit':     ['y','y','y','y','y','y','y','y','n','n','n','n','n','n','n','n', '?','?','?','?','?','?'],
+  'c1-spirit':     ['y','y','y','y','y','y','y','y','w','n','n','n','n','n','n','n', 'y','y','y','y','y','y'],
+  'cutlass-black': ['y','y','y','y','w','w','y','y','n','n','n','n','n','n','n','n', 'y','y','y','y','y','y'],
+  'hermes':        ['y','y','y','y','y','y','y','y','n','n','n','n','n','n','n','n', 'y','y','y','y','y','y'],
+  'nomad':         ['y','y','y','y','y','y','y','y','w','w','n','n','n','n','n','n', '?','?','?','?','?','?'],
+  'zeus-cl':       ['y','y','y','y','y','y','y','y','n','n','n','n','n','n','n','n', '?','?','?','?','?','?'],
+  'caterpillar':   ['w','w','w','w','w','w','w','w','w','w','n','n','n','n','n','n', '?','?','?','?','?','?'],
+  'freelancer-max':['y','y','y','y','y','y','y','y','y','w','w','n','n','n','n','n', '?','?','?','?','?','?'],
+  'constellation': ['y','y','y','y','y','y','y','y','y','y','w','n','n','n','n','n', '?','?','?','?','?','?'],
+  '600i':          ['y','y','y','y','y','y','y','y','y','y','y','n','n','n','n','n', '?','?','?','?','?','?'],
+  'msr':           ['y','y','y','y','y','y','y','y','y','y','y','n','n','n','n','n', '?','?','?','?','?','?'],
+  'valkyrie':      ['y','y','y','y','y','y','y','y','y','y','y','n','n','n','w','n', 'y','y','y','y','y','y'],
+  'hammerhead':    ['y','y','y','y','y','y','y','y','y','y','y','n','n','n','n','n', '?','?','?','?','?','?'],
+  'perseus':       ['y','y','y','y','y','y','y','y','y','y','y','n','n','n','n','n', '?','?','?','?','?','?'],
+  'corsair':       ['y','y','y','y','y','y','y','y','y','y','y','y','n','n','n','n', '?','?','?','?','?','?'],
+  'starfarer':     ['y','y','y','y','y','y','y','y','y','y','w','y','n','n','n','n', '?','?','?','?','?','?'],
+  'carrack':       ['y','y','y','y','y','y','y','y','y','y','y','y','n','n','n','n', '?','?','?','?','?','?'],
+  'reclaimer':     ['y','y','y','y','y','y','y','y','y','y','y','y','n','n','n','n', '?','?','?','?','?','?'],
+  'starlancer':    ['y','y','y','y','y','y','y','y','y','y','y','y','n','n','n','n', '?','?','?','?','?','?'],
+  'asgard':        ['y','y','y','y','y','y','y','y','y','y','y','y','y','y','y','y', '?','?','?','?','?','?'],
+  'polaris-c':     ['y','y','y','y','y','y','y','y','y','y','y','y','y','y','w','w', '?','?','?','?','?','?'],
+  'polaris-h':     ['y','y','y','y','y','y','y','y','y','y','y','y','y','y','y','y', '?','?','?','?','?','?'],
+  '890':           ['y','y','y','y','y','y','y','y','y','y','y','y','y','y','y','y', '?','?','?','?','?','?'],
+  'hercules':      ['y','y','y','y','y','y','y','y','y','y','y','y','y','y','y','y', '?','?','?','?','?','?'],
+};
+
+// quantity notes for specific ship+vehicle combos
+const NOTES = {
+  'a1-spirit':     {ptv:'×2', stv:'×2'},
+  'c1-spirit':     {ptv:'×2', stv:'×2'},
+  'cutlass-black': {ptv:'×7'},
+  'asgard':        {ptv:'×12', cyclone:'×4', ursa:'×2'},
+};
+
+// ── helpers ───────────────────────────────────────────────────────────────────
+
+const VID_IDX = {};
+VEHICLES.forEach((v,i) => VID_IDX[v.id] = i);
+
+function compat(shipId, vehicleId) {
+  const row = COMPAT[shipId];
+  if (!row) return '?';
+  const idx = VID_IDX[vehicleId];
+  return (idx === undefined || row[idx] === undefined) ? '?' : row[idx];
+}
+
+function note(shipId, vehicleId) {
+  return (NOTES[shipId] || {})[vehicleId] || '';
+}
+
+function statusClass(s) {
+  return s === 'y' ? 'fit' : s === 'w' ? 'tight' : s === 'n' ? 'no' : 'unknown';
+}
+
+function statusLabel(s) {
+  return s === 'y' ? 'Fits' : s === 'w' ? 'Tight' : s === 'n' ? 'No' : '?';
+}
+
+function statusIcon(s) {
+  return s === 'y' ? '✅' : s === 'w' ? '⚠️' : s === 'n' ? '❌' : '❔';
+}
+
+// ── state ─────────────────────────────────────────────────────────────────────
+
+let currentView = 'ship';
+let selectedId = null;
+let searchQuery = '';
+
+// ── render selector ───────────────────────────────────────────────────────────
+
+function renderSelector() {
+  const sel = document.getElementById('selector');
+  const q = searchQuery.toLowerCase();
+
+  if (currentView === 'ship') {
+    sel.innerHTML = SHIPS.map(s => {
+      const hidden = q && !s.name.toLowerCase().includes(q) && !s.maker.toLowerCase().includes(q);
+      return `<div class="sel-item${s.id===selectedId?' active':''}${hidden?' hidden':''}" data-id="${s.id}" onclick="select('${s.id}')">
+        <span>${s.name}</span>
+        <span class="sel-maker">${s.maker}</span>
+      </div>`;
+    }).join('');
+  } else {
+    const cats = ['Wheeled','Bike'];
+    const catNames = {Wheeled:'Wheeled & Tracked', Bike:'Bikes & Grav-Lev'};
+    sel.innerHTML = cats.map(cat => {
+      const items = VEHICLES.filter(v => v.cat === cat);
+      const rows = items.map(v => {
+        const hidden = q && !v.name.toLowerCase().includes(q);
+        return `<div class="sel-item${v.id===selectedId?' active':''}${hidden?' hidden':''}" data-id="${v.id}" onclick="select('${v.id}')">
+          ${v.name}
+        </div>`;
+      }).join('');
+      return `<div class="sel-group-label">${catNames[cat]}</div>${rows}`;
+    }).join('');
+  }
+}
+
+// ── render results ────────────────────────────────────────────────────────────
+
+function renderEmpty() {
+  document.getElementById('results').innerHTML = `
+    <div class="results-empty">
+      <div class="icon">${currentView === 'ship' ? '🚀' : '🚗'}</div>
+      <div>Select a ${currentView === 'ship' ? 'ship' : 'vehicle'} to see compatibility</div>
+    </div>`;
+}
+
+function renderByShip(shipId) {
+  const ship = SHIPS.find(s => s.id === shipId);
+  if (!ship) return renderEmpty();
+
+  const cats = ['Wheeled','Bike'];
+  const catNames = {Wheeled:'Wheeled & Tracked', Bike:'Bikes & Grav-Lev'};
+
+  const sections = cats.map(cat => {
+    const vehicles = VEHICLES.filter(v => v.cat === cat);
+    const cards = vehicles.map(v => {
+      const s = compat(shipId, v.id);
+      const n = note(shipId, v.id);
+      return `<div class="v-card ${statusClass(s)}" title="${v.name}: ${statusLabel(s)}">
+        <div class="v-name">${v.name}</div>
+        <div class="v-status">${statusIcon(s)} ${statusLabel(s)}</div>
+        ${n ? `<div class="v-note">${n}</div>` : ''}
+      </div>`;
+    }).join('');
+    return `<div class="cat-section">
+      <div class="cat-label">${catNames[cat]}</div>
+      <div class="vehicle-grid">${cards}</div>
+    </div>`;
+  }).join('');
+
+  document.getElementById('results').innerHTML = `
+    <div class="results-title">${ship.name}</div>
+    <div class="results-meta">${ship.maker}</div>
+    ${sections}`;
+}
+
+function renderByVehicle(vehicleId) {
+  const vehicle = VEHICLES.find(v => v.id === vehicleId);
+  if (!vehicle) return renderEmpty();
+
+  // Sort ships: y first, then w, then n, then ?
+  const order = {y:0, w:1, n:2, '?':3};
+  const sorted = [...SHIPS].sort((a, b) => {
+    const sa = compat(a.id, vehicleId);
+    const sb = compat(b.id, vehicleId);
+    return order[sa] - order[sb];
+  });
+
+  const rows = sorted.map(ship => {
+    const s = compat(ship.id, vehicleId);
+    const n = note(ship.id, vehicleId);
+    return `<div class="s-row ${statusClass(s)}">
+      <div>
+        <div class="s-name">${ship.name}</div>
+        <div class="s-maker">${ship.maker}</div>
+      </div>
+      <div>
+        <div class="s-badge">${statusIcon(s)} ${statusLabel(s)}</div>
+        ${n ? `<div class="s-note">${n}</div>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+
+  const catLabel = vehicle.cat === 'Bike' ? 'Bike / Grav-Lev' : 'Wheeled / Tracked';
+  const fits  = SHIPS.filter(s => compat(s.id, vehicleId) === 'y').length;
+  const tight = SHIPS.filter(s => compat(s.id, vehicleId) === 'w').length;
+
+  document.getElementById('results').innerHTML = `
+    <div class="results-title">${vehicle.name}</div>
+    <div class="results-meta">${catLabel} &mdash; ${fits} comfortable, ${tight} tight</div>
+    <div class="ship-list">${rows}</div>`;
+}
+
+// ── actions ───────────────────────────────────────────────────────────────────
+
+function select(id) {
+  selectedId = id;
+  renderSelector();
+  if (currentView === 'ship') renderByShip(id);
+  else renderByVehicle(id);
+}
+
+function setView(view) {
+  currentView = view;
+  selectedId = null;
+  document.getElementById('btnByShip').classList.toggle('active', view === 'ship');
+  document.getElementById('btnByVehicle').classList.toggle('active', view === 'vehicle');
+  renderSelector();
+  renderEmpty();
+}
+
+function onSearch(q) {
+  searchQuery = q;
+  renderSelector();
+}
+
+// ── init ──────────────────────────────────────────────────────────────────────
+
+renderSelector();
+renderEmpty();
+</script>
+</body>
+</html>
