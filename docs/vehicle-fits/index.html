@@ -154,7 +154,7 @@ const VEHICLES = [
   {id:'utv',        name:'UTV',        cat:'Wheeled'},
   {id:'stv',        name:'STV',        cat:'Wheeled'},
   {id:'mule',       name:'Mule',       cat:'Wheeled'},
-  {id:'cyclone',    name:'Cyclone',    cat:'Wheeled'},
+  {id:'cyclone',    name:'Cyclone series', cat:'Wheeled'},
   {id:'cyclone-mt', name:'Cyclone MT', cat:'Wheeled'},
   {id:'roc',        name:'ROC',        cat:'Wheeled'},
   {id:'csv',        name:'CSV',        cat:'Wheeled'},
@@ -168,7 +168,7 @@ const VEHICLES = [
   {id:'nova',       name:'Nova',       cat:'Wheeled'},
   {id:'pulse',      name:'Pulse',      cat:'Bike'},
   {id:'hoverquad',  name:'HoverQuad',  cat:'Bike'},
-  {id:'x1',         name:'X1',         cat:'Bike'},
+  {id:'x1',         name:'X1 series',  cat:'Bike'},
   {id:'nox',        name:'Nox',        cat:'Bike'},
   {id:'dragonfly',  name:'Dragonfly',  cat:'Bike'},
   {id:'atls',       name:'ATLS',       cat:'Bike'},
@@ -325,7 +325,7 @@ function renderSelector() {
     const cats = ['Wheeled','Bike'];
     const catNames = {Wheeled:'Wheeled & Tracked', Bike:'Bikes & Grav-Lev'};
     sel.innerHTML = cats.map(cat => {
-      const items = VEHICLES.filter(v => v.cat === cat);
+      const items = VEHICLES.filter(v => v.cat === cat).sort((a,b) => a.name.localeCompare(b.name));
       const rows = items.map(v => {
         const hidden = q && !v.name.toLowerCase().includes(q);
         return `<div class="sel-item${v.id===selectedId?' active':''}${hidden?' hidden':''}" data-id="${v.id}" onclick="select('${v.id}')">
