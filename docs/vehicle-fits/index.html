@@ -67,6 +67,7 @@
 
     /* vehicle cards */
     .vehicle-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:7px}
+    .ship-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:7px}
     .v-card{border-radius:7px;padding:9px 10px;text-align:center;border:1px solid transparent;transition:opacity .15s}
     .v-card.fit{background:rgba(56,140,56,.14);border-color:rgba(56,140,56,.3)}
     .v-card.tight{background:rgba(190,130,30,.12);border-color:rgba(190,130,30,.28)}
@@ -79,6 +80,7 @@
     .v-card.no .v-status{color:#555}
     .v-card.unknown .v-status{color:#444}
     .v-note{font-size:.63rem;color:#888;margin-top:2px}
+    .v-maker{font-size:.68rem;color:#555;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
     /* ship list (by vehicle view) */
     .ship-list{display:flex;flex-direction:column;gap:5px}
@@ -378,6 +380,7 @@ function renderByVehicle(vehicleId) {
     const n = note(ship.id, vehicleId);
     return `<div class="v-card ${statusClass(s)}" title="${ship.name}: ${statusLabel(s)}">
       <div class="v-name">${ship.name}</div>
+      <div class="v-maker">${ship.maker}</div>
       <div class="v-status">${statusIcon(s)} ${statusLabel(s)}</div>
       ${n ? `<div class="v-note">${n}</div>` : ''}
     </div>`;
@@ -390,7 +393,7 @@ function renderByVehicle(vehicleId) {
   document.getElementById('results').innerHTML = `
     <div class="results-title">${vehicle.name}</div>
     <div class="results-meta">${catLabel} &mdash; ${fits} comfortable, ${tight} tight</div>
-    <div class="vehicle-grid">${rows}</div>`;
+    <div class="ship-grid">${rows}</div>`;
 }
 
 // ── actions ───────────────────────────────────────────────────────────────────
