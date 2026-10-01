@@ -374,15 +374,10 @@ function renderByVehicle(vehicleId) {
   const rows = sorted.map(ship => {
     const s = compat(ship.id, vehicleId);
     const n = note(ship.id, vehicleId);
-    return `<div class="s-row ${statusClass(s)}">
-      <div>
-        <div class="s-name">${ship.name}</div>
-        <div class="s-maker">${ship.maker}</div>
-      </div>
-      <div>
-        <div class="s-badge">${statusIcon(s)} ${statusLabel(s)}</div>
-        ${n ? `<div class="s-note">${n}</div>` : ''}
-      </div>
+    return `<div class="v-card ${statusClass(s)}" title="${ship.name}: ${statusLabel(s)}">
+      <div class="v-name">${ship.name}</div>
+      <div class="v-status">${statusIcon(s)} ${statusLabel(s)}</div>
+      ${n ? `<div class="v-note">${n}</div>` : ''}
     </div>`;
   }).join('');
 
@@ -393,7 +388,7 @@ function renderByVehicle(vehicleId) {
   document.getElementById('results').innerHTML = `
     <div class="results-title">${vehicle.name}</div>
     <div class="results-meta">${catLabel} &mdash; ${fits} comfortable, ${tight} tight</div>
-    <div class="ship-list">${rows}</div>`;
+    <div class="vehicle-grid">${rows}</div>`;
 }
 
 // ── actions ───────────────────────────────────────────────────────────────────
