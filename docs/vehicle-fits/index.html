@@ -336,8 +336,10 @@ function renderByShip(shipId) {
   const cats = ['Wheeled','Bike'];
   const catNames = {Wheeled:'Wheeled & Tracked', Bike:'Bikes & Grav-Lev'};
 
+  const order = {y:0, w:1, n:2, '?':3};
   const sections = cats.map(cat => {
-    const vehicles = VEHICLES.filter(v => v.cat === cat);
+    const vehicles = VEHICLES.filter(v => v.cat === cat)
+      .sort((a,b) => order[compat(shipId,a.id)] - order[compat(shipId,b.id)]);
     const cards = vehicles.map(v => {
       const s = compat(shipId, v.id);
       const n = note(shipId, v.id);
