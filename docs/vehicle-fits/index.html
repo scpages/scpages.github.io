@@ -339,7 +339,7 @@ function renderByShip(shipId) {
   const order = {y:0, w:1, n:2, '?':3};
   const sections = cats.map(cat => {
     const vehicles = VEHICLES.filter(v => v.cat === cat)
-      .sort((a,b) => order[compat(shipId,a.id)] - order[compat(shipId,b.id)]);
+      .sort((a,b) => (order[compat(shipId,a.id)] - order[compat(shipId,b.id)]) || a.name.localeCompare(b.name));
     const cards = vehicles.map(v => {
       const s = compat(shipId, v.id);
       const n = note(shipId, v.id);
@@ -370,7 +370,7 @@ function renderByVehicle(vehicleId) {
   const sorted = [...SHIPS].sort((a, b) => {
     const sa = compat(a.id, vehicleId);
     const sb = compat(b.id, vehicleId);
-    return order[sa] - order[sb];
+    return (order[sa] - order[sb]) || a.name.localeCompare(b.name);
   });
 
   const rows = sorted.map(ship => {
