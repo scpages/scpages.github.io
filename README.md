@@ -9,7 +9,7 @@ Live at: **https://scpages.github.io**
 | Tool | Repo | Description |
 |---|---|---|
 | Default Ship Components | [scpages/default_loadout](https://github.com/scpages/default_loadout) | Default loadouts for all ships |
-| Cargo Trading | [scpages/trading](https://github.com/scpages/trading) | Trading routes & commodity prices |
+| Commodity Trading | [scpages/trading](https://github.com/scpages/trading) | Trading routes & commodity prices |
 | Ship Component List | [scpages/compoment_list](https://github.com/scpages/compoment_list) | Components with class, grade, size & buy prices |
 | Ship Prices | [scpages/ship_prices](https://github.com/scpages/ship_prices) | Pledge, in-game buy & rental prices |
 | Mining Data | *(this repo)* | Ore locations & spawn percentages across Stanton, Pyro, Nyx — filterable by system, mining method (Ship / Ground / FPS), with By Location and By Ore views |
@@ -36,7 +36,7 @@ docs/
 ├── default-loadouts/       # Default Ship Components
 ├── mining/                 # Mining Data (static, maintained here)
 ├── ship-prices/            # Ship Prices
-├── trading/                # Cargo Trading
+├── trading/                # Commodity Trading
 └── vehicle-fits/           # Vehicle Fits (static, maintained here)
 ```
 
