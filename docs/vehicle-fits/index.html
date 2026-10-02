@@ -43,6 +43,7 @@
 
     /* selector */
     .selector{background:rgba(15,19,38,.7);border:1px solid rgba(42,159,214,.15);border-radius:10px;overflow:hidden;max-height:calc(100vh - 220px);overflow-y:auto;position:sticky;top:16px}
+    @media(max-width:700px){.selector{max-height:220px;position:static}}
     .selector::-webkit-scrollbar{width:4px}
     .selector::-webkit-scrollbar-track{background:transparent}
     .selector::-webkit-scrollbar-thumb{background:rgba(42,159,214,.3);border-radius:2px}
@@ -419,6 +420,9 @@ function select(id) {
   renderSelector();
   if (currentView === 'ship') renderByShip(id);
   else renderByVehicle(id);
+  if (window.innerWidth <= 700) {
+    document.getElementById('results').scrollIntoView({behavior:'smooth', block:'start'});
+  }
 }
 
 function setView(view) {
