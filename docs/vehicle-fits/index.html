@@ -286,6 +286,39 @@ const NOTES = {
   'asgard':        {ptv:'×12', cyclone:'×4', ursa:'×2'},
 };
 
+// ── inference ─────────────────────────────────────────────────────────────────
+
+// Returns true if vehicle A fits inside the space occupied by vehicle B
+// (A is smaller or equal in every dimension)
+function fitsInside(dimA, dimB) {
+  return dimA.l <= dimB.l && dimA.w <= dimB.w && dimA.h <= dimB.h;
+}
+
+// Loaded from vehicles.json; keyed by vehicle id
+let VDIMS = {};
+
+function applyInference() {
+  const vids = VEHICLES.map(v => v.id);
+  for (const [ship, row] of Object.entries(COMPAT)) {
+    for (let i = 0; i < vids.length; i++) {
+      if (row[i] !== '?') continue;
+      const dimA = VDIMS[vids[i]];
+      if (!dimA) continue;
+      // Find any confirmed-fit vehicle whose space A would fit inside
+      for (let j = 0; j < vids.length; j++) {
+        if (row[j] !== 'y') continue;
+        const dimB = VDIMS[vids[j]];
+        if (dimB && fitsInside(dimA, dimB)) { row[i] = 'y'; break; }
+      }
+    }
+  }
+}
+
+fetch('vehicles.json')
+  .then(r => r.json())
+  .then(data => { VDIMS = data; applyInference(); render(); })
+  .catch(() => render()); // render even without dims
+
 // ── helpers ───────────────────────────────────────────────────────────────────
 
 const VID_IDX = {};
@@ -453,6 +486,16 @@ function onSearch(q) {
 }
 
 // ── init ──────────────────────────────────────────────────────────────────────
+
+function render() {
+  renderSelector();
+  if (selectedId) {
+    if (currentView === 'ship') renderByShip(selectedId);
+    else renderByVehicle(selectedId);
+  } else {
+    renderEmpty();
+  }
+}
 
 renderSelector();
 renderEmpty();
