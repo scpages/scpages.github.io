@@ -26,6 +26,12 @@ jobs:
         with:
           node-version: '24'
 
+      - name: Refresh source data (RSI prices + UEX aUEC)
+        working-directory: generator
+        run: |
+          node get_ships_from_rsi.js
+          node get_ships_from_uex.js
+
       - name: Generate HTML
         working-directory: generator
         run: |
