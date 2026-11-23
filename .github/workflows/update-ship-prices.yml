@@ -30,7 +30,10 @@ jobs:
         working-directory: generator
         run: |
           node get_ships_from_rsi.js
-          node get_ships_from_uex.js
+          # UEX sits behind Cloudflare, which 403s GitHub Actions runner IPs.
+          # Keep the deploy alive on failure: fall back to the committed
+          # uex_ships.json (RSI/USD prices still refresh; aUEC data stays last-known).
+          node get_ships_from_uex.js || echo "::warning::UEX refresh failed (Cloudflare 403 on runner IP); using committed uex_ships.json"
 
       - name: Generate HTML
         working-directory: generator
